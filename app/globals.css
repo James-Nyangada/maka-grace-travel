@@ -1,0 +1,115 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --color-safari-green: var(--safari-green);
+  --color-safari-green-dark: var(--safari-green-dark);
+  --color-safari-gold: var(--safari-gold);
+  --color-safari-gold-light: var(--safari-gold-light);
+  --color-safari-cream: var(--safari-cream);
+  --color-safari-ink: var(--safari-ink);
+  --font-sans: var(--font-quicksand), 'Quicksand', ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-grand-hotel), 'Grand Hotel', cursive;
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root,
+.light {
+  color-scheme: light;
+  --background: #ffffff;
+  --foreground: #1a2b34;
+  --card: #ffffff;
+  --card-foreground: #1a2b34;
+  --popover: #ffffff;
+  --popover-foreground: #1a2b34;
+  --primary: #166938;
+  --primary-foreground: #ffffff;
+  --secondary: #f1f1ee;
+  --secondary-foreground: #1a2b34;
+  --muted: #f1f1ee;
+  --muted-foreground: #5c6b73;
+  --accent: #c19a5b;
+  --accent-foreground: #ffffff;
+  --destructive: #dc2626;
+  --border: #e6e6e2;
+  --input: #e6e6e2;
+  --ring: #166938;
+  --radius: 0.625rem;
+  --safari-green: #166938;
+  --safari-green-dark: #0e5029;
+  --safari-gold: #c19a5b;
+  --safari-gold-light: #cfa971;
+  --safari-cream: #f1f1ee;
+  --safari-ink: #1a2b34;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Script accent font */
+.font-script {
+  font-family: var(--font-grand-hotel), 'Grand Hotel', cursive;
+}
+
+/* Typing caret for hero */
+@keyframes caret-blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+.typing-caret {
+  animation: caret-blink 0.9s step-end infinite;
+}
+
+/* Faint safari doodle pattern for cream sections */
+.safari-pattern {
+  background-color: var(--safari-cream);
+  background-image: radial-gradient(rgba(26, 43, 52, 0.045) 1.2px, transparent 1.2px);
+  background-size: 26px 26px;
+}
+
+/* Faint dotted world map style pattern for testimonials */
+.dots-pattern {
+  background-image: radial-gradient(rgba(30, 90, 160, 0.12) 1.5px, transparent 1.5px);
+  background-size: 14px 14px;
+}
