@@ -1,0 +1,564 @@
+MAKA GRACE TOURS AND TRAVEL
+Homepage Content — Section by Section
+— Exact copy to replace the existing UI content without changing the layout —
+Client
+Maka Grace Tours and Travel
+Contact
+Marykala · makagraceholdings@gmail.com · 0705794254
+Prepared by
+Estetica Agency · July 2026
+How to use
+Replace text in each UI section exactly as labelled. Do not move or reorder sections.
+Every content block below is labelled with the section name as it appears in the UI from top to bottom. Paste the content exactly as written. Fields marked [IMAGE] indicate where a photo should be placed — image suggestions are provided.
+SECTION 1 — TOP NAVIGATION BAR
+Top Info Bar (thin bar above main nav)
+Field
+Content
+Email link
+info@makagracetravel.co.ke
+Phone link
++254 705 794 254
+Right CTA
+Get In Touch, We're Available
+Main Navigation Links
+Link Label
+Page it goes to
+Home
+/
+About Us
+/about
+Safari Tours
+/packages?category=Safaris
+Discover Tanzania
+/destinations
+Activities
+/packages?category=Activities
+Gallery
+/gallery
+Blog
+/blog
+Contact
+/contact
+Replace "Discover Tanzania" with "Discover Kenya" and update "Safari Tours" to "Our Packages" or keep as "Safari Tours" if safaris are the main product Marykala wants to lead with.
+SECTION 2 — HERO SECTION
+Hero Eyebrow (small text above headline)
+"Personalised Travel Experiences Across Kenya"
+Hero Main Headline (large display text)
+"Safari" (styled in brand gold)
+"Experience" (in white, same line)
+The UI splits the headline into two words on separate style layers — the first word in one colour (gold/ochre), the second in white. Use "Safari Experience" or choose from these alternatives:
+Option
+Word 1 (Gold)
+Word 2 (White)
+Mood
+A (Recommended)
+Kenya
+Awaits
+Aspirational — speaks to any type of traveller
+B
+Safari
+Experience
+Specific — leads with safaris strongly
+C
+Travel
+with Grace
+Ties in brand tagline — memorable
+D
+Your
+Adventure
+Personal and action-oriented
+Hero Trust Badges (3 small icon badges below headline)
+Badge Icon (Tabler)
+Badge Text
+IconMapPin / location pin
+Expert Local Guides
+IconStarFilled / star
+Tailored Safari Experiences
+IconLeaf / leaf
+Sustainable & Ethical Tourism
+Hero Search / Filter Bar (below trust badges)
+Field
+Label
+Input Type
+Placeholder text
+1
+Destination
+Dropdown
+Where would you like to go?
+2
+Safari Comfort
+Dropdown
+Budget / Mid-range / Luxury
+3
+Days
+Dropdown
+How many days?
+4
+Search button
+Button
+Search Packages
+Destination dropdown options: Maasai Mara · Diani Beach · Amboseli · Mount Kenya · Lake Nakuru · Lamu · Zanzibar · Nairobi & Day Trips · All Destinations
+SECTION 3 — ABOUT INTRO SECTION
+This is the section that appears below the hero with a green tick label, a two-column layout (text left, counters/icons right), and a "More About Us" button.
+Green Tick Eyebrow Label
+Exact text
+"Where Adventure Meets the Wild"
+Section Headline
+Exact text
+"Discover The Wonders Of Kenya"
+Body Paragraph (paragraph of text below the headline)
+Exact copy — paste this in full
+At Maka Grace Tours and Travel, we craft unforgettable travel experiences that connect
+you to the soul of Kenya. From the sweeping plains of the Maasai Mara to the turquoise
+waters of Diani Beach, our carefully designed packages combine adventure, comfort, and
+authentic local culture into journeys that stay with you long after you return home.
+As a Kenya-based agency with deep local knowledge, we offer honest advice, prompt
+communication, and personalised service — ensuring every detail of your trip is handled
+with care and expertise.
+Feature Icons (2 small icon callouts — right side of section)
+Icon (Tabler)
+Heading
+Sub-text
+IconTag / price tag
+Low Price & Friendly
+We offer the best deals for your travel packages so you are never caught off guard.
+IconShieldCheck
+Trusted Travel Guide
+Our KATA-affiliated guides know Kenya like no other — you will never miss a thing.
+Stat Counter (large number on left — "25 years of experience" in the UI)
+Replace with a stat that is accurate for Maka Grace. Since the agency is new, use one of these alternatives:
+Option
+Number
+Label
+Recommended?
+A
+100%
+Custom Itineraries
+Yes — reflects the tailor-made service model
+B
+500+
+Happy Travellers
+Yes — use once numbers are confirmed
+C
+4.9★
+Customer Rating
+Yes — once Google reviews are live
+D
+24/7
+Support Available
+Good for trust — accurate from day one
+"More About Us" Button
+Button text
+"Discover Our Story"
+Links to: /about
+SECTION 4 — PACKAGES SECTION
+This section has an eyebrow label, a large headline, a sub-description, and a horizontal scroll of package cards. Each card has an image, price, duration, locations, and a starting-from price.
+Section Eyebrow Label
+Exact text
+"Popular Kenya Packages"
+Section Headline (large, 2 lines)
+Exact text
+"Discover Kenya's Untamed Beauty With"
+"Our Expertly Crafted Packages."
+Section Sub-description (small paragraph, right side of headline)
+Exact copy
+Whatever your dream journey looks like — from
+a private Big Five safari to a romantic coastal
+retreat — we craft it around you. Handpicked
+destinations, local expertise, and personalised
+service every step of the way.
+Package Cards (horizontal scroll — 4 cards visible at a time)
+Card 1
+Field
+Content
+Image
+[IMAGE: Maasai Mara — wildebeest migration or lion on savanna]
+Price Range
+Mid Range
+Route/Title
+Nairobi to Maasai Mara — 5 Days
+Highlights
+3 game drives · Bush breakfast · Mara River crossing viewpoint
+Includes
+All meals · Luxury tent lodge · Airport transfers
+Rating
+★★★★★
+Price
+Starting from USD 850
+CTA Button
+View Package
+Card 2
+Field
+Content
+Image
+[IMAGE: Diani Beach — turquoise water, white sand, dhow boat]
+Price Range
+Budget
+Route/Title
+Nairobi to Diani Beach — 4 Days
+Highlights
+Beach lodge · Snorkelling · Seafood dining · Colobus monkey walks
+Includes
+Breakfast · Beach hotel · Return road/air transfer
+Rating
+★★★★★
+Price
+Starting from USD 320
+CTA Button
+View Package
+Card 3
+Field
+Content
+Image
+[IMAGE: Amboseli — elephant herd with Kilimanjaro backdrop]
+Price Range
+Mid Range
+Route/Title
+Nairobi to Amboseli — 3 Days
+Highlights
+2 game drives · Maasai village visit · Kilimanjaro sunrise views
+Includes
+All meals · Mid-range lodge · Return transfers
+Rating
+★★★★★
+Price
+Starting from USD 480
+CTA Button
+View Package
+Card 4
+Field
+Content
+Image
+[IMAGE: Zanzibar — Stonetown streets or beach sunset]
+Price Range
+Luxury
+Route/Title
+5-Day Zanzibar Luxury Escape
+Highlights
+Spice tour · Stone Town · Private beach villa · Dhow sunset cruise
+Includes
+All meals · Luxury resort · Return flights from Nairobi
+Rating
+★★★★★
+Price
+Starting from USD 1,200
+CTA Button
+View Package
+Add a 5th and 6th card for Mount Kenya hiking and a Lamu cultural tour when Marykala has confirmed package pricing. Cards scroll horizontally — no need to limit to 4.
+SECTION 5 — EXPERIENCE BANNER (DARK GREEN FULL-WIDTH SECTION)
+This is the full-width Forest Green section with a large left headline, a body paragraph, a "View All Safaris" button, and 4 icon feature tiles below.
+Banner Headline (large, left-aligned)
+Exact text
+"Experience Kenya Like Never Before!"
+Banner Body Paragraph
+Exact copy
+Explore Kenya's breathtaking landscapes, diverse wildlife, and vibrant local culture
+with Maka Grace Tours and Travel — your trusted partner from the first call to the
+moment you return home.
+"View All Safaris" Button
+Button text + link
+"View All Packages"  →  links to: /packages
+4 Feature Tiles (icon + title + sub-text)
+Icon (Tabler)
+Tile Title
+Tile Sub-text
+IconCurrencyDollar
+Flexible & Budget Friendly
+Packages for every budget — from day trips at USD 50 to luxury multi-day safaris.
+IconPaw
+Expert Wildlife Guides
+Our certified local guides know every trail, species, and story in Kenya's parks.
+IconSettings
+Customisable Itineraries
+Every trip is built around you. Choose your destinations, duration, and style.
+IconLeaf
+Sustainable & Eco-Friendly
+We work with lodges and operators who protect Kenya's wildlife and local communities.
+SECTION 6 — DISCOVER & EXPLORE (3 CONTENT CARDS)
+This section has an eyebrow, a headline, and 3 rectangular content cards side by side — each with a background image, a heading, body text, and a "Read More / Explore" button.
+Section Eyebrow
+Exact text
+"Discover & Explore"
+Section Headline
+Exact text
+"Unveil Kenya's Wild Beauty"
+Card 1 — National Parks
+Field
+Content
+Image
+[IMAGE: Maasai Mara or Tsavo — sweeping savanna with wildlife]
+Card Title
+National Parks
+Body Text
+Explore Kenya's world-famous national parks with our expert-guided tours. From the Big Five encounters in the Maasai Mara to the stunning birdlife of Lake Nakuru — we bring you face to face with nature at its most raw and magnificent.
+CTA Button
+"Explore Parks  →"  links to /packages?category=Safaris
+Card 2 — Activities
+Field
+Content
+Image
+[IMAGE: Hot air balloon over Mara or hiking on Mt Kenya]
+Card Title
+Activities
+Body Text
+An adventure requires more than just a destination — it demands the right experience. From hot air balloon rides over the Maasai Mara and snorkelling in Diani's coral reefs to hiking the trails of Mount Kenya, we match you with activities that match your pace.
+CTA Button
+"Explore Activities  →"  links to /packages?category=Activities
+Card 3 — Accommodations
+Field
+Content
+Image
+[IMAGE: Luxury tented camp or safari lodge interior]
+Card Title
+Accommodation
+Body Text
+Whether you dream of a tented bush camp under a star-filled Kenyan sky or a world-class coastal resort with ocean views — we source accommodation that matches your budget, taste, and travel style. From budget-friendly lodges to private villas, we find your perfect stay.
+CTA Button
+"Explore Stays  →"  links to /packages?category=Accommodation
+SECTION 7 — TESTIMONIALS SECTION
+This section has a large featured testimonial quote at the top (with stars, a quote, a name, and a location/country flag), and then a row of 3 platform review badges below with an instruction to click for more reviews.
+Section Eyebrow (small label above main quote)
+Exact text
+"Amazing, I Recommend A Million Times!!"
+This is the headline of the featured testimonial — keep it as a real customer quote once Marykala has reviews. Use this as a placeholder until then.
+Featured Testimonial — Star Rating
+Rating display
+★★★★★  (5 out of 5 stars)
+Featured Testimonial — Full Quote
+Placeholder quote — replace with first real customer review
+"Maka Grace Tours and Travel turned our Kenya dream into reality. From the moment we
+enquired to the moment we landed back home, Marykala and her team handled every detail
+with professionalism and warmth. Our Maasai Mara safari was beyond anything we imagined.
+The guiding was exceptional, the lodge was stunning, and the personal touches made it
+feel like a trip built just for us. We will absolutely be back."
+Featured Testimonial — Reviewer Name & Location
+Field
+Content
+Name
+Sarah & David M.
+Location
+Nairobi, Kenya  (or: London, UK — depending on first real reviewer)
+Trip
+Maasai Mara Safari, March 2025
+Section CTA Text (above the 3 platform badges)
+Exact text
+"Hear From Our Happy Travellers"
+"Click Below To Explore Real Reviews From Our Guests On Google, TripAdvisor, And More!"
+3 Review Platform Badges
+Platform
+Display Text
+Link
+TripAdvisor
+TripAdvisor Reviews  ★★★★★  Read all reviews →
+TripAdvisor listing URL (add when live)
+Google
+Google Experiences  ★★★★★  Read all reviews →
+Google Business listing URL
+Facebook
+Facebook Ratings   ★★★★★  Read all reviews →
+Facebook page reviews URL
+Ask Marykala to set up Google Business Profile (free) and Facebook Business Page first. TripAdvisor listing is also free to create. Once live, paste the review URLs here.
+SECTION 8 — JOURNEY INTO THE WILD (FULL-WIDTH QUOTE BANNER)
+This is a wide section with a large background image, a left-side headline, a right-side paragraph, and a "Get A Quote" button on the far right.
+Section Eyebrow (small label)
+Exact text
+"Journey Into the Wild"
+Section Headline (large, left column)
+Exact text
+"Experience Kenya's Untamed"
+"Beauty With Expert-Guided"
+"Safaris."
+Section Body Text (right column, beside the headline)
+Exact copy
+From the iconic Maasai Mara wildebeest migration to the snow-capped peaks of Mount
+Kenya — every landscape tells a story. Let Maka Grace Tours and Travel be your
+guide through the wild, the beautiful, and the extraordinary.
+We handle every detail — from accommodation and transport to park permits and
+guided game drives — so all you have to do is arrive and be amazed.
+"Get A Quote" Button
+Button text + link
+"Get A Quote  →"  links to: /book  or  /contact
+Background Image Suggestion
+Image
+[IMAGE: Aerial shot of the Maasai Mara at golden hour — vast savanna,
+ wildlife silhouettes, dramatic sky. OR: a lion pride at dusk.]
+Use a high-quality landscape-format image. Overlay: Forest Green at 50-60% opacity.
+SECTION 9 — BLOG / SAFARI & TRAVEL TIPS SECTION
+This section has an eyebrow, a headline, a sub-description, and 3 blog post cards with thumbnail images, category tags, titles, and "Read More" links.
+Section Eyebrow
+Exact text
+"Safari & Travel Tips"
+Section Headline
+Exact text
+"Inspiring Journeys, Expert Tips, And Untold Kenya Secrets."
+Section Sub-description
+Exact copy
+All our safari and travel guides are written by 1 our experienced Kenya-based team.
+Whether you're planning your first trip or your fifth, our blog covers everything
+you need to know before you go.
+Blog Post Card 1
+Field
+Content
+Thumbnail
+[IMAGE: Maasai Mara — wildebeest or Big Five photo]
+Category Tag
+SAFARI TIPS
+Title
+How Much Does a Kenya Safari Cost? (Complete 2026 Guide)
+Excerpt
+Planning a Kenya safari but unsure about budget? We break down the real costs — from accommodation to park fees — so you can plan with confidence.
+Read Time
+8 min read
+CTA
+"Read More  →"
+Blog Post Card 2
+Field
+Content
+Thumbnail
+[IMAGE: Dhow boat on Diani Beach at sunset]
+Category Tag
+TRAVEL GUIDE
+Title
+How to Book a Safari in Kenya: Step-by-Step Guide
+Excerpt
+From choosing the right park to understanding what's included in your package — here is everything you need to know to book your Kenya safari without stress.
+Read Time
+6 min read
+CTA
+"Read More  →"
+Blog Post Card 3
+Field
+Content
+Thumbnail
+[IMAGE: Safari packing flat-lay — binoculars, hat, khaki kit]
+Category Tag
+PACKING TIPS
+Title
+Safari Packing List for Kenya (Everything You Need to Know)
+Excerpt
+Don't let poor packing ruin your Kenya adventure. Our complete packing list covers clothing, gear, health essentials, and what to leave at home.
+Read Time
+5 min read
+CTA
+"Read More  →"
+These 3 blog posts should be written and published before the website goes live — they target high-volume Google search terms and will drive free organic traffic. Ask Marykala to confirm the topics or write them with a freelance travel writer.
+SECTION 10 — BOTTOM CTA BANNER
+This is the final full-width banner before the footer with a headline, a sub-line, and a "Let's Get Started" button.
+Banner Eyebrow
+Exact text
+"Your Journey Starts Here"
+Banner Headline
+Exact text
+"Let Us Create Your Tailor-Made Trip."
+Banner Sub-text (below headline)
+Exact copy
+"Tell us where you want to go, when you want to travel, and how you like to explore.
+We will handle everything else — and deliver an experience worth talking about."
+"Let's Get Started" Button
+Button text + link
+"Let's Get Started  →"  links to: /book
+Background Image Suggestion
+Image
+[IMAGE: Happy travellers on a game drive — smiling, binoculars, open-top jeep.
+ OR: Marykala with clients at a lodge or park. Real photos are most powerful here.]
+SECTION 11 — FOOTER
+Footer Column 1 — Brand
+Field
+Content
+Agency name (logo text)
+Maka Grace Tours and Travel
+Tagline
+Travel with Grace, Discover the Extraordinary
+Short description
+A Kenya-based travel agency crafting tailor-made safaris, beach holidays, and cultural adventures for local and international travellers.
+Social icons to show
+Facebook · Instagram · TikTok · WhatsApp
+Footer Column 2 — Company Links
+Link Label
+URL
+Home
+/
+About Us
+/about
+Our Packages
+/packages
+Blog
+/blog
+Gallery
+/gallery
+Contact Us
+/contact
+Footer Column 3 — Explore (Destinations)
+Link Label
+URL
+Maasai Mara
+/packages?destination=maasai-mara
+Diani Beach
+/packages?destination=diani-beach
+Amboseli
+/packages?destination=amboseli
+Mount Kenya
+/packages?destination=mount-kenya
+Lake Nakuru
+/packages?destination=lake-nakuru
+Lamu Island
+/packages?destination=lamu
+Zanzibar
+/packages?destination=zanzibar
+Footer Column 4 — Contact Us
+Field
+Content
+Address line
+Nairobi, Kenya (office address — add when confirmed)
+Phone
++254 705 794 254
+Email
+makagraceholdings@gmail.com
+WhatsApp
++254 705 794 254  (same number)
+Business hours
+Monday – Sunday · 8:00 AM – 9:00 PM EAT
+Footer Bottom Bar
+Field
+Content
+Copyright
+© 2026 Maka Grace Tours and Travel. All rights reserved.
+Right links
+Privacy Policy  ·  Terms & Conditions
+Made in Kenya
+Made with ♥ in Kenya
+SECTION 12 — SEO META CONTENT (HOMEPAGE HEAD TAGS)
+Paste these into your Next.js homepage metadata export. These are what Google reads and displays in search results.
+Homepage Metadata — copy into app/(frontend)/page.tsx
+export const metadata = {
+  title: "Maka Grace Tours and Travel | Kenya Safaris & Travel Packages",
+  description: "Kenya-based travel agency offering tailor-made safaris, beach
+    holidays, hiking, and cultural tours. Personalised service, expert local guides,
+    and M-Pesa-friendly payments. Book your Kenya adventure today.",
+  keywords: [
+    "Kenya safari packages", "tailor-made Kenya safari",
+    "Maasai Mara tours", "Diani Beach holiday Kenya",
+    "Kenya travel agency", "Nairobi airport transfer",
+    "affordable Kenya tour packages", "Mount Kenya hiking",
+    "Kenya travel packages 2026", "Maka Grace Tours"
+  ],
+  openGraph: {
+    title: "Maka Grace Tours and Travel | Kenya Safaris & Travel Packages",
+    description: "Tailor-made Kenya travel experiences — safaris, beaches, mountains.
+      Personalised service from a trusted Kenya-based agency.",
+    url: "https://www.makagracetravel.co.ke",
+    siteName: "Maka Grace Tours and Travel",
+    images: [{ url: "/images/og-image.jpg", width: 1200, height: 630,
+      alt: "Kenya Safari — Maka Grace Tours and Travel" }],
+    locale: "en_KE",
+    type: "website",
+  },
+}
+OG Image Suggestion
+What the OG image should show (1200 x 630px)
+A striking Kenya landscape — Maasai Mara at golden hour OR elephants with Kilimanjaro.
+Overlay: Maka Grace Tours and Travel logo + tagline "Travel with Grace, Discover the Extraordinary".
+Background: Forest Green gradient on left 40% of image.
+Save as: /public/images/og-image.jpg
+Prepared by Estetica Agency · Maka Grace Tours and Travel · July 2026
+Replace existing UI content section by section. Do not change the layout or structure.

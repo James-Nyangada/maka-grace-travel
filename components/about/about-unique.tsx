@@ -1,27 +1,27 @@
 'use client'
 
-import { SignpostBig, Flame, Tent, TreePine } from 'lucide-react'
+import { PawPrint, Binoculars, Home, Heart } from 'lucide-react'
 
 const uniqueFeatures = [
   {
-    icon: <SignpostBig className="w-10 h-10 text-safari-green" strokeWidth={1.5} />,
+    icon: <PawPrint className="w-10 h-10 text-safari-green" strokeWidth={1.5} />,
     title: "Authentic Safari Experiences",
-    description: "Untouched Wilderness & Iconic Destinations With Expert Guides."
+    description: "Untouched wilderness and iconic destinations explored with expert-certified Kenya guides."
   },
   {
-    icon: <Flame className="w-10 h-10 text-safari-green" strokeWidth={1.5} />,
+    icon: <Binoculars className="w-10 h-10 text-safari-green" strokeWidth={1.5} />,
     title: "Diverse Wildlife Sightings",
-    description: "Witness The Big Five And Rare Species In Their Natural Habitat."
+    description: "Witness the Big Five and rare species in their natural habitat across Kenya's finest parks."
   },
   {
-    icon: <Tent className="w-10 h-10 text-safari-green" strokeWidth={1.5} />,
+    icon: <Home className="w-10 h-10 text-safari-green" strokeWidth={1.5} />,
     title: "Luxury & Budget-Friendly Stays",
-    description: "Stay In Handpicked Lodges, Tented Camps, Or Luxury Resorts."
+    description: "Stay in handpicked lodges, tented camps, or luxury resorts \u2014 all selected for quality and comfort."
   },
   {
-    icon: <TreePine className="w-10 h-10 text-safari-green" strokeWidth={1.5} />,
+    icon: <Heart className="w-10 h-10 text-safari-green" strokeWidth={1.5} />,
     title: "Eco-Friendly & Community Supportive",
-    description: "Travel Responsibly While Supporting Conservation And Local Communities."
+    description: "Travel responsibly while supporting conservation efforts and the local communities we work with."
   }
 ]
 
@@ -30,12 +30,12 @@ export function AboutUnique() {
     <section className="py-20 md:py-28 bg-safari-cream relative">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         <div className="mb-16 max-w-3xl">
-          <h3 className="font-script text-3xl md:text-4xl text-safari-gold mb-2">The Uwanda Difference</h3>
+          <h3 className="font-script text-3xl md:text-4xl text-safari-gold mb-2">The Maka Grace Difference</h3>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-safari-ink mb-6">
             What Makes Us Unique
           </h2>
           <p className="text-muted-foreground leading-relaxed text-lg">
-            At Uwanda Tours And Safaris, we go beyond ordinary safaris to offer exceptional, immersive, and sustainable travel experiences. From expert guides and diverse wildlife sightings to luxury stays and eco-conscious travel, every journey with us is designed to be extraordinary and unforgettable.
+            At Maka Grace Tours and Travel, we go beyond ordinary travel packages to offer exceptional, immersive, and memorable experiences. From expert-guided wildlife encounters and luxury lodge stays to eco-conscious travel and cultural connections &mdash; every journey with us is designed to be extraordinary, personal, and truly unforgettable.
           </p>
         </div>
 

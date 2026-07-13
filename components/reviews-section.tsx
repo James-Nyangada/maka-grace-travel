@@ -27,12 +27,11 @@ function GoogleIcon() {
   )
 }
 
-function SafariBookingsIcon() {
+function FacebookIcon() {
   return (
-    <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white shadow">
-      <svg viewBox="0 0 24 24" className="h-5 w-5" aria-hidden="true">
-        <path fill="#b91c1c" d="M12 2c3 3 4 6 4 9s-1 6-4 11C9 17 8 14 8 11s1-6 4-9z" />
-        <path fill="#7f1d1d" d="M12 2v20c-.4-.7-.8-1.3-1.1-2C9 16.5 8 13.8 8 11c0-3 1-6 4-9z" opacity="0.5" />
+    <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#1877F2]">
+      <svg viewBox="0 0 24 24" fill="white" className="h-4 w-4" aria-hidden="true">
+        <path d="M13.5 22v-8.5h2.9l.4-3.3h-3.3V4.5c0-.95.3-1.6 1.6-1.6h1.7V.2c-.3 0-1.3-.2-2.4-.2-2.4 0-4 1.5-4 4.2v2.3H7.4v3.3h2.8V22h3.3z" />
       </svg>
     </span>
   )
@@ -41,23 +40,23 @@ function SafariBookingsIcon() {
 const reviews = [
   {
     icon: <TripAdvisorIcon />,
-    title: 'TripAdvisor Experiences',
+    title: 'TripAdvisor Reviews',
     description:
-      'Read the stories of our Uwanda Tours And Safaris travelers on TripAdvisor and get inspired for your own unforgettable safari adventure in Tanzania.',
-    rating: '4.8/5',
+      'Read the stories of our Maka Grace Tours and Travel travellers on TripAdvisor and get inspired for your own unforgettable safari adventure in Kenya.',
+    rating: '5.0/5',
   },
   {
     icon: <GoogleIcon />,
     title: 'Google Experiences',
     description:
-      'Discover what our travelers have to say about their safari experiences with Uwanda Tours And Safaris on Google Reviews. Let their stories inspire your African adventure.',
+      'Discover what our travellers have to say about their safari experiences with Maka Grace Tours and Travel on Google Reviews. Let their stories inspire your African adventure.',
     rating: '5.0/5',
   },
   {
-    icon: <SafariBookingsIcon />,
-    title: 'Safari Bookings Experiences',
+    icon: <FacebookIcon />,
+    title: 'Facebook Ratings',
     description:
-      'Explore reviews from our travelers on SafariBookings and see why Uwanda Tours And Safaris is a top choice for safari enthusiasts. Your dream safari starts here.',
+      'Explore reviews from our travellers on Facebook and see why Maka Grace Tours and Travel is a top choice for safari enthusiasts. Your dream safari starts here.',
     rating: '5.0/5',
   },
 ]
@@ -67,7 +66,7 @@ export function ReviewsSection() {
     <section className="bg-white pb-20">
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         <div className="text-center">
-          <p className="font-script text-3xl text-safari-gold md:text-[32px]">Hear From Our Happy Travelers</p>
+          <p className="font-script text-3xl text-safari-gold md:text-[32px]">Hear From Our Happy Travellers</p>
           <h2 className="mt-4 text-balance text-2xl font-bold text-safari-ink md:text-3xl">
             Click Below To Explore Real Reviews From Our Guests On Google, TripAdvisor, And More!
           </h2>

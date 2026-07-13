@@ -2,19 +2,19 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { useState } from 'react'
-import { Mail, Phone, UserRound } from 'lucide-react'
+import { useState, useEffect } from 'react'
+import { Mail, Phone, UserRound, X } from 'lucide-react'
 import { TornEdge } from './torn-edge'
 
 const navLinks = [
-  { label: 'Home', href: '#' },
-  { label: 'About Us', href: '#about' },
-  { label: 'Safari Tours', href: '#safaris' },
-  { label: 'Discover Tanzania', href: '#discover' },
-  { label: 'Activities', href: '#activities' },
+  { label: 'Home', href: '/' },
+  { label: 'About Us', href: '/about' },
+  { label: 'Our Packages', href: '/packages' },
+  { label: 'Discover Kenya', href: '/destinations' },
+  { label: 'Services', href: '/services' },
   { label: 'Gallery', href: '/gallery' },
-  { label: 'Blogs', href: '/blogs' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Blog', href: '/blogs' },
+  { label: 'Contact', href: '/contact' },
 ]
 
 function FacebookIcon({ className }: { className?: string }) {
@@ -49,104 +49,176 @@ function XIcon({ className }: { className?: string }) {
   )
 }
 
+function NavContent({ setMenuOpen }: { setMenuOpen: (val: boolean) => void }) {
+  return (
+    <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 lg:px-8">
+      <Link href="/" className="flex items-center gap-2">
+        <Image src="/logo-maka-icon.png" alt="Maka Grace Tours & Travel logo" width={64} height={64} className="h-16 w-16 object-contain -my-2" />
+        <span className="flex flex-col leading-tight">
+          <span className="text-lg font-bold tracking-widest text-safari-ink">MAKA GRACE</span>
+          <span className="text-[9px] font-semibold tracking-[0.2em] text-safari-gold">TOURS &amp; TRAVEL</span>
+        </span>
+      </Link>
+
+      <nav aria-label="Main navigation" className="hidden items-center gap-8 lg:flex">
+        {navLinks.map((link) => (
+          <a
+            key={link.label}
+            href={link.href}
+            className="text-[15px] font-bold text-safari-ink transition-colors hover:text-safari-green"
+          >
+            {link.label}
+          </a>
+        ))}
+      </nav>
+
+      <Link href="/booking" className="hidden lg:flex items-center justify-center rounded-lg bg-safari-green px-6 py-2.5 text-sm font-bold text-white transition-opacity hover:opacity-90">
+        Book Now
+      </Link>
+
+      <button
+        type="button"
+        onClick={() => setMenuOpen(true)}
+        aria-label="Open menu"
+        className="flex h-12 w-12 flex-col items-end justify-center gap-1.5 rounded-lg bg-safari-green px-3 lg:hidden"
+      >
+        <span className="h-0.5 w-6 rounded bg-white" />
+        <span className="h-0.5 w-4 rounded bg-white" />
+        <span className="h-0.5 w-6 rounded bg-white" />
+      </button>
+    </div>
+  )
+}
+
 export function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 150)
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'unset'
+    }
+    return () => {
+      document.body.style.overflow = 'unset'
+    }
+  }, [menuOpen])
 
   return (
-    <header className="relative z-40">
-      {/* Top bar */}
-      <div className="bg-safari-green text-white">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 lg:px-8">
-          <div className="flex items-center gap-4">
-            <a href="#" aria-label="Facebook" className="transition-opacity hover:opacity-75">
-              <FacebookIcon className="h-4 w-4" />
-            </a>
-            <a href="#" aria-label="Instagram" className="transition-opacity hover:opacity-75">
-              <InstagramIcon className="h-4 w-4" />
-            </a>
-            <a href="#" aria-label="YouTube" className="transition-opacity hover:opacity-75">
-              <YoutubeIcon className="h-4 w-4" />
-            </a>
-            <a href="#" aria-label="X" className="transition-opacity hover:opacity-75">
-              <XIcon className="h-3.5 w-3.5" />
-            </a>
-          </div>
-          <div className="hidden items-center gap-8 text-sm font-semibold md:flex">
-            <a href="mailto:info@uwandatours.com" className="flex items-center gap-2 transition-opacity hover:opacity-75">
-              <Mail className="h-4 w-4" />
-              info@uwandatours.com
-            </a>
-            <a href="tel:+255762378870" className="flex items-center gap-2 transition-opacity hover:opacity-75">
-              <Phone className="h-4 w-4" />
-              +255 762 378 870
-            </a>
-            <span className="flex items-center gap-2">
-              <UserRound className="h-4 w-4" />
-              Dar Es Salaam, Tanzania
-            </span>
+    <>
+      <header className="relative z-40">
+        {/* Top bar */}
+        <div className="bg-safari-green text-white">
+          <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 lg:px-8">
+            <div className="flex items-center gap-4">
+              <a href="#" aria-label="Facebook" className="transition-opacity hover:opacity-75">
+                <FacebookIcon className="h-4 w-4" />
+              </a>
+              <a href="#" aria-label="Instagram" className="transition-opacity hover:opacity-75">
+                <InstagramIcon className="h-4 w-4" />
+              </a>
+              <a href="#" aria-label="YouTube" className="transition-opacity hover:opacity-75">
+                <YoutubeIcon className="h-4 w-4" />
+              </a>
+              <a href="#" aria-label="X" className="transition-opacity hover:opacity-75">
+                <XIcon className="h-3.5 w-3.5" />
+              </a>
+            </div>
+            <div className="hidden items-center gap-8 text-sm font-semibold md:flex">
+              <a href="mailto:info@makagracetravel.co.ke" className="flex items-center gap-2 transition-opacity hover:opacity-75">
+                <Mail className="h-4 w-4" />
+                info@makagracetravel.co.ke
+              </a>
+              <a href="tel:+254705794254" className="flex items-center gap-2 transition-opacity hover:opacity-75">
+                <Phone className="h-4 w-4" />
+                +254 705 794 254
+              </a>
+              <span className="flex items-center gap-2">
+                <UserRound className="h-4 w-4" />
+                Get In Touch, We're Available
+              </span>
+            </div>
           </div>
         </div>
+        {/* Torn edge between top bar and nav */}
+        <div className="relative bg-white">
+          <TornEdge fill="#166938" flip className="-mt-px" />
+        </div>
+
+        {/* Main nav (Static) */}
+        <div className="bg-white">
+          <NavContent setMenuOpen={setMenuOpen} />
+        </div>
+      </header>
+
+      {/* Main nav (Fixed/Scrolled) */}
+      <div 
+        className={`fixed left-0 right-0 top-0 z-50 bg-white shadow-md transition-transform duration-500 ease-in-out ${
+          isScrolled ? 'translate-y-0' : '-translate-y-full'
+        }`}
+      >
+        <NavContent setMenuOpen={setMenuOpen} />
       </div>
-      {/* Torn edge between top bar and nav */}
-      <div className="relative bg-white">
-        <TornEdge fill="#166938" flip className="-mt-px" />
-      </div>
 
-      {/* Main nav */}
-      <div className="bg-white">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 pb-4 pt-1 lg:px-8">
-          <Link href="#" className="flex items-center gap-2">
-            <Image src="/images/uwanda-logo.png" alt="Uwanda Tours & Safaris logo" width={48} height={48} className="h-12 w-12 object-contain" />
-            <span className="flex flex-col leading-tight">
-              <span className="text-lg font-bold tracking-widest text-safari-ink">UWANDA</span>
-              <span className="text-[9px] font-semibold tracking-[0.2em] text-safari-gold">TOURS &amp; SAFARIS</span>
-              <span className="text-[7px] font-medium tracking-[0.35em] text-safari-gold-light">LIMITED</span>
-            </span>
-          </Link>
+      {/* Mobile Menu Drawer Overlay */}
+      <div 
+        className={`fixed inset-0 z-50 bg-black/50 transition-opacity duration-300 lg:hidden ${
+          menuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+        }`}
+        onClick={() => setMenuOpen(false)}
+        aria-hidden="true"
+      />
 
-          <nav aria-label="Main navigation" className="hidden items-center gap-8 lg:flex">
-            {navLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                className="text-[15px] font-bold text-safari-ink transition-colors hover:text-safari-green"
-              >
-                {link.label}
-              </a>
-            ))}
-          </nav>
-
-          <button
-            type="button"
-            onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Toggle menu"
-            aria-expanded={menuOpen}
-            className="flex h-12 w-12 flex-col items-end justify-center gap-1.5 rounded-lg bg-safari-green px-3"
+      {/* Mobile Menu Drawer Panel */}
+      <div 
+        className={`fixed inset-y-0 right-0 z-50 w-full max-w-sm bg-white shadow-xl transition-transform duration-300 ease-in-out lg:hidden ${
+          menuOpen ? 'translate-x-0' : 'translate-x-full'
+        }`}
+      >
+        <div className="flex items-center justify-between p-4 border-b border-gray-100">
+          <span className="text-lg font-bold text-safari-ink">Menu</span>
+          <button 
+            onClick={() => setMenuOpen(false)}
+            className="rounded-lg p-2 bg-gray-100 hover:bg-gray-200 transition-colors"
+            aria-label="Close menu"
           >
-            <span className="h-0.5 w-6 rounded bg-white" />
-            <span className="h-0.5 w-4 rounded bg-white" />
-            <span className="h-0.5 w-6 rounded bg-white" />
+            <X className="h-6 w-6 text-safari-ink" />
           </button>
         </div>
-
-        {menuOpen && (
-          <nav aria-label="Mobile navigation" className="border-t border-border bg-white px-4 py-4 lg:hidden">
-            <ul className="flex flex-col gap-3">
-              {navLinks.map((link) => (
-                <li key={link.label}>
-                  <a
-                    href={link.href}
-                    onClick={() => setMenuOpen(false)}
-                    className="block text-base font-bold text-safari-ink transition-colors hover:text-safari-green"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </nav>
-        )}
+        <div className="p-4">
+          <ul className="flex flex-col gap-4">
+            {navLinks.map((link) => (
+              <li key={link.label}>
+                <a
+                  href={link.href}
+                  onClick={() => setMenuOpen(false)}
+                  className="block text-lg font-bold text-safari-ink transition-colors hover:text-safari-green"
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+          <div className="mt-8">
+            <Link 
+              href="/contact" 
+              onClick={() => setMenuOpen(false)}
+              className="flex w-full items-center justify-center rounded-lg bg-safari-green px-6 py-3 font-bold text-white transition-opacity hover:opacity-90"
+            >
+              Book Now
+            </Link>
+          </div>
+        </div>
       </div>
-    </header>
+    </>
   )
 }

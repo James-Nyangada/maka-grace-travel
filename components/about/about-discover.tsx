@@ -16,19 +16,19 @@ export function AboutDiscover() {
                 <h3 className="font-script text-3xl md:text-4xl text-safari-gold">Where Adventure Meets the Wild!</h3>
               </div>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-safari-ink">
-                Discover The Wonders Of Tanzania
+                Discover The Wonders Of Kenya
               </h2>
             </div>
             
             <div className="space-y-4 text-muted-foreground leading-relaxed text-lg">
               <p>
-                Uwanda Tours And Safaris is a premier safari tour company based in Tanzania, renowned for providing exceptional safari experiences to travelers from around the world. With a wealth of experience and expertise in the tourism industry, Uwanda Tours And Safaris offers a diverse range of safari tours that cater to the unique interests and preferences of every traveler.
+                Maka Grace Tours and Travel is a premier travel agency based in Kenya, dedicated to providing personalised travel experiences to adventurers from across the globe. With deep local knowledge and genuine passion for the beauty of East Africa, we offer a diverse range of tour packages that are carefully crafted to match the unique interests, budget, and travel style of every client.
               </p>
               <p>
-                One of the distinguishing features of Uwanda Tours And Safaris is their commitment to providing personalized service to each client. They understand that every traveler has unique preferences and expectations when it comes to safari tours, and they strive to tailor their services accordingly. Whether you are a seasoned traveler looking for an adventure-packed safari experience, or a first-time visitor seeking a more relaxed and leisurely trip, Uwanda Tours And Safaris has the expertise to make your dream safari a reality.
+                What truly distinguishes Maka Grace Tours and Travel is our unwavering commitment to personalised service. We believe that every traveller is unique &mdash; with different dreams, expectations, and ways of experiencing the world. That is why we take the time to listen, understand, and tailor every journey specifically around you. Whether you are a seasoned adventurer chasing the Great Migration or a first-time visitor dreaming of your first safari sunrise &mdash; we have the expertise, the connections, and the heart to make it happen.
               </p>
               <p>
-                Uwanda Tours And Safaris is also known for their expert guides who are passionate about the wildlife and ecosystems of Tanzania. Their guides are not only knowledgeable about the flora and fauna of the region, but they also have a deep understanding of the local cultures and customs. This allows them to provide a truly immersive experience for travelers, helping them to connect with the land, wildlife, and people of Tanzania on a deeper level.
+                Maka Grace Tours and Travel is equally renowned for our team of expert local guides who are deeply passionate about Kenya&apos;s wildlife, landscapes, and cultures. Our guides are not only highly knowledgeable about the flora and fauna of every park and reserve &mdash; they carry a deep understanding of local communities, traditions, and conservation. This allows us to provide truly immersive experiences that connect our travellers with the land, wildlife, and people of Kenya on a meaningful level.
               </p>
             </div>
           </div>
@@ -71,9 +71,9 @@ export function AboutDiscover() {
               {/* Years of Experience Badge */}
               <div className="absolute bottom-24 left-4 lg:-left-6 z-30 bg-white shadow-xl p-6 text-center w-40 h-40 flex flex-col items-center justify-center transform -rotate-3 border border-border/20">
                 <div className="absolute inset-1 border border-dashed border-border pointer-events-none" />
-                <div className="text-5xl font-bold text-safari-green mb-1 leading-none">25</div>
+                <div className="text-5xl font-bold text-safari-green mb-1 leading-none">100%</div>
                 <div className="text-safari-ink font-medium leading-tight text-base">
-                  year of<br/>experience
+                  Custom<br/>Itineraries
                 </div>
               </div>
             </div>

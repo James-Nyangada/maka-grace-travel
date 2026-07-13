@@ -1,28 +1,28 @@
 'use client'
 
 import Image from 'next/image'
-import { Map, Plane, ShieldCheck, Clock } from 'lucide-react'
+import { MapPin, Leaf, Route, Headset } from 'lucide-react'
 
 const features = [
   {
-    icon: <Plane className="w-8 h-8 text-safari-green" strokeWidth={1.5} />,
+    icon: <MapPin className="w-8 h-8 text-safari-green" strokeWidth={1.5} />,
     title: "Expert Local Guides",
-    description: "Knowledgeable, professional, and passionate about wildlife."
+    description: "Knowledgeable, professional, and genuinely passionate about Kenya's wildlife and landscapes."
   },
   {
-    icon: <ShieldCheck className="w-8 h-8 text-safari-green" strokeWidth={1.5} />,
+    icon: <Leaf className="w-8 h-8 text-safari-green" strokeWidth={1.5} />,
     title: "Sustainable Tourism",
-    description: "Stay in handpicked lodges, tented camps, or luxury resorts."
+    description: "We partner with lodges and operators who prioritise eco-friendly practices and conservation."
   },
   {
-    icon: <Map className="w-8 h-8 text-safari-green" strokeWidth={1.5} />,
-    title: "Tailor-Made Safari Experiences",
-    description: "Custom itineraries to suit your travel style."
+    icon: <Route className="w-8 h-8 text-safari-green" strokeWidth={1.5} />,
+    title: "Tailor-Made Experiences",
+    description: "Every itinerary is built around your travel style, budget, and the destinations that excite you most."
   },
   {
-    icon: <Clock className="w-8 h-8 text-safari-green" strokeWidth={1.5} />,
+    icon: <Headset className="w-8 h-8 text-safari-green" strokeWidth={1.5} />,
     title: "Seamless Travel Planning",
-    description: "Hassle-free booking with 24/7 support"
+    description: "From booking to touchdown \u2014 we handle every detail with prompt, hassle-free, 24/7 support."
   }
 ]
 
@@ -68,12 +68,12 @@ export function AboutWhyChoose() {
           {/* Right Content */}
           <div className="space-y-10 lg:pl-12">
             <div className="space-y-2">
-              <h3 className="font-script text-3xl md:text-4xl text-safari-gold">Unmatched Safaris, Unforgettable Memories</h3>
+              <h3 className="font-script text-3xl md:text-4xl text-safari-gold">Unmatched Experiences, Unforgettable Memories</h3>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-safari-ink">
                 Why Choose Us
               </h2>
               <p className="text-muted-foreground leading-relaxed pt-4 text-lg">
-                Experience Tanzania like never before with expertly guided, tailor-made safaris that prioritize adventure, comfort, and sustainability. We offer seamless travel planning and authentic wildlife encounters for an unforgettable journey.
+                Experience Kenya like never before with expertly guided, tailor-made travel experiences that prioritise adventure, comfort, and authentic local culture. We offer seamless travel planning and genuine wildlife encounters for a journey you will never forget.
               </p>
             </div>
 

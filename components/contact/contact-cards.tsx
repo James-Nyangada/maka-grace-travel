@@ -2,7 +2,7 @@ export function ContactCards() {
   return (
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4 max-w-7xl">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           
           {/* Office Location */}
           <div className="flex flex-col items-center text-center p-10 bg-white rounded-xl shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] border border-gray-100 hover:shadow-md transition-shadow">
@@ -16,8 +16,8 @@ export function ContactCards() {
             </div>
             <h3 className="text-[22px] font-sans font-bold text-safari-green-dark mb-4">Office Location</h3>
             <p className="text-gray-500 text-[15px] leading-relaxed">
-              RUFIJI, COASTAL,<br />
-              Tanzania
+              Nairobi, Kenya<br />
+              (office coming soon)
             </p>
           </div>
 
@@ -32,8 +32,8 @@ export function ContactCards() {
             </div>
             <h3 className="text-[22px] font-sans font-bold text-safari-green-dark mb-4">Phone Number</h3>
             <p className="text-gray-500 text-[15px] leading-relaxed">
-              <a href="tel:+255762378870" className="hover:text-safari-green transition-colors">+255 762 378 870</a><br />
-              <a href="tel:+255787697797" className="hover:text-safari-green transition-colors mt-1 block">+255 787 697 797</a>
+              <span className="font-medium text-gray-700 block mb-1">Mary Kala</span>
+              <a href="tel:+254705794254" className="hover:text-safari-green transition-colors">+254 705 794 254</a>
             </p>
           </div>
 
@@ -49,8 +49,22 @@ export function ContactCards() {
             </div>
             <h3 className="text-[22px] font-sans font-bold text-safari-green-dark mb-4">Mail Address</h3>
             <p className="text-gray-500 text-[15px] leading-relaxed">
-              <a href="mailto:info@uwandatours.com" className="hover:text-safari-green transition-colors">info@uwandatours.com</a><br />
-              <a href="mailto:uwandatours@gmail.com" className="hover:text-safari-green transition-colors mt-1 block">uwandatours@gmail.com</a>
+              <a href="mailto:makagraceholdings@gmail.com" className="hover:text-safari-green transition-colors">makagraceholdings@gmail.com</a>
+            </p>
+          </div>
+
+          {/* Working Hours */}
+          <div className="flex flex-col items-center text-center p-10 bg-white rounded-xl shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] border border-gray-100 hover:shadow-md transition-shadow">
+            <div className="mb-6 text-safari-green-dark">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-16 h-16">
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 16 14" />
+              </svg>
+            </div>
+            <h3 className="text-[22px] font-sans font-bold text-safari-green-dark mb-4">Working Hours</h3>
+            <p className="text-gray-500 text-[15px] leading-relaxed">
+              Monday – Sunday<br />
+              8:00 AM – 9:00 PM EAT
             </p>
           </div>
 

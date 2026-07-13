@@ -10,11 +10,16 @@ export const metadata = {
 }
 
 export default function PackageDetailPage() {
+  const packageData = {
+    title: '3-Day Flight Package Zanzibar To Nyerere Private',
+    image: '/images/placeholder-safari.jpg',
+  }
+
   return (
     <>
       <SiteHeader />
       <main>
-        <PackageDetailClient />
+        <PackageDetailClient packageData={packageData} />
         <PackageFaq />
         <DiscoverSection />
       </main>

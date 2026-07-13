@@ -3,45 +3,9 @@
 import { useEffect, useState } from 'react'
 import { Check, MapPin, Clock3, Search, ChevronDown } from 'lucide-react'
 
-const words = ['Tours', 'Adventures', 'Experiences']
-
-function useTypewriter() {
-  const [wordIndex, setWordIndex] = useState(0)
-  const [text, setText] = useState('')
-  const [deleting, setDeleting] = useState(false)
-
-  useEffect(() => {
-    const current = words[wordIndex]
-    const timeout = setTimeout(
-      () => {
-        if (!deleting) {
-          const next = current.slice(0, text.length + 1)
-          setText(next)
-          if (next === current) {
-            setTimeout(() => setDeleting(true), 1600)
-          }
-        } else {
-          const next = current.slice(0, text.length - 1)
-          setText(next)
-          if (next === '') {
-            setDeleting(false)
-            setWordIndex((i) => (i + 1) % words.length)
-          }
-        }
-      },
-      deleting ? 70 : 140,
-    )
-    return () => clearTimeout(timeout)
-  }, [text, deleting, wordIndex])
-
-  return text
-}
-
 const features = ['Expert Local Guides', 'Tailored Safari Experiences', 'Sustainable & Ethical Tourism']
 
 export function Hero() {
-  const typed = useTypewriter()
-
   return (
     <section className="relative min-h-[640px] overflow-hidden lg:min-h-[720px]" aria-label="Hero">
       {/* Background */}
@@ -74,13 +38,9 @@ export function Hero() {
           />
         </svg>
 
-        <p className="font-script text-3xl text-safari-gold-light md:text-4xl">Unforgettable Safari Adventures</p>
+        <p className="font-script text-3xl text-safari-gold-light md:text-4xl">Personalised Travel Experiences Across Kenya</p>
         <h1 className="mt-4 text-5xl font-bold text-white md:text-7xl">
-          Safari{' '}
-          <span className="font-script font-normal text-safari-gold-light">
-            {typed}
-            <span className="typing-caret ml-1 inline-block h-[0.9em] w-[3px] translate-y-[0.12em] bg-white align-baseline" />
-          </span>
+          <span className="font-script font-normal text-safari-gold-light">Kenya</span> Awaits
         </h1>
 
         <ul className="mt-12 flex flex-col items-center gap-4 md:flex-row md:gap-10">
@@ -107,7 +67,7 @@ export function Hero() {
               <MapPin className="h-5 w-5 shrink-0 text-safari-green" />
               <div className="text-left">
                 <p className="text-base font-bold text-safari-ink">Destination</p>
-                <p className="text-sm text-muted-foreground">All Parks</p>
+                <p className="text-sm text-muted-foreground">Where would you like to go?</p>
               </div>
             </div>
             <ChevronDown className="h-4 w-4 text-safari-ink" />
@@ -119,7 +79,7 @@ export function Hero() {
               </svg>
               <div className="text-left">
                 <p className="text-base font-bold text-safari-ink">Safari Comfort</p>
-                <p className="text-sm text-muted-foreground">All</p>
+                <p className="text-sm text-muted-foreground">Budget / Mid-range / Luxury</p>
               </div>
             </div>
             <ChevronDown className="h-4 w-4 text-safari-ink" />
@@ -129,7 +89,7 @@ export function Hero() {
               <Clock3 className="h-5 w-5 shrink-0 text-safari-green" />
               <div className="text-left">
                 <p className="text-base font-bold text-safari-ink">Days</p>
-                <p className="text-sm text-muted-foreground">All</p>
+                <p className="text-sm text-muted-foreground">How many days?</p>
               </div>
             </div>
             <ChevronDown className="h-4 w-4 text-safari-ink" />
@@ -139,7 +99,7 @@ export function Hero() {
             className="ml-0 flex items-center justify-center gap-2 rounded-md bg-safari-green px-10 py-4 text-base font-bold text-white transition-colors hover:bg-safari-green-dark md:ml-4"
           >
             <Search className="h-4 w-4" />
-            Search
+            Search Packages
           </button>
         </form>
       </div>

@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { PersonStanding, Users } from 'lucide-react'
+import { Tag, ShieldCheck } from 'lucide-react'
 
 function FeatureIcon({ children }: { children: React.ReactNode }) {
   return (
@@ -40,8 +40,8 @@ export function AboutSection() {
             </div>
             {/* Experience badge */}
             <div className="absolute bottom-24 left-16 z-10 w-40 border border-dashed border-safari-gold bg-white p-5 text-center shadow-lg sm:left-24">
-              <p className="text-5xl font-bold text-safari-green">25</p>
-              <p className="mt-1 text-base leading-snug text-safari-ink">year of experience</p>
+              <p className="text-5xl font-bold text-safari-green">100%</p>
+              <p className="mt-1 text-base leading-snug text-safari-ink">Custom Itineraries</p>
             </div>
           </div>
         </div>
@@ -52,42 +52,45 @@ export function AboutSection() {
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-7 w-7 text-safari-green" aria-hidden="true">
               <path d="M12 21c0-6 2-10 8-13-1 6-3 9-8 13zM12 21c0-4-1.5-7-6-9 .8 4 2.5 6.5 6 9z" />
             </svg>
-            Where Adventure Meets the Wild!
+            Where Adventure Meets the Wild
           </p>
-          <h2 className="mt-4 text-3xl font-bold text-safari-ink md:text-4xl">Discover The Wonders Of Tanzania</h2>
+          <h2 className="mt-4 text-3xl font-bold text-safari-ink md:text-4xl">Discover The Wonders Of Kenya</h2>
           <p className="mt-6 text-justify leading-relaxed text-muted-foreground">
-            At Uwanda Tours And Safaris, we craft unforgettable safari experiences that immerse you in
-            Tanzania&apos;s breathtaking landscapes, diverse wildlife, and rich cultural heritage. With expert
-            guides, customized itineraries, and a strong commitment to sustainability, we ensure every journey is
-            unique, authentic, and filled with adventure.
+            At Maka Grace Tours and Travel, we craft unforgettable travel experiences that connect
+            you to the soul of Kenya. From the sweeping plains of the Maasai Mara to the turquoise
+            waters of Diani Beach, our carefully designed packages combine adventure, comfort, and
+            authentic local culture into journeys that stay with you long after you return home.
+            As a Kenya-based agency with deep local knowledge, we offer honest advice, prompt
+            communication, and personalised service &mdash; ensuring every detail of your trip is handled
+            with care and expertise.
           </p>
 
           <div className="mt-10 grid gap-10 sm:grid-cols-2">
             <div>
               <FeatureIcon>
-                <PersonStanding className="h-8 w-8" strokeWidth={1.6} />
+                <Tag className="h-8 w-8" strokeWidth={1.6} />
               </FeatureIcon>
               <h3 className="mt-4 text-xl font-semibold text-safari-gold">Low Price &amp; Friendly</h3>
               <p className="mt-3 leading-relaxed text-muted-foreground">
-                We use to offer best prices for our tour packages so as we can do even budget safari.
+                We offer the best deals for your travel packages so you are never caught off guard.
               </p>
             </div>
             <div>
               <FeatureIcon>
-                <Users className="h-8 w-8" strokeWidth={1.6} />
+                <ShieldCheck className="h-8 w-8" strokeWidth={1.6} />
               </FeatureIcon>
               <h3 className="mt-4 text-xl font-semibold text-safari-gold">Trusted Travel Guide</h3>
               <p className="mt-3 leading-relaxed text-muted-foreground">
-                Our Staffs are trustful incase you forget anything worry out
+                Our KATA-affiliated guides know Kenya like no other &mdash; you will never miss a thing.
               </p>
             </div>
           </div>
 
           <a
-            href="#"
+            href="/about"
             className="mt-10 inline-block rounded-md bg-safari-green px-8 py-4 text-sm font-bold tracking-wide text-white transition-colors hover:bg-safari-green-dark"
           >
-            MORE ABOUT US
+            DISCOVER OUR STORY
           </a>
         </div>
       </div>

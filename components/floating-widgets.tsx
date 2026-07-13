@@ -1,8 +1,5 @@
 'use client'
 
-import { useState } from 'react'
-import { X } from 'lucide-react'
-
 function WhatsAppIcon({ className }: { className?: string }) {
   return (
     <svg viewBox="0 0 32 32" className={className} aria-hidden="true">
@@ -16,47 +13,17 @@ function WhatsAppIcon({ className }: { className?: string }) {
 }
 
 export function FloatingWidgets() {
-  const [visible, setVisible] = useState(true)
-
   return (
-    <div className="mx-auto flex max-w-7xl flex-col items-end gap-4 px-4 py-8 lg:px-8">
-      <div className="flex w-full items-center justify-between gap-4 rounded-3xl bg-white/95 px-4 py-4 shadow-xl ring-1 ring-slate-200 sm:px-6">
-        <a
-          href="https://wa.me/255762378870"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Chat with us on WhatsApp"
-          className="block h-12 w-12 transition-transform hover:scale-110"
-        >
-          <WhatsAppIcon className="h-12 w-12" />
-        </a>
-
-        {visible && (
-          <div className="relative flex items-center gap-3 rounded-full bg-safari-green/5 px-4 py-3 text-safari-ink shadow-lg ring-1 ring-slate-200">
-            <button
-              type="button"
-              onClick={() => setVisible(false)}
-              aria-label="Dismiss chat prompt"
-              className="absolute right-3 top-3 p-1 text-safari-ink/70 hover:text-safari-ink"
-            >
-              <X className="h-4 w-4" />
-            </button>
-            <span className="text-sm font-bold italic text-sky-500">We Are Here!</span>
-            <span className="text-2xl" aria-hidden="true">
-              👋
-            </span>
-            <button
-              type="button"
-              aria-label="Open chat"
-              className="flex h-14 w-14 items-center justify-center rounded-full bg-safari-green text-white shadow-xl ring-4 ring-white transition-transform hover:scale-105"
-            >
-              <svg viewBox="0 0 24 24" fill="currentColor" className="h-6 w-6" aria-hidden="true">
-                <path d="M12 3C6.5 3 2 6.9 2 11.7c0 2.7 1.4 5.1 3.6 6.7-.1.9-.5 2.3-1.5 3.6 0 0 2.5-.3 4.5-1.7 1.1.3 2.2.5 3.4.5 5.5 0 10-3.9 10-8.7S17.5 3 12 3z" />
-              </svg>
-            </button>
-          </div>
-        )}
-      </div>
+    <div className="fixed bottom-6 right-6 z-50">
+      <a
+        href="https://wa.me/254705794254"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Chat with us on WhatsApp"
+        className="block transition-transform hover:scale-110 drop-shadow-xl"
+      >
+        <WhatsAppIcon className="h-14 w-14" />
+      </a>
     </div>
   )
 }

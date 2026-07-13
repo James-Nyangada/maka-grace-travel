@@ -16,9 +16,9 @@ const grandHotel = Grand_Hotel({
 })
 
 export const metadata: Metadata = {
-  title: 'Uwanda Tours & Safaris | Unforgettable Tanzania Safari Adventures',
+  title: 'Maka Grace Tours and Travel | Premier Kenya Safaris & Holidays',
   description:
-    'Explore Tanzania&apos;s breathtaking landscapes, diverse wildlife, and vibrant culture with Uwanda Tours And Safaris. Expert guides, customized itineraries, sustainable travel.',
+    'Discover the magic of Kenya with Maka Grace Tours and Travel. We offer expert-guided safaris, custom itineraries, and unforgettable adventures across the Maasai Mara, Amboseli, and beyond.',
   generator: 'v0.app',
 }
 

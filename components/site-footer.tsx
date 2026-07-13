@@ -37,17 +37,23 @@ const companyLinks = [
   { label: 'About Us', href: '/about' },
   { label: 'Enquire Now', href: '/booking' },
   { label: 'FAQs', href: '/faqs' },
-  { label: 'Our Insights', href: '#' },
-  { label: 'Activities', href: '#' },
+  { label: 'Blogs', href: '/blogs' },
+  { label: 'Services', href: '/services' },
 ]
 const exploreLinks = [
-  { label: 'Contact Us', href: '#contact' },
-  { label: 'Payment Options', href: '/terms' },
-  { label: 'Safaris', href: '#' },
-  { label: 'Tanzania', href: '#' },
-  { label: 'Accommodations', href: '#' },
+  { label: 'Our Packages', href: '/packages' },
+  { label: 'Discover Kenya', href: '/destinations' },
+  { label: 'Gallery', href: '/gallery' },
+  { label: 'Terms & Conditions', href: '/terms' },
+  { label: 'Contact Us', href: '/contact' },
 ]
-const paymentBadges = ['VISA', 'MC', 'AMEX', 'MST', 'JCB']
+const paymentBadges = [
+  { label: 'Visa', src: '/images/visa.svg' },
+  { label: 'Mastercard', src: '/images/mastercard.svg' },
+  { label: 'American Express', src: '/images/amex.svg' },
+  { label: 'Maestro', src: '/images/maestro.svg' },
+  { label: 'JCB', src: '/images/jcb.svg' },
+]
 
 export function SiteFooter() {
   return (
@@ -56,15 +62,14 @@ export function SiteFooter() {
         {/* Brand */}
         <div>
           <div className="flex items-center gap-2">
-            <Image src="/images/uwanda-logo.png" alt="Uwanda Tours & Safaris logo" width={44} height={44} className="h-11 w-11 rounded object-contain" />
+            <Image src="/logo-maka-icon.png" alt="Maka Grace Tours & Travel logo" width={56} height={56} className="h-14 w-14 object-contain" />
             <span className="flex flex-col leading-tight">
-              <span className="text-base font-bold tracking-widest">UWANDA</span>
-              <span className="text-[8px] font-semibold tracking-[0.2em] text-safari-gold">TOURS &amp; SAFARIS</span>
-              <span className="text-[6px] font-medium tracking-[0.35em] text-safari-gold-light">LIMITED</span>
+              <span className="text-base font-bold tracking-widest">MAKA GRACE</span>
+              <span className="text-[8px] font-semibold tracking-[0.2em] text-safari-gold">TOURS &amp; TRAVEL</span>
             </span>
           </div>
           <p className="mt-5 text-sm leading-relaxed text-white/85">
-            Explore the nature and wildlife in Tanzania with us to experience unforgettable safaris.
+            Explore the magic of Kenya with us and experience safaris that stay with you forever.
           </p>
           <div className="mt-5 flex items-center gap-3">
             <a href="#" aria-label="Facebook" className="flex h-8 w-8 items-center justify-center rounded bg-white/10 transition-colors hover:bg-white/20">
@@ -83,10 +88,16 @@ export function SiteFooter() {
           <div className="mt-5 flex items-center gap-1.5">
             {paymentBadges.map((badge) => (
               <span
-                key={badge}
-                className="flex h-6 min-w-9 items-center justify-center rounded-sm bg-white px-1 text-[9px] font-bold text-safari-ink"
+                key={badge.label}
+                className="flex h-7 w-11 items-center justify-center rounded-sm bg-white p-0.5 shadow-sm border border-white/10"
               >
-                {badge}
+                <Image
+                  src={badge.src}
+                  alt={`${badge.label} logo`}
+                  width={44}
+                  height={28}
+                  className="h-full w-full object-contain"
+                />
               </span>
             ))}
           </div>
@@ -127,9 +138,9 @@ export function SiteFooter() {
             <li className="flex items-start gap-3">
               <Phone className="mt-1 h-4 w-4 shrink-0 text-safari-gold" />
               <span>
-                <span className="block text-xs text-white/70">Call / WhatsApp</span>
-                <a href="tel:+255762378870" className="text-sm font-bold hover:text-safari-gold">
-                  +255 762 378 870
+                <span className="block text-xs text-white/70">Call Us (Mary Kala)</span>
+                <a href="tel:+254705794254" className="text-sm font-bold hover:text-safari-gold">
+                  +254 705 794 254
                 </a>
               </span>
             </li>
@@ -137,8 +148,8 @@ export function SiteFooter() {
               <Mail className="mt-1 h-4 w-4 shrink-0 text-safari-gold" />
               <span>
                 <span className="block text-xs text-white/70">Email Address</span>
-                <a href="mailto:info@uwandatours.com" className="text-sm font-bold hover:text-safari-gold">
-                  info@uwandatours.com
+                <a href="mailto:makagraceholdings@gmail.com" className="text-sm font-bold hover:text-safari-gold">
+                  makagraceholdings@gmail.com
                 </a>
               </span>
             </li>
@@ -146,7 +157,7 @@ export function SiteFooter() {
               <MapPin className="mt-1 h-4 w-4 shrink-0 text-safari-gold" />
               <span>
                 <span className="block text-xs text-white/70">Visit Office</span>
-                <span className="text-sm font-bold">Rufiji – Coastal, Tanzania</span>
+                <span className="text-sm font-bold">Nairobi, Kenya</span>
               </span>
             </li>
           </ul>
@@ -165,10 +176,10 @@ export function SiteFooter() {
             </a>
           </p>
           <p>
-            Copyright © 2025 <span className="text-safari-gold">Uwanda Tours &amp; Safaris</span>. All Rights Reserved
+            Copyright © 2026 <span className="text-safari-gold">Maka Grace Tours and Travel</span>. All Rights Reserved
           </p>
           <p>
-            Designed by <span className="text-safari-gold">Pebble Softwares</span>
+            Designed by <span className="text-safari-gold">Afringe Limited</span>
           </p>
         </div>
       </div>

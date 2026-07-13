@@ -23,6 +23,15 @@
   --color-card: var(--card);
   --color-foreground: var(--foreground);
   --color-background: var(--background);
+  --color-forest-green: var(--forest-green);
+  --color-savanna-ochre: var(--savanna-ochre);
+  --color-maasai-gold: var(--maasai-gold);
+  --color-maasai-red: var(--maasai-red);
+  --color-bone-sand: var(--bone-sand);
+  --color-indian-teal: var(--indian-teal);
+  --color-shallow-teal: var(--shallow-teal);
+  --color-ebony: var(--ebony);
+  --color-warm-white: var(--warm-white);
   --color-safari-green: var(--safari-green);
   --color-safari-green-dark: var(--safari-green-dark);
   --color-safari-gold: var(--safari-gold);
@@ -43,31 +52,42 @@
 :root,
 .light {
   color-scheme: light;
-  --background: #ffffff;
-  --foreground: #1a2b34;
-  --card: #ffffff;
-  --card-foreground: #1a2b34;
-  --popover: #ffffff;
-  --popover-foreground: #1a2b34;
-  --primary: #166938;
-  --primary-foreground: #ffffff;
-  --secondary: #f1f1ee;
-  --secondary-foreground: #1a2b34;
-  --muted: #f1f1ee;
-  --muted-foreground: #5c6b73;
-  --accent: #c19a5b;
-  --accent-foreground: #ffffff;
-  --destructive: #dc2626;
-  --border: #e6e6e2;
-  --input: #e6e6e2;
-  --ring: #166938;
+  --background: #F5F0E8;
+  --foreground: #2D2D2D;
+  --card: #F9F5EF;
+  --card-foreground: #2D2D2D;
+  --popover: #F9F5EF;
+  --popover-foreground: #2D2D2D;
+  --primary: #1A4731;
+  --primary-foreground: #F9F5EF;
+  --secondary: #C8601A;
+  --secondary-foreground: #F9F5EF;
+  --muted: #F5F0E8;
+  --muted-foreground: #2D2D2D;
+  --accent: #E8C547;
+  --accent-foreground: #2D2D2D;
+  --destructive: #8B1A1A;
+  --border: #7AB8A4;
+  --input: #7AB8A4;
+  --ring: #1A4731;
   --radius: 0.625rem;
-  --safari-green: #166938;
-  --safari-green-dark: #0e5029;
-  --safari-gold: #c19a5b;
-  --safari-gold-light: #cfa971;
-  --safari-cream: #f1f1ee;
-  --safari-ink: #1a2b34;
+  
+  --forest-green: #1A4731;
+  --savanna-ochre: #C8601A;
+  --maasai-gold: #E8C547;
+  --maasai-red: #8B1A1A;
+  --bone-sand: #F5F0E8;
+  --indian-teal: #1B6B8A;
+  --shallow-teal: #7AB8A4;
+  --ebony: #2D2D2D;
+  --warm-white: #F9F5EF;
+  
+  --safari-green: #1A4731;
+  --safari-green-dark: #123323;
+  --safari-gold: #E8C547;
+  --safari-gold-light: #f1d87f;
+  --safari-cream: #F5F0E8;
+  --safari-ink: #2D2D2D;
 }
 
 @layer base {

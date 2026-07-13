@@ -1,0 +1,406 @@
+
+MAKA GRACE TOURS AND TRAVEL
+About Us Page — Section by Section Content
+— Exact copy to replace the existing UI content without changing the layout —
+
+
+
+Client
+Maka Grace Tours and Travel
+Contact
+Marykala · makagraceholdings@gmail.com · 0705794254
+Prepared by
+Estetica Agency · July 2026
+How to use
+Replace text in each UI section exactly as labelled. Do not move or reorder any sections.
+
+Every content block below matches the About Us page layout from top to bottom, section by section. Fields marked [IMAGE] show where photos should go — suggestions are included for each.
+
+SECTION 1 — PAGE HERO BANNER
+This is the full-width dark green banner at the very top of the About Us page, below the navbar. It has a large centered page title and a breadcrumb link below it.
+
+Hero Background
+Image suggestion
+[IMAGE: A wide Kenya landscape — savanna at golden hour, or aerial Maasai Mara view.
+ Dark Forest Green overlay at 60-70% opacity sits on top of the image.
+ Alternatively, use a solid Forest Green (#1A4731) background if no suitable photo is ready.]
+
+Page Title (large, centered, white)
+Exact text
+"About Us"
+
+Breadcrumb (small, below the title)
+Exact text
+Home  >  About Us
+
+The breadcrumb links: "Home" goes to / and "About Us" is the current page (no link needed on current page).
+
+
+SECTION 2 — WHO WE ARE (TEXT + IMAGE SECTION)
+This is the first content section below the hero. It has a gold italic eyebrow label, a large bold headline, three body paragraphs on the left, and a stacked image or card widget on the right with a stat counter on it.
+
+Eyebrow Label (italic, gold/ochre colour)
+Exact text
+"Where Adventure Meets the Wild!"
+
+Section Headline (large, dark green, bold)
+Exact text
+"Discover The Wonders Of Kenya"
+
+Body Paragraph 1 — Introduction
+Paste this paragraph exactly
+Maka Grace Tours and Travel is a premier travel agency based in Kenya, dedicated to
+providing personalised travel experiences to adventurers from across the globe. With
+deep local knowledge and genuine passion for the beauty of East Africa, we offer a
+diverse range of tour packages that are carefully crafted to match the unique interests,
+budget, and travel style of every client.
+
+Body Paragraph 2 — What Sets Us Apart
+Paste this paragraph exactly
+What truly distinguishes Maka Grace Tours and Travel is our unwavering commitment to
+personalised service. We believe that every traveller is unique — with different dreams,
+expectations, and ways of experiencing the world. That is why we take the time to listen,
+understand, and tailor every journey specifically around you. Whether you are a seasoned
+adventurer chasing the Great Migration or a first-time visitor dreaming of your first
+safari sunrise — we have the expertise, the connections, and the heart to make it happen.
+
+Body Paragraph 3 — Our Guides & Local Expertise
+Paste this paragraph exactly
+Maka Grace Tours and Travel is equally renowned for our team of expert local guides who
+are deeply passionate about Kenya's wildlife, landscapes, and cultures. Our guides are
+not only highly knowledgeable about the flora and fauna of every park and reserve — they
+carry a deep understanding of local communities, traditions, and conservation. This allows
+us to provide truly immersive experiences that connect our travellers with the land,
+wildlife, and people of Kenya on a meaningful level.
+
+Right Column — Stat Card (the "25 years of experience" card in the UI)
+Since Maka Grace Tours and Travel was founded in 2026, replace the years-of-experience stat with something accurate. Choose one option below:
+Option
+Display Number
+Line 1 Text
+Line 2 Text
+Recommended?
+A
+100%
+Custom
+Itineraries
+Yes — reflects tailor-made service from day one
+B
+24/7
+Client
+Support
+Yes — accurate and builds immediate trust
+C
+500+
+Happy
+Travellers
+Use only once real booking numbers confirm this
+D
+4.9★
+Customer
+Rating
+Use only once Google Reviews are live and active
+
+Right Column — Image Stack
+Image suggestions (2 stacked/overlapping images)
+Image 1 (back): Kenya wildlife — elephant family, lion pride, or Mara landscape
+Image 2 (front): A happy traveller or group on a game drive with a guide
+
+If no real client photos are available yet, use high-quality stock images from:
+Unsplash (search: "Kenya safari", "Maasai Mara", "Kenya wildlife")
+Pexels (search: "Kenya landscape", "African safari travellers")
+
+
+SECTION 3 — WHY CHOOSE US (TWO-COLUMN WITH IMAGE + 4 FEATURE TILES)
+This section has a large image or illustrated card on the left with a green badge, and on the right: an italic gold eyebrow, a bold headline, a body paragraph, and 4 icon feature tiles in a 2x2 grid.
+
+Left Column — Image
+Image suggestion
+[IMAGE: A Kenya safari scene — open-top jeep in the Maasai Mara, with wildlife in
+ the background. OR: Marykala with clients at a safari lodge. Use a portrait-oriented
+ or square image. The dark green badge overlaid on the image reads as below.]
+
+Left Column — Overlaid Green Badge Text
+Exact text on the dark green rounded badge
+"Never Stop Exploring"
+
+Right Column — Eyebrow Label (italic, ochre/gold)
+Exact text
+"Unmatched Experiences, Unforgettable Memories"
+
+Right Column — Section Headline
+Exact text
+"Why Choose Us"
+
+Right Column — Introductory Paragraph (below the headline)
+Exact copy
+Experience Kenya like never before with expertly guided, tailor-made travel experiences
+that prioritise adventure, comfort, and authentic local culture. We offer seamless travel
+planning and genuine wildlife encounters for a journey you will never forget.
+
+4 Feature Tiles (2 columns x 2 rows — icon + title + short description)
+
+Tile 1 — Top Left
+Field
+Content
+Icon (Tabler)
+IconMapPin or IconCompass
+Title
+Expert Local Guides
+Description
+Knowledgeable, professional, and genuinely passionate about Kenya's wildlife and landscapes.
+
+Tile 2 — Top Right
+Field
+Content
+Icon (Tabler)
+IconLeaf or IconTree
+Title
+Sustainable Tourism
+Description
+We partner with lodges and operators who prioritise eco-friendly practices and conservation.
+
+Tile 3 — Bottom Left
+Field
+Content
+Icon (Tabler)
+IconRoute or IconMap2
+Title
+Tailor-Made Experiences
+Description
+Every itinerary is built around your travel style, budget, and the destinations that excite you most.
+
+Tile 4 — Bottom Right
+Field
+Content
+Icon (Tabler)
+IconClock or IconHeadset
+Title
+Seamless Travel Planning
+Description
+From booking to touchdown — we handle every detail with prompt, hassle-free, 24/7 support.
+
+
+SECTION 4 — WHAT MAKES US UNIQUE (EYEBROW + HEADLINE + 4 CARDS)
+This is a light-background section with an italic ochre eyebrow, a large bold headline, a body paragraph, and then 4 feature cards in a row — each with an outline icon, a card title, and a short sub-description.
+
+Eyebrow Label (italic, ochre/gold colour)
+Exact text
+"The Maka Grace Difference"
+
+Section Headline
+Exact text
+"What Makes Us Unique"
+
+Section Body Paragraph (below headline, left-aligned)
+Exact copy
+At Maka Grace Tours and Travel, we go beyond ordinary travel packages to offer
+exceptional, immersive, and memorable experiences. From expert-guided wildlife encounters
+and luxury lodge stays to eco-conscious travel and cultural connections — every journey
+with us is designed to be extraordinary, personal, and truly unforgettable.
+
+4 Feature Cards (displayed in a row — icon on top, title, description)
+
+Card 1
+Field
+Content
+Icon (Tabler outline)
+IconPaw or IconBinoculars
+Card Title
+Authentic Safari Experiences
+Sub-description
+Untouched wilderness and iconic destinations explored with expert-certified Kenya guides.
+
+Card 2
+Field
+Content
+Icon (Tabler outline)
+IconEye or IconBinoculars
+Card Title
+Diverse Wildlife Sightings
+Sub-description
+Witness the Big Five and rare species in their natural habitat across Kenya's finest parks.
+
+Card 3
+Field
+Content
+Icon (Tabler outline)
+IconHome or IconBuildingCottage
+Card Title
+Luxury & Budget-Friendly Stays
+Sub-description
+Stay in handpicked lodges, tented camps, or luxury resorts — all selected for quality and comfort.
+
+Card 4
+Field
+Content
+Icon (Tabler outline)
+IconLeaf or IconHeart
+Card Title
+Eco-Friendly & Community Supportive
+Sub-description
+Travel responsibly while supporting conservation efforts and the local communities we work with.
+
+
+SECTION 5 — MISSION, VISION & CORE VALUES
+This section does not appear in the current UI template but is strongly recommended for SEO and for building trust with international travellers. If the template allows an additional section between "What Makes Us Unique" and the footer, insert it here. It can also be used as a separate pull-quote block or collapsible accordion.
+
+Mission Statement
+Official Mission — display prominently on the About page
+"To provide exceptional, reliable, and personalised travel experiences that showcase
+the beauty of Kenya while delivering outstanding customer service, comfort, and value
+to every traveller."
+
+Vision Statement
+Vision — use in an expandable section or sidebar pull-quote
+"To be Kenya's most trusted and recommended travel agency — known for the quality of
+our journeys, the warmth of our service, and the depth of our local connections."
+
+Core Values (display as 3 or 4 icon tiles if the template supports it)
+Value
+One-line description
+Integrity
+We are honest in everything — our pricing, our advice, and our promises.
+Excellence
+We set a high standard for every trip, every communication, and every detail.
+Personalisation
+No two clients are the same. We never offer a one-size-fits-all experience.
+Sustainability
+We protect the Kenya we love by operating with environmental and community responsibility.
+
+
+SECTION 6 — MEET THE TEAM
+This section may not be in the current template but is highly recommended for the About page. It builds personal trust — especially with international travellers who want to know who they are booking with. Add it if the template has space below the feature cards, or as a standalone section before the footer.
+
+Section Eyebrow
+Exact text
+"The People Behind Your Journey"
+
+Section Headline
+Exact text
+"Meet Our Team"
+
+Section Sub-text
+Exact copy
+Every great journey starts with a person who cares. Our small but passionate team brings
+together local expertise, travel industry experience, and a genuine love for Kenya — to
+make sure your experience exceeds every expectation.
+
+Team Card — Marykala (Founder)
+Field
+Content
+Photo
+[IMAGE: Professional headshot or photo of Marykala — smiling, ideally outdoors or at a safari/travel setting. A warm, approachable photo works best here.]
+Name
+Marykala
+Role / Title
+Founder & Travel Director
+Short Bio
+Marykala is the heart of Maka Grace Tours and Travel. With a passion for sharing the beauty of Kenya with the world and a commitment to making every client feel truly cared for, she founded the agency with one mission: to make travel personal, seamless, and extraordinary. Available Monday to Sunday, 8 AM to 9 PM EAT — she is always just a call or WhatsApp away.
+WhatsApp CTA
+"Chat with Marykala" → links to: https://wa.me/254705794254
+
+As the team grows, add additional team cards here with the same structure. Each guide or team member should have a photo, name, role, and a 2–3 sentence bio.
+
+
+SECTION 7 — FOOTER (SAME ACROSS ALL PAGES)
+The footer is identical on every page of the website. Use the same content as specified in the Homepage Content document. Reference below for convenience.
+
+Footer Column 1 — Brand
+Field
+Content
+Agency name
+Maka Grace Tours and Travel
+Tagline
+Travel with Grace, Discover the Extraordinary
+Short description
+A Kenya-based travel agency crafting tailor-made safaris, beach holidays, and cultural adventures for local and international travellers.
+Social icons
+Facebook · Instagram · TikTok · WhatsApp
+
+Footer Column 2 — Company
+Link Label
+URL
+About Us
+/about
+Enquire Now
+/book
+FAQs
+/faq
+Our Blog
+/blog
+Activities
+/packages?category=Activities
+
+Footer Column 3 — Explore
+Link Label
+URL
+Contact Us
+/contact
+Payment Options
+/faq#payment
+Packages
+/packages
+Destinations
+/packages#destinations
+Accommodation
+/packages?category=Accommodation
+
+Footer Column 4 — Contact Us
+Field
+Content
+Call / WhatsApp
++254 705 794 254
+Email Address
+makagraceholdings@gmail.com
+Address
+Nairobi, Kenya (update when office is confirmed)
+
+Footer Bottom Bar
+Field
+Content
+Left text
+© 2026 Maka Grace Tours and Travel. All Rights Reserved.
+Centre link
+Terms & Conditions  ·  Privacy Policy
+Credit line
+Designed by Estetica Agency
+
+
+SECTION 8 — SEO META CONTENT (ABOUT PAGE HEAD TAGS)
+Paste this into your Next.js about page metadata export. This is what Google reads and shows in search results for the About Us page.
+
+About Page Metadata — copy into app/(frontend)/about/page.tsx
+export const metadata = {
+  title: "About Us | Maka Grace Tours and Travel — Kenya Travel Agency",
+  description: "Learn about Maka Grace Tours and Travel — a Kenya-based agency
+    offering personalised safaris, beach holidays, and cultural tours.
+    Expert local guides, tailor-made itineraries, and M-Pesa-friendly payments.",
+  keywords: [
+    "about Maka Grace Tours", "Kenya travel agency about",
+    "Kenya safari company", "local Kenya tour operator",
+    "tailor-made Kenya safaris", "Nairobi travel agency",
+    "trusted Kenya travel agency", "Marykala tours Kenya"
+  ],
+  openGraph: {
+    title: "About Maka Grace Tours and Travel | Kenya Safari Agency",
+    description: "A Kenya-based travel agency built on personalised service,
+      expert local guides, and unforgettable travel experiences.",
+    url: "https://www.makagracetravel.co.ke/about",
+    siteName: "Maka Grace Tours and Travel",
+    images: [{ url: "/images/og-about.jpg", width: 1200, height: 630,
+      alt: "Maka Grace Tours and Travel — About Us" }],
+    locale: "en_KE",
+    type: "website",
+  },
+}
+
+OG Image Suggestion for About Page
+What the About page OG image should show (1200 x 630px)
+Marykala smiling — with a Kenya landscape or safari jeep in the background.
+If no personal photo is available: happy travellers with a guide at a Kenya destination.
+Forest Green gradient on the left 40% with the agency name and "About Us" text overlaid.
+Save as: /public/images/og-about.jpg
+
+Prepared by Estetica Agency · Maka Grace Tours and Travel · July 2026
+Replace existing About Us UI content section by section. Do not change the layout or structure.

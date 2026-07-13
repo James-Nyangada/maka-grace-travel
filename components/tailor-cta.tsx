@@ -30,13 +30,17 @@ export function TailorCta() {
               <path d="M30 20 L30 26 M38 20 L38 26 M46 20 L46 26" />
             </svg>
             <div>
-              <h2 className="text-2xl font-bold text-white md:text-3xl">Let Us Create Your Tailor-Made Trip</h2>
-              <p className="mt-2 text-white/90">Tailor Your Perfect Tanzanian Adventure With Expert Planning.</p>
+              <p className="mb-2 font-script text-2xl text-safari-gold-light md:text-[28px]">Your Journey Starts Here</p>
+              <h2 className="text-2xl font-bold text-white md:text-3xl">Let Us Create Your Tailor-Made Trip.</h2>
+              <p className="mt-2 max-w-xl text-white/90 leading-relaxed">
+                Tell us where you want to go, when you want to travel, and how you like to explore.
+                We will handle everything else &mdash; and deliver an experience worth talking about.
+              </p>
             </div>
           </div>
 
           <a
-            href="#contact"
+            href="/book"
             className="inline-block self-start whitespace-nowrap rounded-md bg-white px-8 py-4 text-sm font-bold tracking-wide text-safari-ink transition-colors hover:bg-safari-cream lg:self-center"
           >
             LET&apos;S GET STARTED

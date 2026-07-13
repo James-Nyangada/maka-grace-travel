@@ -33,19 +33,22 @@ export function TestimonialsSection() {
 
         {/* Review */}
         <div className="relative">
-          <h2 className="text-2xl font-bold text-safari-ink md:text-[26px]">Amazing, I Recomend A Million Times !!</h2>
+          <h2 className="text-2xl font-bold text-safari-ink md:text-[26px]">Amazing, I Recommend A Million Times!!</h2>
           <div className="mt-3 flex gap-1" aria-label="5 out of 5 stars">
             {Array.from({ length: 5 }).map((_, i) => (
               <Star key={i} className="h-4 w-4 fill-safari-gold text-safari-gold" />
             ))}
           </div>
           <p className="mt-5 max-w-lg text-sm leading-relaxed text-muted-foreground">
-            Our trip with Uwanda Tours was really perfect!! The communication was great (all questions have been
-            answered quickly), everything was very well organized according to our wishes. The value for the money
-            was absolutely OK for this amazing trip with the best guide we could have had! Tanks for everything
+            &quot;Maka Grace Tours and Travel turned our Kenya dream into reality. From the moment we
+            enquired to the moment we landed back home, Marykala and her team handled every detail
+            with professionalism and warmth. Our Maasai Mara safari was beyond anything we imagined.
+            The guiding was exceptional, the lodge was stunning, and the personal touches made it
+            feel like a trip built just for us. We will absolutely be back.&quot;
           </p>
           <div className="mt-6 h-1 w-10 bg-safari-green" />
-          <p className="mt-4 font-bold text-safari-ink">Tanja From Germany</p>
+          <p className="mt-4 font-bold text-safari-ink">Sarah &amp; David M.</p>
+          <p className="mt-1 text-xs text-muted-foreground">Nairobi, Kenya &middot; Maasai Mara Safari, March 2025</p>
 
           <div className="absolute right-0 top-40 hidden h-14 w-14 items-center justify-center bg-safari-cream lg:flex">
             <Quote className="h-7 w-7 fill-safari-green text-safari-green" />
