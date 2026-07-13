@@ -72,11 +72,22 @@ export function ExperienceSection() {
         <div className="mx-auto -mt-36 max-w-7xl px-4 lg:px-8 relative z-10">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {cards.map((card) => (
-              <div key={card.title} className="rounded-lg bg-white p-3 shadow-lg relative z-20">
-                <div className="flex h-full flex-col items-center gap-4 rounded-md border border-dashed border-safari-gold/60 px-4 py-8 text-center">
-                  <span className="text-safari-gold">{card.icon}</span>
-                  <h3 className="text-lg font-bold leading-snug text-safari-ink">{card.title}</h3>
-                  <p className="text-sm text-muted-foreground">{card.subtext}</p>
+              <div key={card.title} className="group relative z-20 overflow-hidden rounded-lg bg-white p-3 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                {/* Hover Background Pattern */}
+                <div 
+                  className="absolute inset-0 -z-10 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                  style={{
+                    background: `
+                      linear-gradient(144deg, transparent 65%, #4A9D19 65%),
+                      linear-gradient(116deg, transparent 40%, #237A20 40%),
+                      #125B34
+                    `
+                  }}
+                />
+                <div className="flex h-full flex-col items-center gap-4 rounded-md border border-dashed border-safari-gold/60 group-hover:border-transparent px-4 py-8 text-center transition-colors duration-300">
+                  <div className="text-safari-gold group-hover:text-white transition-all duration-300 group-hover:scale-110">{card.icon}</div>
+                  <h3 className="text-lg font-bold leading-snug text-safari-ink group-hover:text-white transition-colors duration-300">{card.title}</h3>
+                  <p className="text-sm text-muted-foreground group-hover:text-white/90 transition-colors duration-300">{card.subtext}</p>
                 </div>
               </div>
             ))}

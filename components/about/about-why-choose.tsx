@@ -36,7 +36,7 @@ export function AboutWhyChoose() {
           <div className="relative h-[500px] md:h-[600px] w-full lg:w-[110%] lg:-ml-10 rounded-3xl overflow-hidden shadow-2xl">
             <div className="absolute inset-0 w-full h-full bg-muted">
               <Image
-                src="/placeholder.jpg"
+                src="/images/person-lake.png"
                 alt="Person looking at lake"
                 fill
                 className="object-cover"

@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { Search } from 'lucide-react'
+import Image from 'next/image'
 
 const popularTopics = ['Bookings', 'Wildlife', 'Accommodation', 'Health & Safety', 'Packing']
 
@@ -20,12 +21,24 @@ export function FaqHero({ onSearch, onTopicFilter }: { onSearch?: (query: string
   }
 
   return (
-    <section className="bg-safari-cream pt-28 pb-16 md:pt-32 md:pb-20">
-      <div className="mx-auto max-w-3xl px-4 text-center lg:px-8">
-        <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-safari-ink mb-4">
+    <section className="relative pt-28 pb-16 md:pt-32 md:pb-20 overflow-hidden min-h-[500px] flex items-center justify-center">
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/images/balloons-hero.png"
+          alt="Hot air balloons over the Maasai Mara"
+          fill
+          className="object-cover object-center"
+          priority
+          referrerPolicy="no-referrer"
+        />
+        <div className="absolute inset-0 bg-black/50" />
+      </div>
+
+      <div className="relative z-10 mx-auto max-w-3xl px-4 text-center lg:px-8 w-full animate-in fade-in slide-in-from-bottom-8 duration-1000">
+        <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-white mb-4">
           Frequently Asked Questions
         </h1>
-        <p className="text-muted-foreground text-base md:text-lg mb-10">
+        <p className="text-white/90 text-base md:text-lg mb-10">
           Find answers to common questions about our safari adventures in Tanzania.
         </p>
 

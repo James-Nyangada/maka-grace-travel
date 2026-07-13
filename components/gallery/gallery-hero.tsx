@@ -9,15 +9,14 @@ export function GalleryHero() {
     <section className="relative h-[50vh] min-h-[320px] w-full flex items-center justify-center overflow-hidden pt-20">
       <div className="absolute inset-0 z-0">
         <Image
-          src="/placeholder.jpg"
+          src="/images/jeep-hero.png"
           alt="Beautiful safari scenery in Tanzania"
           fill
           className="object-cover object-center"
           priority
           referrerPolicy="no-referrer"
         />
-        <div className="absolute inset-0 bg-safari-green-dark/70 mix-blend-multiply" />
-        <div className="absolute inset-0 bg-black/35" />
+        <div className="absolute inset-0 bg-black/50" />
       </div>
 
       {/* Decorative dashed line and plane */}

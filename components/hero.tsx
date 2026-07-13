@@ -5,16 +5,36 @@ import { Check, MapPin, Clock3, Search, ChevronDown } from 'lucide-react'
 
 const features = ['Expert Local Guides', 'Tailored Safari Experiences', 'Sustainable & Ethical Tourism']
 
+const heroImages = [
+  '/images/safari_elephants.png',
+  '/images/safari_lions.png',
+  '/images/safari_sunset.png',
+]
+
 export function Hero() {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % heroImages.length)
+    }, 3000)
+    return () => clearInterval(interval)
+  }, [])
+
   return (
     <section className="relative min-h-[640px] overflow-hidden lg:min-h-[720px]" aria-label="Hero">
-      {/* Background */}
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: "url('/images/hero-giraffe.png')" }}
-        role="img"
-        aria-label="Giraffe standing beside an acacia tree with green mountains behind"
-      />
+      {/* Background Carousel */}
+      {heroImages.map((src, index) => (
+        <div
+          key={src}
+          className={`absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ease-in-out ${
+            index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+          }`}
+          style={{ backgroundImage: `url('${src}')` }}
+          role="img"
+          aria-label="Safari scene in Kenya"
+        />
+      ))}
       <div className="absolute inset-0 bg-black/35" />
 
       <div className="relative mx-auto flex min-h-[640px] max-w-7xl flex-col items-center justify-center px-4 pb-48 pt-24 text-center lg:min-h-[720px] lg:px-8">

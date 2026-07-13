@@ -21,12 +21,12 @@ export function TestimonialsSection() {
           </svg>
           <div className="absolute left-8 top-6 w-64 rotate-[-8deg] bg-white p-3 pb-10 shadow-xl">
             <div className="relative h-48 w-full">
-              <Image src="/images/polaroid-sunset.png" alt="Safari jeeps on the plains at sunset" fill className="object-cover" />
+              <Image src="/images/testimonial1.webp" alt="Safari jeeps on the plains at sunset" fill className="object-cover" />
             </div>
           </div>
           <div className="absolute left-24 top-16 w-64 rotate-[7deg] bg-white p-3 pb-10 shadow-xl">
             <div className="relative h-48 w-full">
-              <Image src="/images/blog-giraffe-jeep.png" alt="Giraffe beside a safari vehicle" fill className="object-cover" />
+              <Image src="/images/testimonial2.webp" alt="Giraffe beside a safari vehicle" fill className="object-cover" />
             </div>
           </div>
         </div>

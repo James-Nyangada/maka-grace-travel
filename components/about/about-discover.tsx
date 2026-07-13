@@ -40,7 +40,7 @@ export function AboutDiscover() {
               <div className="absolute top-0 left-0 w-2/3 h-[70%] z-10 shadow-xl overflow-hidden bg-background pb-5">
                 <div className="relative w-full h-full">
                   <Image
-                    src="/placeholder.jpg"
+                    src="/images/About-1.webp"
                     alt="Cheetah resting"
                     fill
                     className="object-cover"
@@ -56,7 +56,7 @@ export function AboutDiscover() {
               <div className="absolute bottom-10 right-0 w-3/4 h-[75%] z-20 shadow-2xl bg-white pb-5 transform rotate-2 overflow-hidden">
                 <div className="relative w-full h-full">
                   <Image
-                    src="/placeholder.jpg"
+                    src="/images/About-2.webp"
                     alt="Lion close up"
                     fill
                     className="object-cover"

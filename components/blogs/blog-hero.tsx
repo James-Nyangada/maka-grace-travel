@@ -16,7 +16,7 @@ interface BlogHeroProps {
 export function BlogHero({ 
   title, 
   breadcrumbs, 
-  imageSrc = '/images/placeholder-safari.jpg' 
+  imageSrc = '/images/beach-hero.png' 
 }: BlogHeroProps) {
   return (
     <section className="relative h-[60vh] min-h-[400px] w-full flex items-center justify-center overflow-hidden pt-20">
@@ -29,8 +29,7 @@ export function BlogHero({
           priority
           referrerPolicy="no-referrer"
         />
-        <div className="absolute inset-0 bg-safari-green-dark/80 mix-blend-multiply" />
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-black/50" />
       </div>
       
       {/* Decorative dashed line and plane - simplified version */}

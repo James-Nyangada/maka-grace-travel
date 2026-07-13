@@ -7,15 +7,14 @@ export function PackagesHero() {
     <section className="relative h-[60vh] min-h-[400px] w-full flex items-center justify-center overflow-hidden pt-20">
       <div className="absolute inset-0 z-0">
         <Image
-          src="/placeholder.jpg"
+          src="/images/lions-hero.png"
           alt="Leopard resting on a branch"
           fill
           className="object-cover object-center"
           priority
           referrerPolicy="no-referrer"
         />
-        <div className="absolute inset-0 bg-safari-green-dark/80 mix-blend-multiply" />
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-black/50" />
       </div>
       
       {/* Decorative dashed line and plane - simplified version */}

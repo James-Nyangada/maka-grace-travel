@@ -25,15 +25,14 @@ export function PackageDetailClient({ packageData }: { packageData: any }) {
         <div className="relative h-[50vh] min-h-[350px] flex items-center justify-center">
             <div className="absolute inset-0 z-0">
                 <Image
-                src={packageData.image || "/images/placeholder-safari.jpg"}
+                src={packageData.image || "/images/lions-hero.png"}
                 alt={packageData.title}
                 fill
                 className="object-cover object-center"
                 priority
                 referrerPolicy="no-referrer"
                 />
-                <div className="absolute inset-0 bg-safari-green-dark/80 mix-blend-multiply" />
-                <div className="absolute inset-0 bg-black/40" />
+                <div className="absolute inset-0 bg-black/50" />
             </div>
 
             <div className="relative z-10 text-center text-white px-4">

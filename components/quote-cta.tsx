@@ -1,7 +1,7 @@
 export function QuoteCta() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-r from-[#0c1a14] via-[#3d4a44] to-[#c9c9c5] py-16">
-      <div className="mx-auto flex max-w-7xl flex-col gap-8 px-4 lg:flex-row lg:items-center lg:justify-between lg:px-8">
+    <section className="relative overflow-hidden bg-[url('/images/safari-parallax-bg.png')] bg-fixed bg-cover bg-center py-16 before:absolute before:inset-0 before:bg-black/60">
+      <div className="relative mx-auto flex max-w-7xl flex-col gap-8 px-4 lg:flex-row lg:items-center lg:justify-between lg:px-8">
         <div className="max-w-lg">
           <p className="font-script text-2xl text-safari-gold-light md:text-[28px]">Journey Into the Wild</p>
           <h2 className="mt-4 text-balance text-2xl font-bold text-white md:text-3xl">
