@@ -12,6 +12,7 @@ const navLinks = [
   { label: 'Safari Tours', href: '#safaris' },
   { label: 'Discover Tanzania', href: '#discover' },
   { label: 'Activities', href: '#activities' },
+  { label: 'Gallery', href: '/gallery' },
   { label: 'Blogs', href: '/blogs' },
   { label: 'Contact', href: '#contact' },
 ]

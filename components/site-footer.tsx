@@ -33,8 +33,20 @@ function XIcon({ className }: { className?: string }) {
   )
 }
 
-const companyLinks = ['About Us', 'Enquire Now', 'FAQs', 'Our Insights', 'Activities']
-const exploreLinks = ['Contact Us', 'Payment Options', 'Safaris', 'Tanzania', 'Accommodations']
+const companyLinks = [
+  { label: 'About Us', href: '/about' },
+  { label: 'Enquire Now', href: '/booking' },
+  { label: 'FAQs', href: '/faqs' },
+  { label: 'Our Insights', href: '#' },
+  { label: 'Activities', href: '#' },
+]
+const exploreLinks = [
+  { label: 'Contact Us', href: '#contact' },
+  { label: 'Payment Options', href: '/terms' },
+  { label: 'Safaris', href: '#' },
+  { label: 'Tanzania', href: '#' },
+  { label: 'Accommodations', href: '#' },
+]
 const paymentBadges = ['VISA', 'MC', 'AMEX', 'MST', 'JCB']
 
 export function SiteFooter() {
@@ -85,9 +97,9 @@ export function SiteFooter() {
           <h3 className="text-lg font-bold">Company</h3>
           <ul className="mt-5 flex flex-col gap-3">
             {companyLinks.map((link) => (
-              <li key={link}>
-                <a href="#" className="text-sm text-white/85 transition-colors hover:text-safari-gold">
-                  {link}
+              <li key={link.label}>
+                <a href={link.href} className="text-sm text-white/85 transition-colors hover:text-safari-gold">
+                  {link.label}
                 </a>
               </li>
             ))}
@@ -99,9 +111,9 @@ export function SiteFooter() {
           <h3 className="text-lg font-bold">Explore</h3>
           <ul className="mt-5 flex flex-col gap-3">
             {exploreLinks.map((link) => (
-              <li key={link}>
-                <a href="#" className="text-sm text-white/85 transition-colors hover:text-safari-gold">
-                  {link}
+              <li key={link.label}>
+                <a href={link.href} className="text-sm text-white/85 transition-colors hover:text-safari-gold">
+                  {link.label}
                 </a>
               </li>
             ))}
@@ -144,7 +156,7 @@ export function SiteFooter() {
       <div className="border-t border-white/10">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-4 py-5 text-xs text-white/80 md:flex-row lg:px-8">
           <p>
-            <a href="#" className="hover:text-safari-gold">
+            <a href="/terms" className="hover:text-safari-gold">
               Terms &amp; Conditions
             </a>{' '}
             |{' '}
