@@ -1,46 +1,23 @@
-import Image from 'next/image'
+import Link from 'next/link'
 import { MapPin, ArrowRight, ArrowLeft } from 'lucide-react'
+import { api } from '@/lib/api'
+import { Package } from '@/lib/types'
+import { ImageCarousel } from '@/components/image-carousel'
 
-const packages = [
-  {
-    image: '/images/package-giraffe-jeep.png',
-    alt: 'Maasai Mara — wildebeest migration or lion on savanna',
-    route: 'Nairobi to Maasai Mara — 5 Days',
-    title: 'Nairobi to Maasai Mara — 5 Days',
-    type: 'Mid Range',
-    quote: '3 game drives · Bush breakfast · Mara River crossing viewpoint. Includes: All meals · Luxury tent lodge · Airport transfers',
-    price: 'USD 850',
-  },
-  {
-    image: '/images/package-safari-truck.png',
-    alt: 'Diani Beach — turquoise water, white sand, dhow boat',
-    route: 'Nairobi to Diani Beach — 4 Days',
-    title: 'Nairobi to Diani Beach — 4 Days',
-    type: 'Budget',
-    quote: 'Beach lodge · Snorkelling · Seafood dining · Colobus monkey walks. Includes: Breakfast · Beach hotel · Return road/air transfer',
-    price: 'USD 320',
-  },
-  {
-    image: '/images/package-plane.png',
-    alt: 'Amboseli — elephant herd with Kilimanjaro backdrop',
-    route: 'Nairobi to Amboseli — 3 Days',
-    title: 'Nairobi to Amboseli — 3 Days',
-    type: 'Mid Range',
-    quote: '2 game drives · Maasai village visit · Kilimanjaro sunrise views. Includes: All meals · Mid-range lodge · Return transfers',
-    price: 'USD 480',
-  },
-  {
-    image: '/images/package-safari-truck.png',
-    alt: 'Zanzibar — Stonetown streets or beach sunset',
-    route: 'Zanzibar',
-    title: '5-Day Zanzibar Luxury Escape',
-    type: 'Luxury',
-    quote: 'Spice tour · Stone Town · Private beach villa · Dhow sunset cruise. Includes: All meals · Luxury resort · Return flights from Nairobi',
-    price: 'USD 1,200',
-  },
-]
+export async function PackagesSection() {
+  let packages: Package[] = []
+  
+  try {
+    // Assuming backend takes limit and featured params, or we can slice it
+    const data = await api.packages.getPublic({ limit: 6, isFeatured: 'true' })
+    packages = Array.isArray(data) ? data : (data.packages || data.data || [])
+    if (packages.length > 6) {
+      packages = packages.slice(0, 6)
+    }
+  } catch (error) {
+    console.error("Failed to fetch packages:", error)
+  }
 
-export function PackagesSection() {
   return (
     <section id="safaris" className="safari-pattern py-20 lg:py-24">
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
@@ -75,33 +52,33 @@ export function PackagesSection() {
 
         <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {packages.map((pkg) => (
-            <article key={pkg.title} className="relative z-10 flex flex-col bg-white p-3 shadow-sm">
-              <div className="relative h-60 w-full overflow-hidden">
-                <Image src={pkg.image} alt={pkg.alt} fill className="object-cover" />
+            <article key={pkg._id} className="relative z-10 flex flex-col bg-white p-3 shadow-sm">
+              <div className="relative h-60 w-full overflow-hidden bg-muted">
+                <ImageCarousel images={[pkg.imageUrl, ...(pkg.galleryUrls || [])]} altText={pkg.name} />
                 <span className="absolute bottom-3 right-3 bg-white px-4 py-1.5 text-sm font-semibold text-safari-ink shadow">
-                  {pkg.type}
+                  {pkg.category}
                 </span>
               </div>
               <div className="flex flex-1 flex-col px-3 pb-5 pt-5">
                 <p className="flex items-center gap-2 text-sm font-semibold text-safari-ink">
                   <MapPin className="h-4 w-4 text-safari-green" />
-                  {pkg.route}
+                  {pkg.destination} {pkg.duration ? `— ${pkg.duration}` : ''}
                 </p>
-                <h3 className="mt-3 text-xl font-bold leading-snug text-safari-ink">{pkg.title}</h3>
+                <h3 className="mt-3 text-xl font-bold leading-snug text-safari-ink">{pkg.name}</h3>
                 <p className="mt-4 flex items-start gap-2 text-safari-green">
                   <svg viewBox="0 0 24 24" fill="currentColor" className="mt-1 h-5 w-5 shrink-0" aria-hidden="true">
                     <path d="M4 6h6v6c0 3-2 5-5 6l-1-2c2-.7 3-1.8 3-4H4V6zm10 0h6v6c0 3-2 5-5 6l-1-2c2-.7 3-1.8 3-4h-3V6z" />
                   </svg>
-                  <span className="text-sm font-medium leading-relaxed">{pkg.quote}</span>
+                  <span className="text-sm font-medium leading-relaxed line-clamp-3">{pkg.overview}</span>
                 </p>
-                <div className="mt-5 flex items-center justify-between border-t border-border pt-5">
-                  <p className="text-sm text-muted-foreground">
-                    Starting From <span className="text-lg font-bold text-safari-green">{pkg.price}</span>
+                <div className="mt-auto pt-5 flex items-center justify-between border-t border-border">
+                  <p className="text-sm text-muted-foreground mt-5">
+                    Starting From <span className="text-lg font-bold text-safari-green">{pkg.currency || 'USD'} {pkg.priceFrom}</span>
                   </p>
-                  <a href="#" aria-label={`View ${pkg.title}`} className="group flex items-center text-safari-green">
+                  <Link href={`/packages/${pkg.slug}`} aria-label={`View ${pkg.name}`} className="group flex items-center text-safari-green mt-5">
                     <span className="block h-px w-16 bg-safari-green transition-all group-hover:w-20" />
                     <ArrowRight className="-ml-1 h-5 w-5" />
-                  </a>
+                  </Link>
                 </div>
               </div>
             </article>

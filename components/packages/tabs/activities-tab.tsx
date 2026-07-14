@@ -1,5 +1,9 @@
-export function PackageActivitiesTab() {
-  const activities = ['Game Drives', 'Walking Safaris', 'Hot Air Balloon Safari', 'Cultural Visits', 'Bird Watching']
+import { Package } from '@/lib/types'
+
+export function PackageActivitiesTab({ packageData }: { packageData: Package }) {
+  const activities = packageData.packageActivities && packageData.packageActivities.length > 0 
+    ? packageData.packageActivities
+    : ['Game Drives', 'Walking Safaris', 'Hot Air Balloon Safari', 'Cultural Visits', 'Bird Watching']
 
   return (
     <div className="space-y-6 animate-in fade-in duration-500">

@@ -2,6 +2,7 @@
 
 import { useState, useRef } from 'react'
 import Link from 'next/link'
+import { api } from '@/lib/api'
 import {
   User,
   MapPin,
@@ -105,14 +106,27 @@ const selectCls = `${inputCls} appearance-none cursor-pointer`
 
 /* ════════════════════════ MAIN COMPONENT ═══════════════════ */
 
-export function BookingForm() {
+interface BookingFormProps {
+  prefilledPackageName?: string
+  packageId?: string
+  /** When true, hides the outer section wrapper & header so it can embed inside a tab */
+  embedded?: boolean
+}
+
+export function BookingForm({ prefilledPackageName, packageId, embedded }: BookingFormProps) {
   const [step, setStep] = useState(1)
-  const [form, setForm] = useState<FormState>(initialForm)
+  const [form, setForm] = useState<FormState>(() => ({
+    ...initialForm,
+    packageInterest: prefilledPackageName || '',
+  }))
   const [errors, setErrors] = useState<Partial<Record<keyof FormState, string>>>({})
   const [submitted, setSubmitted] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitError, setSubmitError] = useState('')
   const [direction, setDirection] = useState<'forward' | 'backward'>('forward')
   const formRef = useRef<HTMLDivElement>(null)
+
+  const isPackageLocked = !!prefilledPackageName
 
   /* ── helpers ── */
 
@@ -162,13 +176,37 @@ export function BookingForm() {
     setStep((s) => Math.max(s - 1, 1))
   }
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (!validateStep()) return
     setIsSubmitting(true)
-    setTimeout(() => {
-      setIsSubmitting(false)
+    setSubmitError('')
+    try {
+      const payload = {
+        fullName: form.fullName,
+        email: form.email,
+        phone: form.phone,
+        nationality: form.nationality,
+        country: form.country,
+        packageName: form.packageInterest,
+        ...(packageId ? { packageId } : {}),
+        travelDateFrom: form.dateFrom,
+        travelDateTo: form.dateTo,
+        adults: form.adults,
+        children: form.children,
+        childrenAges: form.childrenAges || undefined,
+        accommodationPref: form.accommodation === 'mid-range' ? 'midrange' : form.accommodation || undefined,
+        specialRequests: form.specialRequests || undefined,
+        howHeard: form.hearAbout || undefined,
+        additionalNotes: form.additionalComments || undefined,
+        agreedToTerms: form.agreeTerms,
+      }
+      await api.bookings.create(payload)
       setSubmitted(true)
-    }, 2000)
+    } catch (err: any) {
+      setSubmitError(err.message || 'Something went wrong. Please try again.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   /* ─────────── progress bar ─────────── */
@@ -215,19 +253,24 @@ export function BookingForm() {
 
   /* ─────────── form steps ─────────── */
 
+  const Wrapper = embedded ? 'div' : 'section'
+  const wrapperCls = embedded ? '' : 'bg-safari-cream py-16 md:py-20'
+
   return (
-    <section className="bg-safari-cream py-16 md:py-20" ref={formRef}>
+    <Wrapper className={wrapperCls} ref={formRef}>
       <div className="mx-auto max-w-5xl px-4 lg:px-8">
         {/* ── Header ── */}
-        <div className="text-center mb-12">
-          <p className="font-script text-3xl text-safari-gold md:text-[34px]">Begin Your Journey</p>
-          <h2 className="mt-3 text-3xl md:text-4xl font-bold text-safari-ink">
-            Tell Us About Your Dream Safari
-          </h2>
-          <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">
-            Fill in the details below and our expert travel planners will craft the perfect Tanzanian adventure just for you.
-          </p>
-        </div>
+        {!embedded && (
+          <div className="text-center mb-12">
+            <p className="font-script text-3xl text-safari-gold md:text-[34px]">Begin Your Journey</p>
+            <h2 className="mt-3 text-3xl md:text-4xl font-bold text-safari-ink">
+              Tell Us About Your Dream Safari
+            </h2>
+            <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">
+              Fill in the details below and our expert travel planners will craft the perfect Tanzanian adventure just for you.
+            </p>
+          </div>
+        )}
 
         {/* ── Step indicator ── */}
         <div className="mb-12">
@@ -392,19 +435,28 @@ export function BookingForm() {
                   <FieldGroup label="Package or Destination of Interest" required>
                     <div className="relative">
                       <MapPin className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground/50 pointer-events-none" />
-                      <select
-                        value={form.packageInterest}
-                        onChange={(e) => set('packageInterest', e.target.value)}
-                        className={`${selectCls} pl-10 ${errors.packageInterest ? 'border-red-400 focus:border-red-500 focus:ring-red-200' : ''}`}
-                      >
-                        <option value="">— Select a package —</option>
-                        {packages.map((p) => (
-                          <option key={p} value={p}>
-                            {p}
-                          </option>
-                        ))}
-                      </select>
-                      <ChevronRight className="absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 rotate-90 text-muted-foreground/50 pointer-events-none" />
+                      {isPackageLocked ? (
+                        <div className={`${inputCls} pl-10 bg-safari-cream/60 cursor-not-allowed flex items-center`}>
+                          <span className="font-semibold text-safari-ink">{form.packageInterest}</span>
+                          <span className="ml-auto text-xs text-safari-green font-bold bg-safari-green/10 px-2 py-0.5 rounded-full">Pre-selected</span>
+                        </div>
+                      ) : (
+                        <>
+                          <select
+                            value={form.packageInterest}
+                            onChange={(e) => set('packageInterest', e.target.value)}
+                            className={`${selectCls} pl-10 ${errors.packageInterest ? 'border-red-400 focus:border-red-500 focus:ring-red-200' : ''}`}
+                          >
+                            <option value="">— Select a package —</option>
+                            {packages.map((p) => (
+                              <option key={p} value={p}>
+                                {p}
+                              </option>
+                            ))}
+                          </select>
+                          <ChevronRight className="absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 rotate-90 text-muted-foreground/50 pointer-events-none" />
+                        </>
+                      )}
                     </div>
                     {errors.packageInterest && <p className="mt-1 text-xs text-red-500">{errors.packageInterest}</p>}
                   </FieldGroup>
@@ -692,6 +744,14 @@ export function BookingForm() {
                 </button>
               )}
             </div>
+
+            {/* ── Submit error message ── */}
+            {submitError && (
+              <div className="mt-4 rounded-lg bg-red-50 border border-red-200 p-4 text-sm text-red-700 animate-in fade-in duration-300">
+                <p className="font-semibold">Something went wrong</p>
+                <p>{submitError}</p>
+              </div>
+            )}
           </div>
         </div>
 
@@ -710,6 +770,6 @@ export function BookingForm() {
           ))}
         </div>
       </div>
-    </section>
+    </Wrapper>
   )
 }

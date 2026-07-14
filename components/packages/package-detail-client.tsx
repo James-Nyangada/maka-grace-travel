@@ -1,9 +1,10 @@
 'use client'
 
 import { useState } from 'react'
-import Image from 'next/image'
 import Link from 'next/link'
 import { ChevronRight, Plane } from 'lucide-react'
+import { Package } from '@/lib/types'
+import { ImageCarousel } from '@/components/image-carousel'
 
 // Tabs
 import { PackageOverviewTab } from './tabs/overview-tab'
@@ -15,7 +16,7 @@ import { PackageBookNowTab } from './tabs/book-now-tab'
 
 const TABS = ['Overview', 'Itinerary', 'Gallery', 'Activities', 'Prices', 'Book Now']
 
-export function PackageDetailClient({ packageData }: { packageData: any }) {
+export function PackageDetailClient({ packageData }: { packageData: Package }) {
   const [activeTab, setActiveTab] = useState('Overview')
 
   return (
@@ -23,26 +24,23 @@ export function PackageDetailClient({ packageData }: { packageData: any }) {
       {/* Hero Section with Tabs */}
       <section className="relative w-full overflow-hidden pt-20 flex flex-col">
         <div className="relative h-[50vh] min-h-[350px] flex items-center justify-center">
-            <div className="absolute inset-0 z-0">
-                <Image
-                src={packageData.image || "/images/lions-hero.png"}
-                alt={packageData.title}
-                fill
-                className="object-cover object-center"
-                priority
-                referrerPolicy="no-referrer"
+            <div className="absolute inset-0 z-0 bg-black">
+                <ImageCarousel 
+                  images={[packageData.imageUrl, ...(packageData.galleryUrls || [])]} 
+                  altText={packageData.name} 
+                  priority 
                 />
                 <div className="absolute inset-0 bg-black/50" />
             </div>
 
             <div className="relative z-10 text-center text-white px-4">
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-sans font-bold mb-4">{packageData.title}</h1>
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-sans font-bold mb-4">{packageData.name}</h1>
                 <div className="flex items-center justify-center gap-2 text-lg">
                 <Link href="/" className="text-safari-green hover:text-white transition-colors">Home</Link>
                 <ChevronRight size={16} />
                 <Link href="/packages" className="text-safari-green hover:text-white transition-colors">Packages</Link>
                 <ChevronRight size={16} />
-                <span className="text-white font-medium truncate max-w-[200px] sm:max-w-none">{packageData.title}</span>
+                <span className="text-white font-medium truncate max-w-[200px] sm:max-w-none">{packageData.name}</span>
                 </div>
             </div>
         </div>
@@ -72,12 +70,12 @@ export function PackageDetailClient({ packageData }: { packageData: any }) {
       {/* Content Area */}
       <div className="py-16 bg-[#F9F9F9] min-h-[50vh]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl bg-white p-8 lg:p-12 rounded-xl shadow-sm border border-border/40">
-           {activeTab === 'Overview' && <PackageOverviewTab />}
-           {activeTab === 'Itinerary' && <PackageItineraryTab />}
-           {activeTab === 'Gallery' && <PackageGalleryTab />}
-           {activeTab === 'Activities' && <PackageActivitiesTab />}
-           {activeTab === 'Prices' && <PackagePricesTab />}
-           {activeTab === 'Book Now' && <PackageBookNowTab />}
+           {activeTab === 'Overview' && <PackageOverviewTab packageData={packageData} />}
+           {activeTab === 'Itinerary' && <PackageItineraryTab packageData={packageData} />}
+           {activeTab === 'Gallery' && <PackageGalleryTab packageData={packageData} />}
+           {activeTab === 'Activities' && <PackageActivitiesTab packageData={packageData} />}
+           {activeTab === 'Prices' && <PackagePricesTab packageData={packageData} />}
+           {activeTab === 'Book Now' && <PackageBookNowTab packageData={packageData} />}
         </div>
       </div>
     </>
