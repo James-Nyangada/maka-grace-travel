@@ -85,7 +85,7 @@ export const api = {
   packages: {
     getPublic: async (params = {}) => {
       const query = new URLSearchParams(params).toString();
-      const response = await fetch(`${API_BASE_URL}/packages?${query}`);
+      const response = await fetch(`${API_BASE_URL}/packages?${query}`, { next: { revalidate: 3600 } });
       return handleResponse(response);
     },
     getFeatured: async () => {
@@ -93,7 +93,7 @@ export const api = {
       return handleResponse(response);
     },
     getBySlug: async (slug) => {
-      const response = await fetch(`${API_BASE_URL}/packages/${slug}`);
+      const response = await fetch(`${API_BASE_URL}/packages/${slug}`, { next: { revalidate: 3600 } });
       return handleResponse(response);
     },
     incrementView: async (id) => {
@@ -310,11 +310,11 @@ export const api = {
   blog: {
     getPublic: async (params = {}) => {
       const query = new URLSearchParams(params).toString();
-      const response = await fetch(`${API_BASE_URL}/blog?${query}`);
+      const response = await fetch(`${API_BASE_URL}/blog?${query}`, { next: { revalidate: 3600 } });
       return handleResponse(response);
     },
     getBySlug: async (slug) => {
-      const response = await fetch(`${API_BASE_URL}/blog/slug/${slug}`);
+      const response = await fetch(`${API_BASE_URL}/blog/slug/${slug}`, { next: { revalidate: 3600 } });
       return handleResponse(response);
     },
     getAdminAll: async (params = {}) => {
@@ -445,6 +445,14 @@ export const api = {
         headers: getHeaders(),
         body: JSON.stringify({ url: urlOrFilename }),
       });
+      return handleResponse(response);
+    }
+  },
+
+  gallery: {
+    getVisible: async (params = {}) => {
+      const query = new URLSearchParams(params).toString();
+      const response = await fetch(`${API_BASE_URL}/gallery/visible?${query}`);
       return handleResponse(response);
     }
   }

@@ -10,7 +10,7 @@ export function ServicesHero() {
       <div className="absolute inset-0 z-0">
         <Image
           src="/images/maasai-hero.png"
-          alt="Our Services at Uwanda Tours & Safaris"
+          alt="Our Services at makagracetravel Tours & Safaris"
           fill
           className="object-cover object-center"
           priority

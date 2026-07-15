@@ -7,8 +7,8 @@ import { ContactForm } from '@/components/contact/contact-form'
 import { TailorCta } from '@/components/tailor-cta'
 
 export const metadata = {
-  title: 'Contact Us - Uwanda Tours & Safaris',
-  description: 'Get in touch with Uwanda Tours & Safaris for any inquiries or booking requests.',
+  title: 'Contact Us - makagracetravel Tours & Safaris',
+  description: 'Get in touch with makagracetravel Tours & Safaris for any inquiries or booking requests.',
 }
 
 export default function ContactPage() {

@@ -15,7 +15,7 @@ const sections = [
     title: 'Booking Confirmation',
     content: (
       <p>
-        A booking is confirmed once Uwanda Tours &amp; Safaris receives a deposit and sends you a written confirmation
+        A booking is confirmed once makagracetravel Tours &amp; Safaris receives a deposit and sends you a written confirmation
         email. By confirming a booking, you acknowledge that you have read and accepted these Terms &amp; Conditions on
         behalf of all travelers in your group.
       </p>
@@ -46,7 +46,7 @@ const sections = [
     content: (
       <>
         <p>
-          Uwanda Tours &amp; Safaris reserves the right to modify itineraries, transport, or accommodation in the interest of
+          makagracetravel Tours &amp; Safaris reserves the right to modify itineraries, transport, or accommodation in the interest of
           client safety, comfort, or circumstances beyond our control. You will be notified promptly of any major changes
           and may choose to:
         </p>
@@ -100,7 +100,7 @@ const sections = [
     content: (
       <p>
         It is mandatory for all travelers to have comprehensive travel insurance that covers medical expenses, emergency
-        evacuation, trip cancellation, and personal belongings. Uwanda Tours &amp; Safaris is not liable for any loss,
+        evacuation, trip cancellation, and personal belongings. makagracetravel Tours &amp; Safaris is not liable for any loss,
         damage, or injury not covered by insurance.
       </p>
     ),
@@ -129,7 +129,7 @@ const sections = [
     content: (
       <>
         <p>
-          Uwanda Tours &amp; Safaris acts as an agent for third-party service providers (hotels, airlines, transport
+          makagracetravel Tours &amp; Safaris acts as an agent for third-party service providers (hotels, airlines, transport
           companies, etc.) and is not liable for:
         </p>
         <ul className="mt-4 ml-6 list-disc space-y-2 text-muted-foreground">
@@ -151,7 +151,7 @@ const sections = [
       <>
         <p>
           All travelers are expected to follow the instructions of their guides, respect wildlife, and adhere to national
-          park regulations. Uwanda Tours &amp; Safaris reserves the right to terminate the tour of any participant whose
+          park regulations. makagracetravel Tours &amp; Safaris reserves the right to terminate the tour of any participant whose
           behavior is disruptive, dangerous, or unlawful.
         </p>
         <p className="mt-4">No refunds will be issued in such cases.</p>
@@ -165,7 +165,7 @@ const sections = [
     content: (
       <p>
         By participating in a tour, you consent to the use of any photographs or videos taken during the tour for
-        promotional and marketing purposes by Uwanda Tours &amp; Safaris, unless otherwise requested in writing prior to the
+        promotional and marketing purposes by makagracetravel Tours &amp; Safaris, unless otherwise requested in writing prior to the
         tour.
       </p>
     ),
@@ -252,8 +252,8 @@ export function TermsContent() {
               <p className="text-sm text-muted-foreground leading-relaxed">
                 <strong className="text-safari-ink">Need Clarification?</strong> If you have any questions about our
                 Terms &amp; Conditions, please don&apos;t hesitate to contact us at{' '}
-                <a href="mailto:info@uwandatours.com" className="text-safari-green font-semibold hover:underline">
-                  info@uwandatours.com
+                <a href="mailto:info@makagracetraveltours.com" className="text-safari-green font-semibold hover:underline">
+                  info@makagracetraveltours.com
                 </a>{' '}
                 or call{' '}
                 <a href="tel:+255762378870" className="text-safari-green font-semibold hover:underline">

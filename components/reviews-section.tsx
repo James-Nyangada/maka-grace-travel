@@ -93,6 +93,12 @@ export function ReviewsSection() {
             </article>
           ))}
         </div>
+
+        <div className="mt-16 text-center">
+          <a href="/review" className="inline-flex items-center justify-center rounded-md bg-safari-green px-8 py-4 text-sm font-semibold text-white transition-colors hover:bg-safari-green/90">
+            Leave a Review
+          </a>
+        </div>
       </div>
     </section>
   )

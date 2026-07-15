@@ -6,7 +6,7 @@ import { GalleryContent } from '@/components/gallery/gallery-content'
 import { TailorCta } from '@/components/tailor-cta'
 
 export const metadata = {
-  title: 'Gallery - Uwanda Tours & Safaris',
+  title: 'Gallery - makagracetravel Tours & Safaris',
   description: 'View photos from our amazing Tanzania safari adventures, wildlife, landscapes, and cultural experiences.',
 }
 

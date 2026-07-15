@@ -55,7 +55,28 @@ const paymentBadges = [
   { label: 'JCB', src: '/images/jcb.svg' },
 ]
 
-export function SiteFooter() {
+export async function SiteFooter() {
+  let settings = null;
+  try {
+    const rawUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api';
+    const apiUrl = rawUrl.endsWith('/api') ? rawUrl : `${rawUrl}/api`;
+    const res = await fetch(`${apiUrl}/settings`, {
+      next: { revalidate: 60 }
+    });
+    if (res.ok) {
+      settings = await res.json();
+    }
+  } catch (error) {
+    console.error("Failed to fetch contact settings for footer:", error);
+  }
+
+  const officeLocation = settings?.officeLocation || "Nairobi, Kenya\n(office coming soon)";
+  // Only take the first line of the location for the short footer map pin
+  const shortOfficeLocation = officeLocation.split('\n')[0];
+  const contactPerson = settings?.contactPerson || "Mary Kala";
+  const phoneNumber = settings?.phoneNumber || "+254 705 794 254";
+  const emailAddress = settings?.emailAddress || "makagraceholdings@gmail.com";
+
   return (
     <footer id="contact" className="bg-safari-ink text-white">
       <div className="mx-auto grid max-w-7xl gap-12 px-4 py-14 md:grid-cols-2 lg:grid-cols-4 lg:px-8">
@@ -71,6 +92,7 @@ export function SiteFooter() {
           <p className="mt-5 text-sm leading-relaxed text-white/85">
             Explore the magic of Kenya with us and experience safaris that stay with you forever.
           </p>
+          {/*
           <div className="mt-5 flex items-center gap-3">
             <a href="#" aria-label="Facebook" className="flex h-8 w-8 items-center justify-center rounded bg-white/10 transition-colors hover:bg-white/20">
               <FacebookIcon className="h-4 w-4" />
@@ -101,6 +123,7 @@ export function SiteFooter() {
               </span>
             ))}
           </div>
+          */}
         </div>
 
         {/* Company */}
@@ -138,9 +161,9 @@ export function SiteFooter() {
             <li className="flex items-start gap-3">
               <Phone className="mt-1 h-4 w-4 shrink-0 text-safari-gold" />
               <span>
-                <span className="block text-xs text-white/70">Call Us (Mary Kala)</span>
-                <a href="tel:+254705794254" className="text-sm font-bold hover:text-safari-gold">
-                  +254 705 794 254
+                <span className="block text-xs text-white/70">Call Us ({contactPerson})</span>
+                <a href={`tel:${phoneNumber.replace(/\s+/g, '')}`} className="text-sm font-bold hover:text-safari-gold">
+                  {phoneNumber}
                 </a>
               </span>
             </li>
@@ -148,8 +171,8 @@ export function SiteFooter() {
               <Mail className="mt-1 h-4 w-4 shrink-0 text-safari-gold" />
               <span>
                 <span className="block text-xs text-white/70">Email Address</span>
-                <a href="mailto:makagraceholdings@gmail.com" className="text-sm font-bold hover:text-safari-gold">
-                  makagraceholdings@gmail.com
+                <a href={`mailto:${emailAddress}`} className="text-sm font-bold hover:text-safari-gold">
+                  {emailAddress}
                 </a>
               </span>
             </li>
@@ -157,7 +180,7 @@ export function SiteFooter() {
               <MapPin className="mt-1 h-4 w-4 shrink-0 text-safari-gold" />
               <span>
                 <span className="block text-xs text-white/70">Visit Office</span>
-                <span className="text-sm font-bold">Nairobi, Kenya</span>
+                <span className="text-sm font-bold">{shortOfficeLocation}</span>
               </span>
             </li>
           </ul>

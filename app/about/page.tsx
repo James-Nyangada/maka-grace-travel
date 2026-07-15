@@ -7,8 +7,8 @@ import { AboutWhyChoose } from '@/components/about/about-why-choose'
 import { AboutUnique } from '@/components/about/about-unique'
 
 export const metadata = {
-  title: 'About Us - Uwanda Tours & Safaris',
-  description: 'Learn more about Uwanda Tours & Safaris, a premier safari tour company based in Tanzania.',
+  title: 'About Us - makagracetravel Tours & Safaris',
+  description: 'Learn more about makagracetravel Tours & Safaris, a premier safari tour company based in Tanzania.',
 }
 
 export default function AboutPage() {

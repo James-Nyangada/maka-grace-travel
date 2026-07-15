@@ -40,7 +40,7 @@ export function TailorCta() {
           </div>
 
           <a
-            href="/book"
+            href="/booking"
             className="inline-block self-start whitespace-nowrap rounded-md bg-white px-8 py-4 text-sm font-bold tracking-wide text-safari-ink transition-colors hover:bg-safari-cream lg:self-center"
           >
             LET&apos;S GET STARTED

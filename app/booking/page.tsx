@@ -5,9 +5,9 @@ import { BookingHero } from '@/components/booking/booking-hero'
 import { BookingForm } from '@/components/booking/booking-form'
 
 export const metadata = {
-  title: 'Book Your Safari - Uwanda Tours & Safaris',
+  title: 'Book Your Safari - makagracetravel Tours & Safaris',
   description:
-    'Book your dream Tanzania safari adventure with Uwanda Tours & Safaris. Fill in your details and our expert planners will craft the perfect itinerary for you.',
+    'Book your dream Tanzania safari adventure with makagracetravel Tours & Safaris. Fill in your details and our expert planners will craft the perfect itinerary for you.',
 }
 
 export default function BookingPage() {

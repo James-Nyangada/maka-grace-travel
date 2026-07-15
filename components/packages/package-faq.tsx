@@ -6,10 +6,10 @@ import { ChevronDown, ChevronUp } from 'lucide-react'
 const faqs = [
   {
     question: "1. When Is The Best Time To Visit Tanzania?",
-    answer: "Tanzania is a year-round destination, but the best time to visit depends on what you want to experience:\n\n• June to October (Dry Season):\nBest for Wildlife Viewing: This is the peak safari season. The dry weather makes animals easier to spot as they gather around water sources. Great Migration (Northern Serengeti): July to September is ideal for witnessing the famous river crossings.\n\n• November to March (Green Season):\nLush Landscapes & Bird Watching: The scenery is vibrant, and it's an excellent time for birding. Calving Season (Southern Serengeti): January to March offers a chance to see thousands of wildebeest calves born on the plains.\n\n• April & May (Long Rains):\nThis is the off-season due to heavier rainfall, but it's also when lodges offer discounted rates.\n\nUwanda Tours & Safaris offers tailored itineraries for each season so you can experience the best of Tanzania year-round."
+    answer: "Tanzania is a year-round destination, but the best time to visit depends on what you want to experience:\n\n• June to October (Dry Season):\nBest for Wildlife Viewing: This is the peak safari season. The dry weather makes animals easier to spot as they gather around water sources. Great Migration (Northern Serengeti): July to September is ideal for witnessing the famous river crossings.\n\n• November to March (Green Season):\nLush Landscapes & Bird Watching: The scenery is vibrant, and it's an excellent time for birding. Calving Season (Southern Serengeti): January to March offers a chance to see thousands of wildebeest calves born on the plains.\n\n• April & May (Long Rains):\nThis is the off-season due to heavier rainfall, but it's also when lodges offer discounted rates.\n\nmakagracetravel Tours & Safaris offers tailored itineraries for each season so you can experience the best of Tanzania year-round."
   },
   {
-    question: "2. What Can I Expect From A Safari In Tanzania With Uwanda Tours & Safaris?",
+    question: "2. What Can I Expect From A Safari In Tanzania With makagracetravel Tours & Safaris?",
     answer: "You can expect professional service, highly experienced guides, comfortable accommodations tailored to your budget, and well-maintained 4x4 safari vehicles. We handle all logistics—from airport transfers to park fees—so you can focus on enjoying the wildlife and stunning landscapes."
   },
   {

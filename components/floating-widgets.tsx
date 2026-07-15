@@ -1,5 +1,3 @@
-'use client'
-
 function WhatsAppIcon({ className }: { className?: string }) {
   return (
     <svg viewBox="0 0 32 32" className={className} aria-hidden="true">
@@ -12,11 +10,28 @@ function WhatsAppIcon({ className }: { className?: string }) {
   )
 }
 
-export function FloatingWidgets() {
+export async function FloatingWidgets() {
+  let settings = null;
+  try {
+    const rawUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api';
+    const apiUrl = rawUrl.endsWith('/api') ? rawUrl : `${rawUrl}/api`;
+    const res = await fetch(`${apiUrl}/settings`, {
+      next: { revalidate: 60 }
+    });
+    if (res.ok) {
+      settings = await res.json();
+    }
+  } catch (error) {
+    console.error("Failed to fetch contact settings for whatsapp widget:", error);
+  }
+
+  const phoneNumber = settings?.phoneNumber || "+254 705 794 254";
+  const whatsappNumber = phoneNumber.replace(/[^0-9]/g, '');
+
   return (
     <div className="fixed bottom-6 right-6 z-50">
       <a
-        href="https://wa.me/254705794254"
+        href={`https://wa.me/${whatsappNumber}`}
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat with us on WhatsApp"

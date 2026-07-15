@@ -3,15 +3,15 @@
 import { useState } from 'react'
 import { ChevronDown } from 'lucide-react'
 
-interface FaqItem {
+export interface FaqItem {
   question: string
   answer: string
   category: string
 }
 
-const faqData: FaqItem[] = [
+export const faqData: FaqItem[] = [
   {
-    question: 'What Destinations Does Uwanda Tours & Safaris Cover?',
+    question: 'What Destinations Does makagracetravel Tours & Safaris Cover?',
     answer:
       'We specialize in safari adventures across Tanzania\'s most spectacular national parks and game reserves, including the famous Serengeti Plains, Ngorongoro Crater, and Tarangire National Park, Nyerere NP, Mikumi NP, Ruaha NP, etc. Our tours also cover cultural experiences with local tribes.',
     category: 'Bookings',
@@ -23,7 +23,7 @@ const faqData: FaqItem[] = [
     category: 'Accommodation',
   },
   {
-    question: 'How Do I Book A Safari With Uwanda Tours?',
+    question: 'How Do I Book A Safari With makagracetravel Tours?',
     answer:
       'Booking is simple! You can reach out to us via our website contact form, email, or WhatsApp. Our team will work with you to create a personalized itinerary based on your preferences, budget, and travel dates. A deposit is required to confirm your booking.',
     category: 'Bookings',

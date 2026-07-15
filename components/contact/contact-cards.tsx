@@ -1,4 +1,24 @@
-export function ContactCards() {
+export async function ContactCards() {
+  let settings = null;
+  try {
+    const rawUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api';
+    const apiUrl = rawUrl.endsWith('/api') ? rawUrl : `${rawUrl}/api`;
+    const res = await fetch(`${apiUrl}/settings`, {
+      next: { revalidate: 60 } // Revalidate every minute
+    });
+    if (res.ok) {
+      settings = await res.json();
+    }
+  } catch (error) {
+    console.error("Failed to fetch contact settings:", error);
+  }
+
+  const officeLocation = settings?.officeLocation || "Nairobi, Kenya\n(office coming soon)";
+  const contactPerson = settings?.contactPerson || "Mary Kala";
+  const phoneNumber = settings?.phoneNumber || "+254 705 794 254";
+  const emailAddress = settings?.emailAddress || "makagraceholdings@gmail.com";
+  const workingHours = settings?.workingHours || "Monday – Sunday\n8:00 AM – 9:00 PM EAT";
+
   return (
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4 max-w-7xl">
@@ -16,8 +36,12 @@ export function ContactCards() {
             </div>
             <h3 className="text-[22px] font-sans font-bold text-safari-green-dark mb-4">Office Location</h3>
             <p className="text-gray-500 text-[15px] leading-relaxed">
-              Nairobi, Kenya<br />
-              (office coming soon)
+              {officeLocation.split('\n').map((line, i) => (
+                <span key={i}>
+                  {line}
+                  {i < officeLocation.split('\n').length - 1 && <br />}
+                </span>
+              ))}
             </p>
           </div>
 
@@ -32,8 +56,8 @@ export function ContactCards() {
             </div>
             <h3 className="text-[22px] font-sans font-bold text-safari-green-dark mb-4">Phone Number</h3>
             <p className="text-gray-500 text-[15px] leading-relaxed">
-              <span className="font-medium text-gray-700 block mb-1">Mary Kala</span>
-              <a href="tel:+254705794254" className="hover:text-safari-green transition-colors">+254 705 794 254</a>
+              <span className="font-medium text-gray-700 block mb-1">{contactPerson}</span>
+              <a href={`tel:${phoneNumber.replace(/\s+/g, '')}`} className="hover:text-safari-green transition-colors">{phoneNumber}</a>
             </p>
           </div>
 
@@ -49,7 +73,7 @@ export function ContactCards() {
             </div>
             <h3 className="text-[22px] font-sans font-bold text-safari-green-dark mb-4">Mail Address</h3>
             <p className="text-gray-500 text-[15px] leading-relaxed">
-              <a href="mailto:makagraceholdings@gmail.com" className="hover:text-safari-green transition-colors">makagraceholdings@gmail.com</a>
+              <a href={`mailto:${emailAddress}`} className="hover:text-safari-green transition-colors">{emailAddress}</a>
             </p>
           </div>
 
@@ -63,8 +87,12 @@ export function ContactCards() {
             </div>
             <h3 className="text-[22px] font-sans font-bold text-safari-green-dark mb-4">Working Hours</h3>
             <p className="text-gray-500 text-[15px] leading-relaxed">
-              Monday – Sunday<br />
-              8:00 AM – 9:00 PM EAT
+              {workingHours.split('\n').map((line, i) => (
+                <span key={i}>
+                  {line}
+                  {i < workingHours.split('\n').length - 1 && <br />}
+                </span>
+              ))}
             </p>
           </div>
 

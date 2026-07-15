@@ -5,9 +5,9 @@ import { TermsHero } from '@/components/terms/terms-hero'
 import { TermsContent } from '@/components/terms/terms-content'
 
 export const metadata = {
-  title: 'Terms & Conditions - Uwanda Tours & Safaris',
+  title: 'Terms & Conditions - makagracetravel Tours & Safaris',
   description:
-    'Read the terms and conditions for booking safaris with Uwanda Tours & Safaris including cancellation policies, payments, and travel insurance.',
+    'Read the terms and conditions for booking safaris with makagracetravel Tours & Safaris including cancellation policies, payments, and travel insurance.',
 }
 
 export default function TermsPage() {

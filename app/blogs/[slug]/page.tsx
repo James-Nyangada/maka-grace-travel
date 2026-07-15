@@ -13,13 +13,40 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     const res = await fetch(`${API}/api/blogs/slug/${slug}`);
     if (res.ok) {
       const blog = await res.json();
+      const title = `${blog.title} | Maka Grace Tours and Travel`;
+      const description = blog.excerpt || blog.content?.substring(0, 150) || 'Read the latest updates and stories from Maka Grace Tours and Travel.';
+      const ogImage = blog.thumbnailUrl || '/logo-maka-icon.png';
       return {
-        title: `${blog.title} - Uwanda Tours & Safaris`,
+        title,
+        description,
+        alternates: {
+          canonical: `/blogs/${slug}`,
+        },
+        openGraph: {
+          title,
+          description,
+          url: `https://www.makagracetours.com/blogs/${slug}`,
+          type: 'article',
+          images: [
+            {
+              url: ogImage,
+              width: 1200,
+              height: 630,
+              alt: blog.title,
+            },
+          ],
+        },
+        twitter: {
+          card: 'summary_large_image',
+          title,
+          description,
+          images: [ogImage],
+        },
       }
     }
   } catch (error) {}
   return {
-    title: 'Blog - Uwanda Tours & Safaris',
+    title: 'Blog | Maka Grace Tours and Travel',
   }
 }
 
@@ -43,10 +70,39 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
 
   const imageSrc = blog.thumbnailUrl || "/images/safari_lions.png";
 
+  const schema = blog ? {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": blog.title,
+    "image": [
+      blog.thumbnailUrl || "https://www.makagracetours.com/logo-maka-icon.png"
+    ],
+    "datePublished": blog.createdAt || new Date().toISOString(),
+    "dateModified": blog.updatedAt || blog.createdAt || new Date().toISOString(),
+    "author": [{
+      "@type": "Person",
+      "name": blog.author?.name || "Maka Grace Tours and Travel"
+    }],
+    "publisher": {
+      "@type": "Organization",
+      "name": "Maka Grace Tours and Travel",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.makagracetours.com/logo-maka-icon.png"
+      }
+    }
+  } : null;
+
   return (
     <>
       <SiteHeader />
       <main>
+        {schema && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+          />
+        )}
         <BlogHero 
           breadcrumbs={[
             { label: 'Home', href: '/' },

@@ -6,7 +6,7 @@ import { ServicesContent } from '@/components/services/services-content'
 import { TailorCta } from '@/components/tailor-cta'
 
 export const metadata = {
-  title: 'Our Services - Uwanda Tours & Safaris',
+  title: 'Our Services - makagracetravel Tours & Safaris',
   description: 'Explore our wide range of services including wildlife safaris, beach holidays, flight ticketing, visa assistance, and corporate travel.',
 }
 

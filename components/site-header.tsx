@@ -119,6 +119,7 @@ export function SiteHeader() {
         {/* Top bar */}
         <div className="bg-safari-green text-white">
           <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 lg:px-8">
+            {/*
             <div className="flex items-center gap-4">
               <a href="#" aria-label="Facebook" className="transition-opacity hover:opacity-75">
                 <FacebookIcon className="h-4 w-4" />
@@ -133,6 +134,7 @@ export function SiteHeader() {
                 <XIcon className="h-3.5 w-3.5" />
               </a>
             </div>
+            */}
             <div className="hidden items-center gap-8 text-sm font-semibold md:flex">
               <a href="mailto:info@makagracetravel.co.ke" className="flex items-center gap-2 transition-opacity hover:opacity-75">
                 <Mail className="h-4 w-4" />

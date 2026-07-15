@@ -7,8 +7,8 @@ import { BlogSidebar } from '@/components/blogs/blog-sidebar'
 import { TailorCta } from '@/components/tailor-cta'
 
 export const metadata = {
-  title: 'Our Insights - Uwanda Tours & Safaris',
-  description: 'Read the latest travel tips, safari guides, and insights from Uwanda Tours & Safaris.',
+  title: 'Our Insights - makagracetravel Tours & Safaris',
+  description: 'Read the latest travel tips, safari guides, and insights from makagracetravel Tours & Safaris.',
 }
 
 export default function BlogsPage() {

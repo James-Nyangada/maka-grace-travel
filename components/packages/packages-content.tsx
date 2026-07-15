@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useMemo, useCallback } from 'react'
+import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import { MapPin, ArrowRight, ChevronRight, TreePine, Calendar, ChevronsRight, ChevronLeft, SlidersHorizontal, X, SearchX } from 'lucide-react'
 import { Package } from '@/lib/types'
@@ -49,10 +50,15 @@ export function PackagesContent({ initialPackages = [] }: { initialPackages?: Pa
     return { min: Math.floor(Math.min(...prices)), max: Math.ceil(Math.max(...prices)) }
   }, [initialPackages])
 
+  const searchParams = useSearchParams()
+  const initDest = searchParams.get('destination') || 'all'
+  const initCat = searchParams.get('category') || 'all'
+  const initDays = searchParams.get('days') || 'all'
+
   /* ── filter state ── */
-  const [selectedDestination, setSelectedDestination] = useState('all')
-  const [selectedCategory, setSelectedCategory] = useState('all')
-  const [selectedDays, setSelectedDays] = useState('all')
+  const [selectedDestination, setSelectedDestination] = useState(initDest)
+  const [selectedCategory, setSelectedCategory] = useState(initCat)
+  const [selectedDays, setSelectedDays] = useState(initDays)
   const [priceMin, setPriceMin] = useState(priceRange.min)
   const [priceMax, setPriceMax] = useState(priceRange.max)
   const [sortBy, setSortBy] = useState('popular')
@@ -60,9 +66,9 @@ export function PackagesContent({ initialPackages = [] }: { initialPackages?: Pa
 
   // "Applied" state — only updates when Apply is clicked
   const [appliedFilters, setAppliedFilters] = useState({
-    destination: 'all',
-    category: 'all',
-    days: 'all',
+    destination: initDest,
+    category: initCat,
+    days: initDays,
     priceMin: priceRange.min,
     priceMax: priceRange.max,
   })

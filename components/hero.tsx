@@ -1,6 +1,8 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { useRouter } from 'next/navigation'
+import Image from 'next/image'
 import { Check, MapPin, Clock3, Search, ChevronDown } from 'lucide-react'
 
 const features = ['Expert Local Guides', 'Tailored Safari Experiences', 'Sustainable & Ethical Tourism']
@@ -12,7 +14,11 @@ const heroImages = [
 ]
 
 export function Hero() {
+  const router = useRouter()
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const [destination, setDestination] = useState('all')
+  const [category, setCategory] = useState('all')
+  const [days, setDays] = useState('all')
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -21,19 +27,35 @@ export function Hero() {
     return () => clearInterval(interval)
   }, [])
 
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault()
+    const params = new URLSearchParams()
+    if (destination !== 'all') params.set('destination', destination)
+    if (category !== 'all') params.set('category', category)
+    if (days !== 'all') params.set('days', days)
+    
+    router.push(`/packages?${params.toString()}`)
+  }
+
   return (
     <section className="relative min-h-[640px] overflow-hidden lg:min-h-[720px]" aria-label="Hero">
       {/* Background Carousel */}
       {heroImages.map((src, index) => (
         <div
           key={src}
-          className={`absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ease-in-out ${
+          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
             index === currentImageIndex ? 'opacity-100' : 'opacity-0'
           }`}
-          style={{ backgroundImage: `url('${src}')` }}
-          role="img"
-          aria-label="Safari scene in Kenya"
-        />
+        >
+          <Image
+            src={src}
+            alt="Safari scene in Kenya"
+            fill
+            className="object-cover"
+            priority={index === 0}
+            quality={90}
+          />
+        </div>
       ))}
       <div className="absolute inset-0 bg-black/35" />
 
@@ -79,40 +101,80 @@ export function Hero() {
       <div className="absolute inset-x-4 bottom-8 z-10 mx-auto max-w-5xl lg:inset-x-8">
         <form
           className="flex flex-col gap-2 rounded-md bg-white p-4 shadow-2xl md:flex-row md:items-stretch md:gap-0 md:p-5"
-          onSubmit={(e) => e.preventDefault()}
+          onSubmit={handleSearch}
           aria-label="Search safaris"
         >
-          <div className="flex flex-1 items-center justify-between gap-3 border-border px-3 py-2 md:border-r">
-            <div className="flex items-center gap-3">
+          <div className="relative flex flex-1 items-center border-border px-3 py-2 md:border-r">
+            <div className="flex items-center gap-3 w-full">
               <MapPin className="h-5 w-5 shrink-0 text-safari-green" />
-              <div className="text-left">
+              <div className="flex flex-col w-full relative pr-4">
                 <p className="text-base font-bold text-safari-ink">Destination</p>
-                <p className="text-sm text-muted-foreground">Where would you like to go?</p>
+                <select 
+                  value={destination}
+                  onChange={(e) => setDestination(e.target.value)}
+                  className="w-full text-sm text-muted-foreground bg-transparent focus:outline-none appearance-none cursor-pointer outline-none"
+                >
+                  <option value="all">Where would you like to go?</option>
+                  <option value="Amboseli">Amboseli</option>
+                  <option value="Lake Nakuru">Lake Nakuru</option>
+                  <option value="Masai Mara">Masai Mara</option>
+                  <option value="Samburu">Samburu</option>
+                  <option value="Tsavo">Tsavo</option>
+                </select>
               </div>
             </div>
-            <ChevronDown className="h-4 w-4 text-safari-ink" />
+            <ChevronDown className="h-4 w-4 text-safari-ink pointer-events-none absolute right-3" />
           </div>
-          <div className="flex flex-1 items-center justify-between gap-3 border-border px-3 py-2 md:border-r">
-            <div className="flex items-center gap-3">
+          <div className="relative flex flex-1 items-center border-border px-3 py-2 md:border-r">
+            <div className="flex items-center gap-3 w-full">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-5 w-5 shrink-0 text-safari-green" aria-hidden="true">
                 <path d="M3 17h18M5 17V9a2 2 0 012-2h6a2 2 0 012 2v8M15 11h4a2 2 0 012 2v4M7 17v2M17 17v2" />
               </svg>
-              <div className="text-left">
+              <div className="flex flex-col w-full relative pr-4">
                 <p className="text-base font-bold text-safari-ink">Safari Comfort</p>
-                <p className="text-sm text-muted-foreground">Budget / Mid-range / Luxury</p>
+                <select
+                  value={category}
+                  onChange={(e) => setCategory(e.target.value)}
+                  className="w-full text-sm text-muted-foreground bg-transparent focus:outline-none appearance-none cursor-pointer outline-none"
+                >
+                  <option value="all">Budget / Mid-range / Luxury</option>
+                  <option value="Budget">Budget</option>
+                  <option value="Mid-range">Mid-range</option>
+                  <option value="Luxury">Luxury</option>
+                </select>
               </div>
             </div>
-            <ChevronDown className="h-4 w-4 text-safari-ink" />
+            <ChevronDown className="h-4 w-4 text-safari-ink pointer-events-none absolute right-3" />
           </div>
-          <div className="flex flex-1 items-center justify-between gap-3 px-3 py-2">
-            <div className="flex items-center gap-3">
+          <div className="relative flex flex-1 items-center px-3 py-2">
+            <div className="flex items-center gap-3 w-full">
               <Clock3 className="h-5 w-5 shrink-0 text-safari-green" />
-              <div className="text-left">
+              <div className="flex flex-col w-full relative pr-4">
                 <p className="text-base font-bold text-safari-ink">Days</p>
-                <p className="text-sm text-muted-foreground">How many days?</p>
+                <select
+                  value={days}
+                  onChange={(e) => setDays(e.target.value)}
+                  className="w-full text-sm text-muted-foreground bg-transparent focus:outline-none appearance-none cursor-pointer outline-none"
+                >
+                  <option value="all">How many days?</option>
+                  <option value="1">1 Day</option>
+                  <option value="2">2 Days</option>
+                  <option value="3">3 Days</option>
+                  <option value="4">4 Days</option>
+                  <option value="5">5 Days</option>
+                  <option value="6">6 Days</option>
+                  <option value="7">7 Days</option>
+                  <option value="8">8 Days</option>
+                  <option value="9">9 Days</option>
+                  <option value="10">10 Days</option>
+                  <option value="11">11 Days</option>
+                  <option value="12">12 Days</option>
+                  <option value="13">13 Days</option>
+                  <option value="14">14 Days</option>
+                </select>
               </div>
             </div>
-            <ChevronDown className="h-4 w-4 text-safari-ink" />
+            <ChevronDown className="h-4 w-4 text-safari-ink pointer-events-none absolute right-3" />
           </div>
           <button
             type="submit"

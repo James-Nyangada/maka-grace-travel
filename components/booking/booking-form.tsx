@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
 import { api } from '@/lib/api'
 import {
@@ -23,15 +23,7 @@ import {
 
 /* ─────────────────────────── data ─────────────────────────── */
 
-const packages = [
-  '3-Day Flight Package Zanzibar to Nyerere Private',
-  '2-Day Flying Zanzibar to Nyerere National Park',
-  '1-Day Game Drive Safari Flying Zanzibar To Nyerere NP (Selous GR)',
-  '8-Day Amazing Safari Mikumi NP, Ruaha NP, Selous GR (Nyerere NP)',
-  '2-Day Zanzibar to Serengeti by Flight + 2 Game Drive',
-  '3-Day Flight Package Zanzibar to Serengeti National Park',
-  'Custom / Tailor-Made Safari',
-]
+// Packages are now fetched dynamically from the API
 
 const hearAboutOptions = ['Google', 'Social Media', 'Referral', 'Travel Blog', 'TripAdvisor', 'Other']
 
@@ -125,6 +117,30 @@ export function BookingForm({ prefilledPackageName, packageId, embedded }: Booki
   const [submitError, setSubmitError] = useState('')
   const [direction, setDirection] = useState<'forward' | 'backward'>('forward')
   const formRef = useRef<HTMLDivElement>(null)
+
+  const [fetchedPackages, setFetchedPackages] = useState<any[]>([])
+
+  // Fetch packages from the API
+  useEffect(() => {
+    const fetchPackages = async () => {
+      try {
+        const rawUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api';
+        const apiBaseUrl = rawUrl.endsWith('/api') ? rawUrl : `${rawUrl}/api`;
+        const res = await fetch(`${apiBaseUrl}/packages`);
+        const data = await res.json();
+        if (data.packages) {
+          setFetchedPackages(data.packages);
+        } else if (data.data) {
+          setFetchedPackages(data.data);
+        } else if (Array.isArray(data)) {
+          setFetchedPackages(data);
+        }
+      } catch (err) {
+        console.error('Failed to fetch packages:', err);
+      }
+    };
+    fetchPackages();
+  }, [])
 
   const isPackageLocked = !!prefilledPackageName
 
@@ -448,11 +464,12 @@ export function BookingForm({ prefilledPackageName, packageId, embedded }: Booki
                             className={`${selectCls} pl-10 ${errors.packageInterest ? 'border-red-400 focus:border-red-500 focus:ring-red-200' : ''}`}
                           >
                             <option value="">— Select a package —</option>
-                            {packages.map((p) => (
-                              <option key={p} value={p}>
-                                {p}
+                            {fetchedPackages.map((p) => (
+                              <option key={p._id || p.name || p.title} value={p.name || p.title}>
+                                {p.name || p.title}
                               </option>
                             ))}
+                            <option value="Custom / Tailor-Made Safari">Custom / Tailor-Made Safari</option>
                           </select>
                           <ChevronRight className="absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 rotate-90 text-muted-foreground/50 pointer-events-none" />
                         </>
@@ -691,7 +708,7 @@ export function BookingForm({ prefilledPackageName, packageId, embedded }: Booki
                       <Link href="/terms" className="text-safari-green font-semibold underline underline-offset-2 hover:text-safari-green-dark" target="_blank">
                         Terms &amp; Conditions
                       </Link>{' '}
-                      of Uwanda Tours &amp; Safaris. <span className="text-red-500">*</span>
+                      of makagracetravel Tours &amp; Safaris. <span className="text-red-500">*</span>
                     </span>
                   </label>
                   {errors.agreeTerms && <p className="mt-1 text-xs text-red-500 ml-8">{errors.agreeTerms}</p>}

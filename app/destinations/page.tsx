@@ -6,7 +6,7 @@ import { DestinationsContent } from '@/components/destinations/destinations-cont
 import { TailorCta } from '@/components/tailor-cta'
 
 export const metadata = {
-  title: 'Destinations - Uwanda Tours & Safaris',
+  title: 'Destinations - makagracetravel Tours & Safaris',
   description: 'Explore our top destinations in Kenya including the Maasai Mara, Amboseli, Tsavo, and pristine coastal beaches.',
 }
 
