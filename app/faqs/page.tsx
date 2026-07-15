@@ -2,7 +2,7 @@ import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 import { FloatingWidgets } from '@/components/floating-widgets'
 import { FaqsContent } from './faqs-content'
-import { faqData } from '@/components/faqs/faq-accordion'
+import { faqData } from '@/lib/faq-data'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
