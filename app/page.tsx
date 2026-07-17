@@ -1,5 +1,6 @@
 import { SiteHeader } from '@/components/site-header'
 import { Hero } from '@/components/hero'
+import { TrustSection } from '@/components/trust-section'
 import { AboutSection } from '@/components/about-section'
 import { PackagesSection } from '@/components/packages-section'
 import { ExperienceSection } from '@/components/experience-section'
@@ -18,6 +19,7 @@ export default function Page() {
       <SiteHeader />
       <main>
         <Hero />
+        <TrustSection />
         <AboutSection />
         <PackagesSection />
         <ExperienceSection />
