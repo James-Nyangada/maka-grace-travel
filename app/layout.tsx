@@ -18,17 +18,24 @@ const grandHotel = Grand_Hotel({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.makagracetours.com'),
+  metadataBase: new URL('https://www.makagracetravel.co.ke'),
   title: {
     default: 'Maka Grace Tours and Travel | Premier Kenya Safaris & Holidays',
     template: '%s | Maka Grace Tours and Travel'
   },
   description:
     'Discover the magic of Kenya with Maka Grace Tours and Travel. We offer expert-guided safaris, custom itineraries, and unforgettable adventures across the Maasai Mara, Amboseli, and beyond.',
+  keywords: [
+"Kenya safari packages", "tailor-made Kenya safari",
+    "Maasai Mara tours", "Diani Beach holiday Kenya",
+    "Kenya travel agency", "Nairobi airport transfer",
+    "affordable Kenya tour packages", "Mount Kenya hiking",
+    "Kenya travel packages 2026", "Maka Grace Tours",
+  ], 
   openGraph: {
     type: 'website',
     locale: 'en_KE',
-    url: 'https://www.makagracetours.com',
+    url: 'https://www.makagracetravel.co.ke',
     siteName: 'Maka Grace Tours and Travel',
     images: [
       {
