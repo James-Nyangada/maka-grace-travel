@@ -2,33 +2,56 @@
 
 import posthog from 'posthog-js';
 import { PostHogProvider as PHProvider } from 'posthog-js/react';
-import { usePathname } from 'next/navigation';
-import { useEffect } from 'react';
+import { usePathname, useSearchParams } from 'next/navigation';
+import { useEffect, Suspense } from 'react';
 
 if (typeof window !== 'undefined' && process.env.NEXT_PUBLIC_POSTHOG_KEY) {
-  posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY, {
+  posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY!, {
     api_host: process.env.NEXT_PUBLIC_POSTHOG_HOST || 'https://us.i.posthog.com',
-    person_profiles: 'identified_only',
+    person_profiles: 'always',
     capture_pageview: false,
     capture_pageleave: true,
     autocapture: true,
+    persistence: 'localStorage+cookie',
+    loaded: (posthog) => {
+      if (process.env.NODE_ENV === 'development') {
+        console.log('[PostHog] Initialized successfully. Distinct ID:', posthog.get_distinct_id());
+      }
+    },
   });
 }
 
-export function PostHogProvider({ children }: { children: React.ReactNode }) {
+function PostHogPageView() {
   const pathname = usePathname();
+  const searchParams = useSearchParams();
 
   useEffect(() => {
-    if (pathname && process.env.NEXT_PUBLIC_POSTHOG_KEY) {
+    if (pathname && posthog) {
+      let url = window.location.origin + pathname;
+      const search = searchParams?.toString();
+      if (search) {
+        url += '?' + search;
+      }
       posthog.capture('$pageview', {
-        $current_url: window.location.href,
+        $current_url: url,
       });
     }
-  }, [pathname]);
+  }, [pathname, searchParams]);
 
+  return null;
+}
+
+export function PostHogProvider({ children }: { children: React.ReactNode }) {
   if (!process.env.NEXT_PUBLIC_POSTHOG_KEY) {
     return <>{children}</>;
   }
 
-  return <PHProvider client={posthog}>{children}</PHProvider>;
+  return (
+    <PHProvider client={posthog}>
+      <Suspense fallback={null}>
+        <PostHogPageView />
+      </Suspense>
+      {children}
+    </PHProvider>
+  );
 }
