@@ -23,6 +23,7 @@ export interface Package {
   duration: string;
   groupSize: string;
   priceFrom: number;
+  priceFromKSH?: number;
   currency: string;
   badge: 'popular' | 'limited' | 'new' | 'null' | null | '';
   overview: string;
@@ -49,6 +50,7 @@ export interface Package {
   pricing?: {
     title: string;
     price: number;
+    priceKSH?: number;
   }[];
   createdAt: string;
   updatedAt: string;

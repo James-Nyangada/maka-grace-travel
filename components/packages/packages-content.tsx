@@ -427,6 +427,11 @@ export function PackagesContent({ initialPackages = [] }: { initialPackages?: Pa
                         <div className="group-hover:scale-105 transition-transform duration-500 w-full h-full relative">
                           <ImageCarousel images={[pkg.imageUrl, ...(pkg.galleryUrls || [])]} altText={pkg.name} />
                         </div>
+                        {pkg.status === 'on-offer' && (
+                          <div className="absolute top-4 left-4 bg-[#D4AF37] text-white px-3 py-1 text-xs font-bold rounded-sm shadow-md z-10">
+                            On offer
+                          </div>
+                        )}
                       </div>
                       <div className="flex flex-col flex-grow p-6 pt-6 relative">
                         <div className="absolute -top-4 right-4 bg-white px-4 py-1.5 text-sm font-semibold text-safari-ink shadow-md rounded-sm border border-border/10 z-10">
@@ -451,7 +456,7 @@ export function PackagesContent({ initialPackages = [] }: { initialPackages?: Pa
                         
                         <div className="mt-auto pt-5 border-t border-border/50 flex items-center justify-between">
                           <p className="text-sm text-muted-foreground">
-                            Starting From <span className="text-lg font-bold text-safari-green">{pkg.currency || 'USD'} {pkg.priceFrom?.toLocaleString()}</span>
+                            Starting From <span className="text-lg font-bold text-safari-green">${pkg.priceFrom?.toLocaleString()} {pkg.priceFromKSH ? `| KSH ${pkg.priceFromKSH.toLocaleString()}` : ''}</span>
                           </p>
                           <Link href={`/packages/${pkg.slug}`} aria-label={`View ${pkg.name}`} className="group/btn flex items-center text-safari-green">
                             <span className="block h-px w-12 bg-safari-green transition-all group-hover/btn:w-16" />

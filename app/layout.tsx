@@ -65,7 +65,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`light bg-background ${quicksand.variable} ${grandHotel.variable}`}>
+    <html lang="en" className={`light bg-background ${quicksand.variable} ${grandHotel.variable}`} suppressHydrationWarning>
       <body className="font-sans antialiased">
         <PostHogProvider>
           {children}

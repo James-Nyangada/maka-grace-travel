@@ -32,11 +32,12 @@ export function AboutSection() {
                 src="/images/cheetah-tree.png"
                 alt="Cheetah sitting beside a tree in the savanna"
                 fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 className="object-cover"
               />
             </div>
             <div className="absolute bottom-0 right-0 h-[400px] w-[64%] overflow-hidden shadow-xl">
-              <Image src="/images/lion.png" alt="Male lion walking through golden grass" fill className="object-cover" />
+              <Image src="/images/lion.png" alt="Male lion walking through golden grass" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover" />
             </div>
             {/* Experience badge */}
             <div className="absolute bottom-24 left-16 z-10 w-40 border border-dashed border-safari-gold bg-white p-5 text-center shadow-lg sm:left-24">

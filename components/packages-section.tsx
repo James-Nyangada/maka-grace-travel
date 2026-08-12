@@ -55,6 +55,11 @@ export async function PackagesSection() {
             <article key={pkg._id} className="relative z-10 flex flex-col bg-white p-3 shadow-sm">
               <div className="relative h-60 w-full overflow-hidden bg-muted">
                 <ImageCarousel images={[pkg.imageUrl, ...(pkg.galleryUrls || [])]} altText={pkg.name} />
+                {pkg.status === 'on-offer' && (
+                  <span className="absolute top-3 left-3 bg-[#D4AF37] px-3 py-1 text-xs font-bold text-white shadow rounded-sm z-10">
+                    On offer
+                  </span>
+                )}
                 <span className="absolute bottom-3 right-3 bg-white px-4 py-1.5 text-sm font-semibold text-safari-ink shadow">
                   {pkg.category}
                 </span>
@@ -73,7 +78,7 @@ export async function PackagesSection() {
                 </p>
                 <div className="mt-auto pt-5 flex items-center justify-between border-t border-border">
                   <p className="text-sm text-muted-foreground mt-5">
-                    Starting From <span className="text-lg font-bold text-safari-green">{pkg.currency || 'USD'} {pkg.priceFrom}</span>
+                    Starting From <span className="text-lg font-bold text-safari-green">${pkg.priceFrom?.toLocaleString()} {pkg.priceFromKSH ? `| KSH ${pkg.priceFromKSH.toLocaleString()}` : ''}</span>
                   </p>
                   <Link href={`/packages/${pkg.slug}`} aria-label={`View ${pkg.name}`} className="group flex items-center text-safari-green mt-5">
                     <span className="block h-px w-16 bg-safari-green transition-all group-hover:w-20" />

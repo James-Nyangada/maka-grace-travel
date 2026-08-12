@@ -21,7 +21,7 @@ export function PackagePricesTab({ packageData }: { packageData: Package }) {
         <div className="p-6 bg-[#f9f9f9] border border-border/40 rounded-lg text-center text-muted-foreground">
           <p>Pricing information is not currently available for this package.</p>
           {packageData.priceFrom ? (
-             <p className="mt-2">Prices start from <span className="font-bold text-safari-green">{formatPrice(packageData.priceFrom)}</span></p>
+             <p className="mt-2">Prices start from <span className="font-bold text-safari-green">{formatPrice(packageData.priceFrom)} {packageData.priceFromKSH ? `| KSH ${packageData.priceFromKSH.toLocaleString()}` : ''}</span></p>
           ) : null}
         </div>
       ) : (
@@ -30,14 +30,16 @@ export function PackagePricesTab({ packageData }: { packageData: Package }) {
             <thead>
               <tr className="bg-[#f9f9f9] text-safari-ink">
                 <th className="p-4 border-b border-r border-border/40">Season / Category</th>
-                <th className="p-4 border-b border-border/40">Price (Per Person)</th>
+                <th className="p-4 border-b border-r border-border/40">Price (USD)</th>
+                <th className="p-4 border-b border-border/40">Price (KSH)</th>
               </tr>
             </thead>
             <tbody className="text-muted-foreground">
               {pricing.map((item, index) => (
                 <tr key={index} className="border-b border-border/40">
                   <td className="p-4 border-r border-border/40 font-medium text-safari-ink">{item.title}</td>
-                  <td className="p-4 font-bold text-safari-green">{formatPrice(item.price)}</td>
+                  <td className="p-4 border-r border-border/40 font-bold text-safari-green">{formatPrice(item.price)}</td>
+                  <td className="p-4 font-bold text-safari-green">{item.priceKSH ? `KSH ${item.priceKSH.toLocaleString()}` : '-'}</td>
                 </tr>
               ))}
             </tbody>
