@@ -22,7 +22,7 @@ export default function BlogsPage() {
             { label: 'Home', href: '/' },
             { label: 'Blogs' }
           ]} 
-          imageSrc="/images/placeholder-safari.jpg" 
+          imageSrc="/images/safari_elephants.png" 
         />
         
         <section className="py-20 bg-[#F9F9F9] min-h-screen">
