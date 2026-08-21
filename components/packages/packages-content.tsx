@@ -441,8 +441,10 @@ export function PackagesContent({ initialPackages = [] }: { initialPackages?: Pa
                           <MapPin className="h-4 w-4 text-safari-green" />
                           {pkg.destination}
                         </p>
-                        <h3 className="text-xl font-bold leading-tight text-safari-ink mb-4 hover:text-safari-green transition-colors cursor-pointer">
-                          {pkg.name}
+                        <h3 className="text-xl font-bold leading-tight text-safari-ink mb-4 transition-colors">
+                          <Link href={`/packages/${pkg.slug}`} className="hover:text-safari-green">
+                            {pkg.name}
+                          </Link>
                         </h3>
                         
                         <ul className="space-y-2 mb-6">

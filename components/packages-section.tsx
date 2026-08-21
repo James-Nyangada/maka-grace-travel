@@ -69,7 +69,11 @@ export async function PackagesSection() {
                   <MapPin className="h-4 w-4 text-safari-green" />
                   {pkg.destination} {pkg.duration ? `— ${pkg.duration}` : ''}
                 </p>
-                <h3 className="mt-3 text-xl font-bold leading-snug text-safari-ink">{pkg.name}</h3>
+                <h3 className="mt-3 text-xl font-bold leading-snug text-safari-ink">
+                  <Link href={`/packages/${pkg.slug}`} className="hover:text-safari-green transition-colors">
+                    {pkg.name}
+                  </Link>
+                </h3>
                 <p className="mt-4 flex items-start gap-2 text-safari-green">
                   <svg viewBox="0 0 24 24" fill="currentColor" className="mt-1 h-5 w-5 shrink-0" aria-hidden="true">
                     <path d="M4 6h6v6c0 3-2 5-5 6l-1-2c2-.7 3-1.8 3-4H4V6zm10 0h6v6c0 3-2 5-5 6l-1-2c2-.7 3-1.8 3-4h-3V6z" />
