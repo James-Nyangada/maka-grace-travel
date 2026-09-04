@@ -27,6 +27,7 @@ export interface Package {
   currency: string;
   badge: 'popular' | 'limited' | 'new' | 'null' | null | '';
   overview: string;
+  packageType?: 'Public' | 'Private';
   highlights?: string[];
   packageActivities?: string[];
   itinerary: {

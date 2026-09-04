@@ -6,6 +6,7 @@ import Link from 'next/link'
 import { MapPin, ArrowRight, ChevronRight, TreePine, Calendar, ChevronsRight, ChevronLeft, SlidersHorizontal, X, SearchX } from 'lucide-react'
 import { Package } from '@/lib/types'
 import { ImageCarousel } from '@/components/image-carousel'
+import { BookingModal } from '@/components/booking/booking-modal'
 
 /* ─────────────── helpers ─────────────── */
 
@@ -63,6 +64,7 @@ export function PackagesContent({ initialPackages = [] }: { initialPackages?: Pa
   const [priceMax, setPriceMax] = useState(priceRange.max)
   const [sortBy, setSortBy] = useState('popular')
   const [currentPage, setCurrentPage] = useState(1)
+  const [bookingPackage, setBookingPackage] = useState<Package | null>(null)
 
   // "Applied" state — only updates when Apply is clicked
   const [appliedFilters, setAppliedFilters] = useState({
@@ -310,7 +312,13 @@ export function PackagesContent({ initialPackages = [] }: { initialPackages?: Pa
 
 
   return (
-    <section className="py-20 bg-safari-cream">
+    <>
+      <BookingModal 
+        isOpen={!!bookingPackage} 
+        onClose={() => setBookingPackage(null)} 
+        packageData={bookingPackage} 
+      />
+      <section className="py-20 bg-safari-cream">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         <div className="flex flex-col lg:flex-row gap-8">
           
@@ -437,6 +445,16 @@ export function PackagesContent({ initialPackages = [] }: { initialPackages?: Pa
                         <div className="absolute -top-4 right-4 bg-white px-4 py-1.5 text-sm font-semibold text-safari-ink shadow-md rounded-sm border border-border/10 z-10">
                           {pkg.category}
                         </div>
+                        {pkg.packageType === 'Private' && (
+                          <div className="absolute -top-4 right-32 bg-safari-ink text-white px-4 py-1.5 text-sm font-semibold shadow-md rounded-sm z-10">
+                            Private
+                          </div>
+                        )}
+                        {pkg.packageType === 'Public' && (
+                          <div className="absolute -top-4 right-32 bg-safari-green text-white px-4 py-1.5 text-sm font-semibold shadow-md rounded-sm z-10">
+                            Public
+                          </div>
+                        )}
                         <p className="flex items-center gap-2 text-xs font-bold text-muted-foreground uppercase tracking-wider mb-3">
                           <MapPin className="h-4 w-4 text-safari-green" />
                           {pkg.destination}
@@ -456,14 +474,22 @@ export function PackagesContent({ initialPackages = [] }: { initialPackages?: Pa
                           ))}
                         </ul>
                         
-                        <div className="mt-auto pt-5 border-t border-border/50 flex items-center justify-between">
-                          <p className="text-sm text-muted-foreground">
-                            Starting From <span className="text-lg font-bold text-safari-green">${pkg.priceFrom?.toLocaleString()} {pkg.priceFromKSH ? `| KSH ${pkg.priceFromKSH.toLocaleString()}` : ''}</span>
-                          </p>
-                          <Link href={`/packages/${pkg.slug}`} aria-label={`View ${pkg.name}`} className="group/btn flex items-center text-safari-green">
-                            <span className="block h-px w-12 bg-safari-green transition-all group-hover/btn:w-16" />
-                            <ArrowRight className="-ml-1 h-5 w-5" />
-                          </Link>
+                        <div className="mt-auto pt-5 border-t border-border/50 flex flex-col gap-4">
+                          <div className="flex items-center justify-between">
+                            <p className="text-sm text-muted-foreground">
+                              Starting From <span className="text-lg font-bold text-safari-green">${pkg.priceFrom?.toLocaleString()} {pkg.priceFromKSH ? `| KSH ${pkg.priceFromKSH.toLocaleString()}` : ''}</span>
+                            </p>
+                            <Link href={`/packages/${pkg.slug}`} aria-label={`View ${pkg.name}`} className="group/btn flex items-center text-safari-green">
+                              <span className="block h-px w-12 bg-safari-green transition-all group-hover/btn:w-16" />
+                              <ArrowRight className="-ml-1 h-5 w-5" />
+                            </Link>
+                          </div>
+                          <button
+                            onClick={() => setBookingPackage(pkg)}
+                            className="w-full bg-safari-green hover:bg-safari-green-dark text-white font-bold py-2.5 rounded-md transition-colors text-sm"
+                          >
+                            Request Quote
+                          </button>
                         </div>
                       </div>
                     </article>
@@ -513,5 +539,6 @@ export function PackagesContent({ initialPackages = [] }: { initialPackages?: Pa
         </div>
       </div>
     </section>
+    </>
   )
 }
