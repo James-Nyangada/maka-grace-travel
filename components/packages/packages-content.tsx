@@ -474,22 +474,31 @@ export function PackagesContent({ initialPackages = [] }: { initialPackages?: Pa
                           ))}
                         </ul>
                         
-                        <div className="mt-auto pt-5 border-t border-border/50 flex flex-col gap-4">
-                          <div className="flex items-center justify-between">
-                            <p className="text-sm text-muted-foreground">
-                              Starting From <span className="text-lg font-bold text-safari-green">${pkg.priceFrom?.toLocaleString()} {pkg.priceFromKSH ? `| KSH ${pkg.priceFromKSH.toLocaleString()}` : ''}</span>
-                            </p>
-                            <Link href={`/packages/${pkg.slug}`} aria-label={`View ${pkg.name}`} className="group/btn flex items-center text-safari-green">
-                              <span className="block h-px w-12 bg-safari-green transition-all group-hover/btn:w-16" />
-                              <ArrowRight className="-ml-1 h-5 w-5" />
-                            </Link>
-                          </div>
-                          <button
-                            onClick={() => setBookingPackage(pkg)}
-                            className="w-full bg-safari-green hover:bg-safari-green-dark text-white font-bold py-2.5 rounded-md transition-colors text-sm"
-                          >
-                            Request Quote
-                          </button>
+                        <div className="mt-auto pt-5 border-t border-border/50">
+                          {pkg.priceFrom && pkg.priceFrom > 0 ? (
+                            <div className="flex items-center justify-between">
+                              <p className="text-sm text-muted-foreground">
+                                Starting From <span className="text-lg font-bold text-safari-green">${pkg.priceFrom?.toLocaleString()} {pkg.priceFromKSH ? `| KSH ${pkg.priceFromKSH.toLocaleString()}` : ''}</span>
+                              </p>
+                              <Link href={`/packages/${pkg.slug}`} aria-label={`View ${pkg.name}`} className="group/btn flex items-center text-safari-green">
+                                <span className="block h-px w-12 bg-safari-green transition-all group-hover/btn:w-16" />
+                                <ArrowRight className="-ml-1 h-5 w-5" />
+                              </Link>
+                            </div>
+                          ) : (
+                            <div className="flex items-center justify-between gap-4">
+                              <button
+                                onClick={() => setBookingPackage(pkg)}
+                                className="flex-1 bg-safari-green hover:bg-safari-green-dark text-white font-bold py-2.5 rounded-md transition-colors text-sm text-center"
+                              >
+                                Request Quote
+                              </button>
+                              <Link href={`/packages/${pkg.slug}`} aria-label={`View ${pkg.name}`} className="group/btn flex items-center text-safari-green shrink-0">
+                                <span className="block h-px w-8 bg-safari-green transition-all group-hover/btn:w-12" />
+                                <ArrowRight className="-ml-1 h-5 w-5" />
+                              </Link>
+                            </div>
+                          )}
                         </div>
                       </div>
                     </article>
