@@ -6,7 +6,7 @@ import Link from 'next/link'
 import { MapPin, ArrowRight, ChevronRight, TreePine, Calendar, ChevronsRight, ChevronLeft, SlidersHorizontal, X, SearchX } from 'lucide-react'
 import { Package } from '@/lib/types'
 import { ImageCarousel } from '@/components/image-carousel'
-import { BookingModal } from '@/components/booking/booking-modal'
+import { PackagePriceOrQuote } from '@/components/packages/package-price-or-quote'
 
 /* ─────────────── helpers ─────────────── */
 
@@ -64,7 +64,6 @@ export function PackagesContent({ initialPackages = [] }: { initialPackages?: Pa
   const [priceMax, setPriceMax] = useState(priceRange.max)
   const [sortBy, setSortBy] = useState('popular')
   const [currentPage, setCurrentPage] = useState(1)
-  const [bookingPackage, setBookingPackage] = useState<Package | null>(null)
 
   // "Applied" state — only updates when Apply is clicked
   const [appliedFilters, setAppliedFilters] = useState({
@@ -313,11 +312,6 @@ export function PackagesContent({ initialPackages = [] }: { initialPackages?: Pa
 
   return (
     <>
-      <BookingModal 
-        isOpen={!!bookingPackage} 
-        onClose={() => setBookingPackage(null)} 
-        packageData={bookingPackage} 
-      />
       <section className="py-20 bg-safari-cream">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         <div className="flex flex-col lg:flex-row gap-8">
@@ -474,32 +468,7 @@ export function PackagesContent({ initialPackages = [] }: { initialPackages?: Pa
                           ))}
                         </ul>
                         
-                        <div className="mt-auto pt-5 border-t border-border/50">
-                          {pkg.priceFrom && pkg.priceFrom > 0 ? (
-                            <div className="flex items-center justify-between">
-                              <p className="text-sm text-muted-foreground">
-                                Starting From <span className="text-lg font-bold text-safari-green">${pkg.priceFrom?.toLocaleString()} {pkg.priceFromKSH ? `| KSH ${pkg.priceFromKSH.toLocaleString()}` : ''}</span>
-                              </p>
-                              <Link href={`/packages/${pkg.slug}`} aria-label={`View ${pkg.name}`} className="group/btn flex items-center text-safari-green">
-                                <span className="block h-px w-12 bg-safari-green transition-all group-hover/btn:w-16" />
-                                <ArrowRight className="-ml-1 h-5 w-5" />
-                              </Link>
-                            </div>
-                          ) : (
-                            <div className="flex items-center justify-between gap-4">
-                              <button
-                                onClick={() => setBookingPackage(pkg)}
-                                className="flex-1 bg-safari-green hover:bg-safari-green-dark text-white font-bold py-2.5 rounded-md transition-colors text-sm text-center"
-                              >
-                                Request Quote
-                              </button>
-                              <Link href={`/packages/${pkg.slug}`} aria-label={`View ${pkg.name}`} className="group/btn flex items-center text-safari-green shrink-0">
-                                <span className="block h-px w-8 bg-safari-green transition-all group-hover/btn:w-12" />
-                                <ArrowRight className="-ml-1 h-5 w-5" />
-                              </Link>
-                            </div>
-                          )}
-                        </div>
+                        <PackagePriceOrQuote pkg={pkg} />
                       </div>
                     </article>
                   ))}

@@ -3,6 +3,7 @@ import { MapPin, ArrowRight, ArrowLeft } from 'lucide-react'
 import { api } from '@/lib/api'
 import { Package } from '@/lib/types'
 import { ImageCarousel } from '@/components/image-carousel'
+import { PackagePriceOrQuote } from '@/components/packages/package-price-or-quote'
 
 export async function PackagesSection() {
   let packages: Package[] = []
@@ -80,15 +81,7 @@ export async function PackagesSection() {
                   </svg>
                   <span className="text-sm font-medium leading-relaxed line-clamp-3">{pkg.overview}</span>
                 </p>
-                <div className="mt-auto pt-5 flex items-center justify-between border-t border-border">
-                  <p className="text-sm text-muted-foreground mt-5">
-                    Starting From <span className="text-lg font-bold text-safari-green">${pkg.priceFrom?.toLocaleString()} {pkg.priceFromKSH ? `| KSH ${pkg.priceFromKSH.toLocaleString()}` : ''}</span>
-                  </p>
-                  <Link href={`/packages/${pkg.slug}`} aria-label={`View ${pkg.name}`} className="group flex items-center text-safari-green mt-5">
-                    <span className="block h-px w-16 bg-safari-green transition-all group-hover:w-20" />
-                    <ArrowRight className="-ml-1 h-5 w-5" />
-                  </Link>
-                </div>
+                <PackagePriceOrQuote pkg={pkg} />
               </div>
             </article>
           ))}
