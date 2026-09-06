@@ -4,6 +4,7 @@ import { Quicksand, Grand_Hotel } from 'next/font/google'
 import './globals.css'
 import { PostHogProvider } from '@/components/providers/PostHogProvider'
 import { GlobalStructuredData } from '@/components/global-structured-data'
+import { FloatingBookingWidget } from '@/components/booking/floating-booking-widget'
 
 const quicksand = Quicksand({
   subsets: ['latin'],
@@ -71,6 +72,7 @@ export default function RootLayout({
           {children}
         </PostHogProvider>
         <GlobalStructuredData />
+        <FloatingBookingWidget />
       </body>
     </html>
   )

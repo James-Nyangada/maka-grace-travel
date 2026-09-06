@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { createPortal } from 'react-dom'
 import { X } from 'lucide-react'
 import { Package } from '@/lib/types'
 import { BookingForm } from './booking-form'
@@ -29,8 +30,8 @@ export function BookingModal({ isOpen, onClose, packageData }: BookingModalProps
   if (!mounted) return null
   if (!isOpen || !packageData) return null
 
-  return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 md:p-8">
+  return createPortal(
+    <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 sm:p-6 md:p-8">
       {/* Backdrop */}
       <div 
         className="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity"
@@ -63,6 +64,7 @@ export function BookingModal({ isOpen, onClose, packageData }: BookingModalProps
           />
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   )
 }
