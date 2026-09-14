@@ -81,7 +81,7 @@ const services = [
     image: '/images/person-lake.png',
   },
   {
-    title: 'Airport Transfers',
+    title: 'SUV',
     description: 'Reliable, punctual airport pick-up and drop-off across Kenya',
     icon: Car,
     image: '/images/airport_transfer_new.png',
