@@ -96,7 +96,7 @@ const services = [
     title: 'Visa Processing Assistance',
     description: 'Expert support and guidance for visa applications and international travel documentation',
     icon: FileCheck,
-    image: '/images/About-1.webp',
+    image: '/images/visa_processing.jpg',
   },
   {
     title: 'Travel Insurance',
