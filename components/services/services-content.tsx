@@ -36,7 +36,7 @@ const services = [
     title: 'Mountain Climbing & Hiking',
     description: 'Guided hikes and climbs including Mount Kenya and the Aberdare ranges',
     icon: Mountain,
-    image: '/images/safari-parallax-bg.png',
+    image: '/images/mountain_climbing.jpg',
   },
   {
     title: 'Cultural & Heritage Tours',
@@ -48,7 +48,7 @@ const services = [
     title: 'International Travel Packages',
     description: 'Full travel packages with flights and visas to destinations beyond Kenya',
     icon: Globe2,
-    image: '/images/balloons-hero.png',
+    image: '/images/international_travel.jpg',
   },
   {
     title: 'Honeymoon & Romance Packages',
@@ -60,7 +60,7 @@ const services = [
     title: 'Family Holiday Packages',
     description: 'Safe, fun, family-friendly itineraries for travellers of all ages',
     icon: Baby,
-    image: '/images/testimonial2.webp',
+    image: '/images/family_holiday.jpg',
   },
   {
     title: 'Group / School Trips',
@@ -72,7 +72,7 @@ const services = [
     title: 'Corporate Travel & Retreats',
     description: 'Professional travel management and retreat planning for businesses',
     icon: Briefcase,
-    image: '/images/About-2.webp',
+    image: '/images/corporate_travel.jpg',
   },
   {
     title: 'Weekend Getaways',
@@ -90,7 +90,7 @@ const services = [
     title: 'Air Ticketing & Flight Booking',
     description: 'Domestic and international flight bookings at competitive rates',
     icon: Ticket,
-    image: '/images/balloons.png',
+    image: '/images/flight_booking.jpg',
   },
   {
     title: 'Visa Processing Assistance',
@@ -102,13 +102,13 @@ const services = [
     title: 'Travel Insurance',
     description: 'Recommended travel insurance options to protect every trip',
     icon: ShieldCheck,
-    image: '/images/safari_elephants.png',
+    image: '/images/travel_insurance.jpg',
   },
   {
     title: 'Hotel & Accommodation Booking',
     description: 'Hotels, lodges, camps, and resorts sourced for every budget and preference',
     icon: Building,
-    image: '/images/safari_sunset.png',
+    image: '/images/hotel_accommodation.jpg',
   },
 ]
 
