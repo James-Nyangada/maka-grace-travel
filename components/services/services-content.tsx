@@ -84,7 +84,7 @@ const services = [
     title: 'Airport Transfers',
     description: 'Reliable, punctual airport pick-up and drop-off across Kenya',
     icon: Car,
-    image: '/images/jeep-hero.png',
+    image: '/images/airport_transfer_new.png',
   },
   {
     title: 'Air Ticketing & Flight Booking',

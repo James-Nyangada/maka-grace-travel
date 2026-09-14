@@ -256,8 +256,8 @@ export function TermsContent() {
                   info@makagracetraveltours.com
                 </a>{' '}
                 or call{' '}
-                <a href="tel:+255762378870" className="text-safari-green font-semibold hover:underline">
-                  +255 762 378 870
+                <a href="tel:+254 705 794254" className="text-safari-green font-semibold hover:underline">
+                  +254 705 794254
                 </a>
                 .
               </p>
