@@ -53,6 +53,11 @@ export const metadata: Metadata = {
     description: 'Discover the magic of Kenya with Maka Grace Tours and Travel.',
     images: ['/logo-maka-icon.png'],
   },
+  verification: {
+    other: {
+      'everyvisitor-verify': 'ps_7e338618da90cf97023314191cfad581',
+    },
+  },
   generator: 'v0.app',
 }
 
