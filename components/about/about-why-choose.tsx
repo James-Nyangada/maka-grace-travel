@@ -57,18 +57,18 @@ export function AboutWhyChoose() {
             
             {/* Green Badge Overlay */}
             <div className="absolute bottom-16 left-8 md:left-16 bg-safari-green rounded-[2rem] transform -rotate-[15deg] p-6 shadow-xl z-10 w-48 text-center flex flex-col items-center justify-center aspect-square">
-              <h4 className="font-script text-white text-4xl leading-tight transform rotate-[5deg]">
+              <p className="font-script text-white text-4xl leading-tight transform rotate-[5deg]">
                 Never stop
                 <br />
                 <span className="text-5xl">Exploring</span>
-              </h4>
+              </p>
             </div>
           </div>
 
           {/* Right Content */}
           <div className="space-y-10 lg:pl-12">
             <div className="space-y-2">
-              <h3 className="font-script text-3xl md:text-4xl text-safari-gold">Unmatched Experiences, Unforgettable Memories</h3>
+              <p className="font-script text-3xl md:text-4xl text-safari-gold">Unmatched Experiences, Unforgettable Memories</p>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-safari-ink">
                 Why Choose Us
               </h2>
@@ -84,7 +84,7 @@ export function AboutWhyChoose() {
                     {feature.icon}
                   </div>
                   <div>
-                    <h4 className="text-lg font-bold text-safari-ink mb-1">{feature.title}</h4>
+                    <h3 className="text-lg font-bold text-safari-ink mb-1">{feature.title}</h3>
                     <p className="text-muted-foreground text-sm leading-relaxed">{feature.description}</p>
                   </div>
                 </div>

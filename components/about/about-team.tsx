@@ -7,7 +7,7 @@ export function AboutTeam() {
     <section className="py-20 md:py-28 bg-background relative border-t border-border/40">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h3 className="font-script text-3xl md:text-4xl text-safari-gold mb-2">The People Behind Your Journey</h3>
+          <p className="font-script text-3xl md:text-4xl text-safari-gold mb-2">The People Behind Your Journey</p>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-safari-ink mb-6">
             Meet Our Team
           </h2>
@@ -28,7 +28,7 @@ export function AboutTeam() {
               />
             </div>
             <div className="p-6 md:p-8">
-              <h4 className="text-2xl font-bold text-safari-ink mb-1">Marykala</h4>
+              <h3 className="text-2xl font-bold text-safari-ink mb-1">Marykala</h3>
               <p className="text-safari-green font-medium mb-4">Founder & Travel Director</p>
               <p className="text-muted-foreground leading-relaxed text-sm mb-6">
                 Marykala is the heart of Maka Grace Tours and Travel. With a passion for sharing the beauty of Kenya with the world and a commitment to making every client feel truly cared for, she founded the agency with one mission: to make travel personal, seamless, and extraordinary. Available Monday to Sunday, 8 AM to 9 PM EAT &mdash; she is always just a call or WhatsApp away.

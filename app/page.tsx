@@ -29,8 +29,8 @@ export default function Page() {
         <QuoteCta />
         <BlogSection />
         <TailorCta />
-        <SiteFooter />
       </main>
+      <SiteFooter />
       <FloatingWidgets />
     </>
   )

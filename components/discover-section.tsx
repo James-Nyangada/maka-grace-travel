@@ -55,7 +55,7 @@ export function DiscoverSection() {
               href="/packages?category=Activities"
             />
             <div className="rounded-lg bg-safari-gold px-8 py-10 lg:px-10">
-              <h3 className="text-2xl font-bold text-safari-ink">Activities</h3>
+              <h3 className="text-2xl font-bold text-white">Activities</h3>
               <p className="mt-5 leading-relaxed text-white">
                 An adventure requires more than just a destination &mdash; it demands the right experience. From hot air balloon rides over the Maasai Mara and snorkelling in Diani&apos;s coral reefs to hiking the trails of Mount Kenya, we match you with activities that match your pace.
               </p>

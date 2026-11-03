@@ -16,7 +16,7 @@ export function FloatingBookingWidget() {
   if (!mounted) return null
 
   return createPortal(
-    <div className="fixed bottom-6 left-6 z-[9000] flex flex-col items-start">
+    <aside aria-label="Quick safari booking" className="fixed bottom-6 left-6 z-[9000] flex flex-col items-start">
       {/* Widget Panel */}
       {isOpen && (
         <div className="mb-4 w-[calc(100vw-3rem)] sm:w-[450px] max-h-[80vh] bg-white rounded-2xl shadow-2xl overflow-hidden flex flex-col border border-border animate-in slide-in-from-bottom-5 fade-in duration-300">
@@ -47,7 +47,7 @@ export function FloatingBookingWidget() {
             ? 'bg-gray-800 text-white hover:bg-gray-700'
             : 'bg-safari-green text-white hover:bg-safari-green-dark'
         }`}
-        aria-label="Open booking widget"
+        aria-label={isOpen ? 'Close booking widget' : 'Request Booking'}
       >
         {isOpen ? (
           <X className="h-6 w-6" />
@@ -58,7 +58,7 @@ export function FloatingBookingWidget() {
           </>
         )}
       </button>
-    </div>,
+    </aside>,
     document.body
   )
 }

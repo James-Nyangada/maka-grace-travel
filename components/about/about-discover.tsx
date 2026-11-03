@@ -13,7 +13,7 @@ export function AboutDiscover() {
                 <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
                    <path d="M17.5 2a5.5 5.5 0 0 0-5.5 5.5c0 1.25.4 2.4 1.08 3.33L9.25 14.66A2.5 2.5 0 0 0 5 15.5a2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5c0-.2-.04-.4-.1-.58l3.75-3.75c.92.68 2.08 1.08 3.33 1.08a5.5 5.5 0 0 0 5.5-5.5 5.5 5.5 0 0 0-5.5-5.5zm0 9c-1.93 0-3.5-1.57-3.5-3.5S15.57 4 17.5 4 21 5.57 21 7.5 19.43 11 17.5 11z"/>
                 </svg>
-                <h3 className="font-script text-3xl md:text-4xl text-safari-gold">Where Adventure Meets the Wild!</h3>
+                <p className="font-script text-3xl md:text-4xl text-safari-gold">Where Adventure Meets the Wild!</p>
               </div>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-safari-ink">
                 Discover The Wonders Of Kenya

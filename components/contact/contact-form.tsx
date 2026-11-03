@@ -15,37 +15,48 @@ export function ContactForm() {
           
           <form className="space-y-8 max-w-lg mx-auto">
             <div className="relative border-b border-gray-300 pb-3 group focus-within:border-safari-green transition-colors">
+              <label htmlFor="contact-name" className="sr-only">Your Name</label>
               <div className="absolute inset-y-0 left-0 flex items-center pointer-events-none text-gray-400 group-focus-within:text-safari-green pb-3 transition-colors">
                 <User className="w-5 h-5" />
               </div>
               <input 
+                id="contact-name"
+                name="name"
                 type="text" 
                 placeholder="Your Name*" 
                 required
-                className="w-full bg-transparent border-none pl-10 focus:outline-none focus:ring-0 text-safari-ink placeholder:text-gray-500 text-[15px]"
+                aria-required="true"
+                className="w-full bg-transparent border-none pl-10 focus:outline-none focus:ring-0 text-safari-ink placeholder:text-gray-600 text-[15px]"
               />
             </div>
             
             <div className="relative border-b border-gray-300 pb-3 group focus-within:border-safari-green transition-colors">
+              <label htmlFor="contact-email" className="sr-only">Email Address</label>
               <div className="absolute inset-y-0 left-0 flex items-center pointer-events-none text-gray-400 group-focus-within:text-safari-green pb-3 transition-colors">
                 <Mail className="w-5 h-5" />
               </div>
               <input 
+                id="contact-email"
+                name="email"
                 type="email" 
                 placeholder="Email Address*" 
                 required
-                className="w-full bg-transparent border-none pl-10 focus:outline-none focus:ring-0 text-safari-ink placeholder:text-gray-500 text-[15px]"
+                aria-required="true"
+                className="w-full bg-transparent border-none pl-10 focus:outline-none focus:ring-0 text-safari-ink placeholder:text-gray-600 text-[15px]"
               />
             </div>
 
             <div className="relative border-b border-gray-300 pb-3 group focus-within:border-safari-green transition-colors pt-2">
+              <label htmlFor="contact-message" className="sr-only">Your Message</label>
               <div className="absolute top-2 left-0 flex items-start pointer-events-none text-gray-400 group-focus-within:text-safari-green transition-colors">
                 <Edit3 className="w-5 h-5" />
               </div>
               <textarea 
+                id="contact-message"
+                name="message"
                 placeholder="Enter Your Message here" 
                 rows={4}
-                className="w-full bg-transparent border-none pl-10 focus:outline-none focus:ring-0 text-safari-ink placeholder:text-gray-500 text-[15px] resize-none"
+                className="w-full bg-transparent border-none pl-10 focus:outline-none focus:ring-0 text-safari-ink placeholder:text-gray-600 text-[15px] resize-none"
               ></textarea>
             </div>
 

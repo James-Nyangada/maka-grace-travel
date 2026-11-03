@@ -41,7 +41,7 @@ export function ReviewForm() {
     fetchPackages();
   }, [])
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
   }
 
@@ -92,7 +92,7 @@ export function ReviewForm() {
               <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-safari-green/10">
                 <Star className="h-8 w-8 fill-safari-green text-safari-green" />
               </div>
-              <h3 className="mt-6 text-2xl font-bold text-safari-ink">Thank you for your review!</h3>
+              <h2 className="mt-6 text-2xl font-bold text-safari-ink">Thank you for your review!</h2>
               <p className="mt-2 text-muted-foreground">
                 Your feedback has been submitted successfully. It will appear on our website once approved.
               </p>
@@ -199,7 +199,8 @@ export function ReviewForm() {
                         setFormData({ ...formData, rating: star });
                       }}
                       onMouseEnter={() => setHoveredStar(star)}
-                      className="focus:outline-none focus-visible:ring-2 focus-visible:ring-safari-gold"
+                      aria-label={`Rate ${star} star${star > 1 ? 's' : ''}`}
+                      className="focus:outline-none focus-visible:ring-2 focus-visible:ring-safari-gold p-1"
                     >
                       <Star
                         className={`pointer-events-none h-8 w-8 transition-colors ${

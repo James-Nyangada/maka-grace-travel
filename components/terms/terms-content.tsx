@@ -211,7 +211,7 @@ export function TermsContent() {
           {/* Sidebar */}
           <aside className="lg:w-72 shrink-0">
             <div className="sticky top-28">
-              <nav className="rounded-xl bg-white shadow-lg ring-1 ring-border overflow-hidden">
+              <nav aria-label="Terms of service navigation" className="rounded-xl bg-white shadow-lg ring-1 ring-border overflow-hidden">
                 {sidebarLinks.map((link) => (
                   <button
                     key={link.id}

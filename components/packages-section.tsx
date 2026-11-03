@@ -57,7 +57,7 @@ export async function PackagesSection() {
               <div className="relative h-60 w-full overflow-hidden bg-muted">
                 <ImageCarousel images={[pkg.imageUrl, ...(pkg.galleryUrls || [])]} altText={pkg.name} />
                 {pkg.status === 'on-offer' && (
-                  <span className="absolute top-3 left-3 bg-[#D4AF37] px-3 py-1 text-xs font-bold text-white shadow rounded-sm z-10">
+                  <span className="absolute top-3 left-3 bg-safari-green px-3 py-1 text-xs font-bold text-white shadow rounded-sm z-10">
                     On offer
                   </span>
                 )}

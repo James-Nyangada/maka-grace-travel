@@ -79,10 +79,10 @@ const initialForm: FormState = {
 
 /* ───────────────── reusable field wrappers ─────────────────── */
 
-function FieldGroup({ label, required, children, hint }: { label: string; required?: boolean; children: React.ReactNode; hint?: string }) {
+function FieldGroup({ id, label, required, children, hint }: { id?: string; label: string; required?: boolean; children: React.ReactNode; hint?: string }) {
   return (
     <div className="group">
-      <label className="block text-sm font-bold text-safari-ink mb-1.5">
+      <label htmlFor={id} className="block text-sm font-bold text-safari-ink mb-1.5">
         {label}
         {required && <span className="text-red-500 ml-0.5">*</span>}
       </label>
@@ -372,10 +372,11 @@ export function BookingForm({ prefilledPackageName, packageId, embedded }: Booki
             {/* ═══════════════ STEP 1 — Personal Info ═══════════════ */}
             {step === 1 && (
               <div className="grid gap-6 md:grid-cols-2 animate-in fade-in slide-in-from-right-4 duration-500">
-                <FieldGroup label="Full Name" required>
+                <FieldGroup id="booking-full-name" label="Full Name" required>
                   <div className="relative">
                     <User className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground/50" />
                     <input
+                      id="booking-full-name"
                       type="text"
                       value={form.fullName}
                       onChange={(e) => set('fullName', e.target.value)}
@@ -386,10 +387,11 @@ export function BookingForm({ prefilledPackageName, packageId, embedded }: Booki
                   {errors.fullName && <p className="mt-1 text-xs text-red-500">{errors.fullName}</p>}
                 </FieldGroup>
 
-                <FieldGroup label="Email Address" required>
+                <FieldGroup id="booking-email" label="Email Address" required>
                   <div className="relative">
                     <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground/50" />
                     <input
+                      id="booking-email"
                       type="email"
                       value={form.email}
                       onChange={(e) => set('email', e.target.value)}
@@ -400,10 +402,11 @@ export function BookingForm({ prefilledPackageName, packageId, embedded }: Booki
                   {errors.email && <p className="mt-1 text-xs text-red-500">{errors.email}</p>}
                 </FieldGroup>
 
-                <FieldGroup label="Phone Number (WhatsApp)" required hint="Include country code, e.g. +254 712 345 678">
+                <FieldGroup id="booking-phone" label="Phone Number (WhatsApp)" required hint="Include country code, e.g. +254 712 345 678">
                   <div className="relative">
                     <Phone className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground/50" />
                     <input
+                      id="booking-phone"
                       type="tel"
                       value={form.phone}
                       onChange={(e) => set('phone', e.target.value)}
@@ -414,10 +417,11 @@ export function BookingForm({ prefilledPackageName, packageId, embedded }: Booki
                   {errors.phone && <p className="mt-1 text-xs text-red-500">{errors.phone}</p>}
                 </FieldGroup>
 
-                <FieldGroup label="Nationality" required>
+                <FieldGroup id="booking-nationality" label="Nationality" required>
                   <div className="relative">
                     <Globe className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground/50" />
                     <input
+                      id="booking-nationality"
                       type="text"
                       value={form.nationality}
                       onChange={(e) => set('nationality', e.target.value)}
@@ -428,10 +432,11 @@ export function BookingForm({ prefilledPackageName, packageId, embedded }: Booki
                   {errors.nationality && <p className="mt-1 text-xs text-red-500">{errors.nationality}</p>}
                 </FieldGroup>
 
-                <FieldGroup label="Country of Residence" required>
+                <FieldGroup id="booking-country" label="Country of Residence" required>
                   <div className="relative">
                     <MapPin className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground/50" />
                     <input
+                      id="booking-country"
                       type="text"
                       value={form.country}
                       onChange={(e) => set('country', e.target.value)}
@@ -448,7 +453,7 @@ export function BookingForm({ prefilledPackageName, packageId, embedded }: Booki
             {step === 2 && (
               <div className="grid gap-6 md:grid-cols-2 animate-in fade-in slide-in-from-right-4 duration-500">
                 <div className="md:col-span-2">
-                  <FieldGroup label="Package or Destination of Interest" required>
+                  <FieldGroup id="booking-package" label="Package or Destination of Interest" required>
                     <div className="relative">
                       <MapPin className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground/50 pointer-events-none" />
                       {isPackageLocked ? (
@@ -459,6 +464,8 @@ export function BookingForm({ prefilledPackageName, packageId, embedded }: Booki
                       ) : (
                         <>
                           <select
+                            id="booking-package"
+                            aria-label="Package or Destination of Interest"
                             value={form.packageInterest}
                             onChange={(e) => set('packageInterest', e.target.value)}
                             className={`${selectCls} pl-10 ${errors.packageInterest ? 'border-red-400 focus:border-red-500 focus:ring-red-200' : ''}`}
@@ -479,10 +486,12 @@ export function BookingForm({ prefilledPackageName, packageId, embedded }: Booki
                   </FieldGroup>
                 </div>
 
-                <FieldGroup label="Preferred Start Date" required>
+                <FieldGroup id="booking-date-from" label="Preferred Start Date" required>
                   <div className="relative">
                     <CalendarDays className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground/50 pointer-events-none" />
                     <input
+                      id="booking-date-from"
+                      aria-label="Preferred Start Date"
                       type="date"
                       value={form.dateFrom}
                       onChange={(e) => set('dateFrom', e.target.value)}
@@ -493,10 +502,12 @@ export function BookingForm({ prefilledPackageName, packageId, embedded }: Booki
                   {errors.dateFrom && <p className="mt-1 text-xs text-red-500">{errors.dateFrom}</p>}
                 </FieldGroup>
 
-                <FieldGroup label="Preferred End Date" required>
+                <FieldGroup id="booking-date-to" label="Preferred End Date" required>
                   <div className="relative">
                     <CalendarDays className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground/50 pointer-events-none" />
                     <input
+                      id="booking-date-to"
+                      aria-label="Preferred End Date"
                       type="date"
                       value={form.dateTo}
                       onChange={(e) => set('dateTo', e.target.value)}
@@ -518,6 +529,7 @@ export function BookingForm({ prefilledPackageName, packageId, embedded }: Booki
                       <button
                         type="button"
                         onClick={() => set('adults', Math.max(1, form.adults - 1))}
+                        aria-label="Decrease number of adults"
                         className="flex h-11 w-11 items-center justify-center rounded-lg border border-border bg-safari-cream text-safari-ink text-lg font-bold transition-colors hover:bg-safari-green hover:text-white hover:border-safari-green"
                       >
                         −
@@ -528,6 +540,7 @@ export function BookingForm({ prefilledPackageName, packageId, embedded }: Booki
                       <button
                         type="button"
                         onClick={() => set('adults', form.adults + 1)}
+                        aria-label="Increase number of adults"
                         className="flex h-11 w-11 items-center justify-center rounded-lg border border-border bg-safari-cream text-safari-ink text-lg font-bold transition-colors hover:bg-safari-green hover:text-white hover:border-safari-green"
                       >
                         +
@@ -541,6 +554,7 @@ export function BookingForm({ prefilledPackageName, packageId, embedded }: Booki
                       <button
                         type="button"
                         onClick={() => set('children', Math.max(0, form.children - 1))}
+                        aria-label="Decrease number of children"
                         className="flex h-11 w-11 items-center justify-center rounded-lg border border-border bg-safari-cream text-safari-ink text-lg font-bold transition-colors hover:bg-safari-green hover:text-white hover:border-safari-green"
                       >
                         −
@@ -551,6 +565,7 @@ export function BookingForm({ prefilledPackageName, packageId, embedded }: Booki
                       <button
                         type="button"
                         onClick={() => set('children', form.children + 1)}
+                        aria-label="Increase number of children"
                         className="flex h-11 w-11 items-center justify-center rounded-lg border border-border bg-safari-cream text-safari-ink text-lg font-bold transition-colors hover:bg-safari-green hover:text-white hover:border-safari-green"
                       >
                         +
@@ -561,8 +576,9 @@ export function BookingForm({ prefilledPackageName, packageId, embedded }: Booki
 
                 {form.children > 0 && (
                   <div className="animate-in fade-in slide-in-from-bottom-3 duration-400">
-                    <FieldGroup label="Approximate Age Range of Children" hint="e.g. 3, 7, 12">
+                    <FieldGroup id="booking-children-ages" label="Approximate Age Range of Children" hint="e.g. 3, 7, 12">
                       <input
+                        id="booking-children-ages"
                         type="text"
                         value={form.childrenAges}
                         onChange={(e) => set('childrenAges', e.target.value)}
@@ -592,7 +608,7 @@ export function BookingForm({ prefilledPackageName, packageId, embedded }: Booki
             {step === 4 && (
               <div className="space-y-8 animate-in fade-in slide-in-from-right-4 duration-500">
                 <FieldGroup label="Accommodation Preference" required>
-                  <div className="grid gap-4 md:grid-cols-3 mt-2">
+                  <div role="radiogroup" aria-label="Accommodation Preference" className="grid gap-4 md:grid-cols-3 mt-2">
                     {([
                       { value: 'budget', label: 'Budget', desc: 'Clean & comfortable', icon: '🏕️' },
                       { value: 'mid-range', label: 'Mid-Range', desc: 'Quality & value', icon: '🏡' },
@@ -601,6 +617,8 @@ export function BookingForm({ prefilledPackageName, packageId, embedded }: Booki
                       <button
                         key={opt.value}
                         type="button"
+                        role="radio"
+                        aria-checked={form.accommodation === opt.value}
                         onClick={() => set('accommodation', opt.value)}
                         className={`relative flex flex-col items-center gap-2 rounded-xl border-2 px-4 py-6 text-center transition-all duration-300 hover:shadow-md ${
                           form.accommodation === opt.value
@@ -622,8 +640,9 @@ export function BookingForm({ prefilledPackageName, packageId, embedded }: Booki
                   {errors.accommodation && <p className="mt-1 text-xs text-red-500">{errors.accommodation}</p>}
                 </FieldGroup>
 
-                <FieldGroup label="Special Requests, Dietary Requirements, or Accessibility Needs" hint="Vegetarian, wheelchair access, etc.">
+                <FieldGroup id="booking-special-requests" label="Special Requests, Dietary Requirements, or Accessibility Needs" hint="Vegetarian, wheelchair access, etc.">
                   <textarea
+                    id="booking-special-requests"
                     value={form.specialRequests}
                     onChange={(e) => set('specialRequests', e.target.value)}
                     rows={4}
@@ -637,10 +656,12 @@ export function BookingForm({ prefilledPackageName, packageId, embedded }: Booki
             {/* ═══════════════ STEP 5 — Final Details ═══════════════ */}
             {step === 5 && (
               <div className="space-y-6 animate-in fade-in slide-in-from-right-4 duration-500">
-                <FieldGroup label="How Did You Hear About Us?">
+                <FieldGroup id="booking-hear-about" label="How Did You Hear About Us?">
                   <div className="relative">
                     <Sparkles className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground/50 pointer-events-none" />
                     <select
+                      id="booking-hear-about"
+                      aria-label="How Did You Hear About Us?"
                       value={form.hearAbout}
                       onChange={(e) => set('hearAbout', e.target.value)}
                       className={`${selectCls} pl-10`}
@@ -656,8 +677,9 @@ export function BookingForm({ prefilledPackageName, packageId, embedded }: Booki
                   </div>
                 </FieldGroup>
 
-                <FieldGroup label="Additional Comments or Questions">
+                <FieldGroup id="booking-additional-comments" label="Additional Comments or Questions">
                   <textarea
+                    id="booking-additional-comments"
                     value={form.additionalComments}
                     onChange={(e) => set('additionalComments', e.target.value)}
                     rows={4}
@@ -686,10 +708,12 @@ export function BookingForm({ prefilledPackageName, packageId, embedded }: Booki
 
                 {/* Terms checkbox */}
                 <div>
-                  <label className="flex items-start gap-3 cursor-pointer group">
+                  <label htmlFor="booking-agree-terms" className="flex items-start gap-3 cursor-pointer group">
                     <div className="relative mt-0.5">
                       <input
+                        id="booking-agree-terms"
                         type="checkbox"
+                        aria-label="I have read and agree to the Terms & Conditions of makagracetravel Tours & Safaris"
                         checked={form.agreeTerms}
                         onChange={(e) => set('agreeTerms', e.target.checked)}
                         className="peer sr-only"

@@ -22,6 +22,7 @@ export async function ContactCards() {
   return (
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4 max-w-7xl">
+        <h2 className="sr-only">Our Contact Information</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           
           {/* Office Location */}
@@ -35,8 +36,8 @@ export async function ContactCards() {
               </svg>
             </div>
             <h3 className="text-[22px] font-sans font-bold text-safari-green-dark mb-4">Office Location</h3>
-            <p className="text-gray-500 text-[15px] leading-relaxed">
-              {officeLocation.split('\n').map((line, i) => (
+            <p className="text-gray-600 text-[15px] leading-relaxed">
+              {officeLocation.split('\n').map((line: string, i: number) => (
                 <span key={i}>
                   {line}
                   {i < officeLocation.split('\n').length - 1 && <br />}
@@ -55,7 +56,7 @@ export async function ContactCards() {
               </svg>
             </div>
             <h3 className="text-[22px] font-sans font-bold text-safari-green-dark mb-4">Phone Number</h3>
-            <p className="text-gray-500 text-[15px] leading-relaxed">
+            <p className="text-gray-600 text-[15px] leading-relaxed">
               <span className="font-medium text-gray-700 block mb-1">{contactPerson}</span>
               <a href={`tel:${phoneNumber.replace(/\s+/g, '')}`} className="hover:text-safari-green transition-colors">{phoneNumber}</a>
             </p>
@@ -72,7 +73,7 @@ export async function ContactCards() {
               </svg>
             </div>
             <h3 className="text-[22px] font-sans font-bold text-safari-green-dark mb-4">Mail Address</h3>
-            <p className="text-gray-500 text-[15px] leading-relaxed">
+            <p className="text-gray-600 text-[15px] leading-relaxed">
               <a href={`mailto:${emailAddress}`} className="hover:text-safari-green transition-colors">{emailAddress}</a>
             </p>
           </div>
@@ -86,8 +87,8 @@ export async function ContactCards() {
               </svg>
             </div>
             <h3 className="text-[22px] font-sans font-bold text-safari-green-dark mb-4">Working Hours</h3>
-            <p className="text-gray-500 text-[15px] leading-relaxed">
-              {workingHours.split('\n').map((line, i) => (
+            <p className="text-gray-600 text-[15px] leading-relaxed">
+              {workingHours.split('\n').map((line: string, i: number) => (
                 <span key={i}>
                   {line}
                   {i < workingHours.split('\n').length - 1 && <br />}

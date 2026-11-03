@@ -69,8 +69,8 @@ export default async function PackageDetailPage({ params }: { params: Promise<{ 
     return (
       <>
         <SiteHeader />
-        <main className="py-32 text-center text-xl font-bold">
-          Package not found
+        <main className="py-32 text-center">
+          <h1 className="text-3xl font-bold text-safari-ink">Package Not Found</h1>
         </main>
         <SiteFooter />
       </>

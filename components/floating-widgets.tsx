@@ -29,7 +29,7 @@ export async function FloatingWidgets() {
   const whatsappNumber = phoneNumber.replace(/[^0-9]/g, '');
 
   return (
-    <div className="fixed bottom-6 right-6 z-50">
+    <aside aria-label="WhatsApp quick chat" className="fixed bottom-6 right-6 z-50">
       <a
         href={`https://wa.me/${whatsappNumber}`}
         target="_blank"
@@ -39,6 +39,6 @@ export async function FloatingWidgets() {
       >
         <WhatsAppIcon className="h-14 w-14" />
       </a>
-    </div>
+    </aside>
   )
 }

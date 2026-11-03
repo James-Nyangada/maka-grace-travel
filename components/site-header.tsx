@@ -49,7 +49,7 @@ function XIcon({ className }: { className?: string }) {
   )
 }
 
-function NavContent({ setMenuOpen }: { setMenuOpen: (val: boolean) => void }) {
+function NavContent({ setMenuOpen, isSticky }: { setMenuOpen: (val: boolean) => void; isSticky?: boolean }) {
   return (
     <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 lg:px-8">
       <Link href="/" className="flex items-center gap-2">
@@ -60,7 +60,7 @@ function NavContent({ setMenuOpen }: { setMenuOpen: (val: boolean) => void }) {
         </span>
       </Link>
 
-      <nav aria-label="Main navigation" className="hidden items-center gap-8 lg:flex">
+      <nav aria-label={isSticky ? "Sticky navigation" : "Main navigation"} className="hidden items-center gap-8 lg:flex">
         {navLinks.map((link) => (
           <a
             key={link.label}
@@ -160,67 +160,70 @@ export function SiteHeader() {
         <div className="bg-white">
           <NavContent setMenuOpen={setMenuOpen} />
         </div>
-      </header>
 
-      {/* Main nav (Fixed/Scrolled) */}
-      <div 
-        className={`fixed left-0 right-0 top-0 z-50 bg-white shadow-md transition-transform duration-500 ease-in-out ${
-          isScrolled ? 'translate-y-0' : '-translate-y-full'
-        }`}
-      >
-        <NavContent setMenuOpen={setMenuOpen} />
-      </div>
-
-      {/* Mobile Menu Drawer Overlay */}
-      <div 
-        className={`fixed inset-0 z-50 bg-black/50 transition-opacity duration-300 lg:hidden ${
-          menuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
-        }`}
-        onClick={() => setMenuOpen(false)}
-        aria-hidden="true"
-      />
-
-      {/* Mobile Menu Drawer Panel */}
-      <div 
-        className={`fixed inset-y-0 right-0 z-50 w-full max-w-sm bg-white shadow-xl transition-transform duration-300 ease-in-out lg:hidden ${
-          menuOpen ? 'translate-x-0' : 'translate-x-full'
-        }`}
-      >
-        <div className="flex items-center justify-between p-4 border-b border-gray-100">
-          <span className="text-lg font-bold text-safari-ink">Menu</span>
-          <button 
-            onClick={() => setMenuOpen(false)}
-            className="rounded-lg p-2 bg-gray-100 hover:bg-gray-200 transition-colors"
-            aria-label="Close menu"
-          >
-            <X className="h-6 w-6 text-safari-ink" />
-          </button>
+        {/* Main nav (Fixed/Scrolled) */}
+        <div 
+          aria-hidden={!isScrolled}
+          className={`fixed left-0 right-0 top-0 z-50 bg-white shadow-md transition-transform duration-500 ease-in-out ${
+            isScrolled ? 'translate-y-0' : '-translate-y-full'
+          }`}
+        >
+          <NavContent setMenuOpen={setMenuOpen} isSticky />
         </div>
-        <div className="p-4">
-          <ul className="flex flex-col gap-4">
-            {navLinks.map((link) => (
-              <li key={link.label}>
-                <a
-                  href={link.href}
-                  onClick={() => setMenuOpen(false)}
-                  className="block text-lg font-bold text-safari-ink transition-colors hover:text-safari-green"
-                >
-                  {link.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-          <div className="mt-8">
-            <Link 
-              href="/contact" 
+
+        {/* Mobile Menu Drawer Overlay */}
+        <div 
+          className={`fixed inset-0 z-50 bg-black/50 transition-opacity duration-300 lg:hidden ${
+            menuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+          }`}
+          onClick={() => setMenuOpen(false)}
+          aria-hidden="true"
+        />
+
+        {/* Mobile Menu Drawer Panel */}
+        <div 
+          className={`fixed inset-y-0 right-0 z-50 w-full max-w-sm bg-white shadow-xl transition-transform duration-300 ease-in-out lg:hidden ${
+            menuOpen ? 'translate-x-0' : 'translate-x-full'
+          }`}
+        >
+          <div className="flex items-center justify-between p-4 border-b border-gray-100">
+            <span className="text-lg font-bold text-safari-ink">Menu</span>
+            <button 
               onClick={() => setMenuOpen(false)}
-              className="flex w-full items-center justify-center rounded-lg bg-safari-green px-6 py-3 font-bold text-white transition-opacity hover:opacity-90"
+              className="rounded-lg p-2 bg-gray-100 hover:bg-gray-200 transition-colors"
+              aria-label="Close menu"
             >
-              Book Now
-            </Link>
+              <X className="h-6 w-6 text-safari-ink" />
+            </button>
+          </div>
+          <div className="p-4">
+            <nav aria-label="Mobile navigation">
+              <ul className="flex flex-col gap-4">
+                {navLinks.map((link) => (
+                  <li key={link.label}>
+                    <a
+                      href={link.href}
+                      onClick={() => setMenuOpen(false)}
+                      className="block text-lg font-bold text-safari-ink transition-colors hover:text-safari-green"
+                    >
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+            <div className="mt-8">
+              <Link 
+                href="/contact" 
+                onClick={() => setMenuOpen(false)}
+                className="flex w-full items-center justify-center rounded-lg bg-safari-green px-6 py-3 font-bold text-white transition-opacity hover:opacity-90"
+              >
+                Book Now
+              </Link>
+            </div>
           </div>
         </div>
-      </div>
+      </header>
     </>
   )
 }

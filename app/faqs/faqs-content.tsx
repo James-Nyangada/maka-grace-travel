@@ -10,10 +10,10 @@ export function FaqsContent() {
   const [topicFilter, setTopicFilter] = useState<string | null>(null)
 
   return (
-    <main>
+    <>
       <FaqHero onSearch={setSearchQuery} onTopicFilter={setTopicFilter} />
       <FaqAccordion searchQuery={searchQuery} topicFilter={topicFilter} />
       <TailorCta />
-    </main>
+    </>
   )
 }

@@ -189,6 +189,8 @@ export function PackagesContent({ initialPackages = [] }: { initialPackages?: Pa
             <MapPin className="h-5 w-5 text-safari-green" />
           </div>
           <select
+            id="filter-destination"
+            aria-label="Filter by destination"
             value={selectedDestination}
             onChange={e => setSelectedDestination(e.target.value)}
             className="w-full appearance-none bg-white border border-border/60 rounded-md py-3 pl-10 pr-10 text-safari-ink focus:outline-none focus:border-safari-green focus:ring-1 focus:ring-safari-green transition-shadow cursor-pointer"
@@ -201,7 +203,7 @@ export function PackagesContent({ initialPackages = [] }: { initialPackages?: Pa
           <div className="absolute inset-y-0 right-3 flex items-center pointer-events-none">
             <ChevronRight className="h-4 w-4 text-muted-foreground rotate-90" />
           </div>
-          <div className="absolute -top-2 left-3 bg-white px-1 text-xs text-safari-ink">Destination</div>
+          <label htmlFor="filter-destination" className="absolute -top-2 left-3 bg-white px-1 text-xs text-safari-ink">Destination</label>
         </div>
       </div>
 
@@ -212,6 +214,8 @@ export function PackagesContent({ initialPackages = [] }: { initialPackages?: Pa
             <TreePine className="h-5 w-5 text-safari-green" />
           </div>
           <select
+            id="filter-comfort"
+            aria-label="Filter by safari comfort"
             value={selectedCategory}
             onChange={e => setSelectedCategory(e.target.value)}
             className="w-full appearance-none bg-white border border-border/60 rounded-md py-3 pl-10 pr-10 text-safari-ink focus:outline-none focus:border-safari-green focus:ring-1 focus:ring-safari-green transition-shadow cursor-pointer"
@@ -224,7 +228,7 @@ export function PackagesContent({ initialPackages = [] }: { initialPackages?: Pa
           <div className="absolute inset-y-0 right-3 flex items-center pointer-events-none">
             <ChevronRight className="h-4 w-4 text-muted-foreground rotate-90" />
           </div>
-          <div className="absolute -top-2 left-3 bg-white px-1 text-xs text-safari-ink">Safari Comfort</div>
+          <label htmlFor="filter-comfort" className="absolute -top-2 left-3 bg-white px-1 text-xs text-safari-ink">Safari Comfort</label>
         </div>
       </div>
 
@@ -235,6 +239,8 @@ export function PackagesContent({ initialPackages = [] }: { initialPackages?: Pa
             <Calendar className="h-5 w-5 text-safari-green" />
           </div>
           <select
+            id="filter-days"
+            aria-label="Filter by duration in days"
             value={selectedDays}
             onChange={e => setSelectedDays(e.target.value)}
             className="w-full appearance-none bg-white border border-border/60 rounded-md py-3 pl-10 pr-10 text-safari-ink focus:outline-none focus:border-safari-green focus:ring-1 focus:ring-safari-green transition-shadow cursor-pointer"
@@ -247,13 +253,13 @@ export function PackagesContent({ initialPackages = [] }: { initialPackages?: Pa
           <div className="absolute inset-y-0 right-3 flex items-center pointer-events-none">
             <ChevronRight className="h-4 w-4 text-muted-foreground rotate-90" />
           </div>
-          <div className="absolute -top-2 left-3 bg-white px-1 text-xs text-safari-ink">Days</div>
+          <label htmlFor="filter-days" className="absolute -top-2 left-3 bg-white px-1 text-xs text-safari-ink">Days</label>
         </div>
       </div>
 
       {/* Price Slider */}
       <div className="pt-4">
-        <h4 className="font-bold text-safari-ink mb-4">Filter By Price</h4>
+        <h3 className="font-bold text-safari-ink mb-4 text-base">Filter By Price</h3>
         <div className="relative w-full h-2 rounded-full bg-muted">
           {/* Active range track */}
           <div
@@ -261,7 +267,10 @@ export function PackagesContent({ initialPackages = [] }: { initialPackages?: Pa
             style={{ left: `${minPercent}%`, width: `${maxPercent - minPercent}%` }}
           />
           {/* Min thumb */}
+          <label htmlFor="price-min" className="sr-only">Minimum price</label>
           <input
+            id="price-min"
+            aria-label="Minimum price"
             type="range"
             min={priceRange.min}
             max={priceRange.max}
@@ -272,7 +281,10 @@ export function PackagesContent({ initialPackages = [] }: { initialPackages?: Pa
             style={{ zIndex: priceMin > priceRange.max - 100 ? 5 : 3 }}
           />
           {/* Max thumb */}
+          <label htmlFor="price-max" className="sr-only">Maximum price</label>
           <input
+            id="price-max"
+            aria-label="Maximum price"
             type="range"
             min={priceRange.min}
             max={priceRange.max}
@@ -300,6 +312,7 @@ export function PackagesContent({ initialPackages = [] }: { initialPackages?: Pa
           <button
             onClick={resetFilters}
             className="px-4 py-3 border border-border/60 rounded-md text-safari-ink hover:bg-red-50 hover:border-red-200 hover:text-red-600 transition-colors text-sm font-semibold"
+            aria-label="Reset filters"
             title="Reset filters"
           >
             <X className="h-4 w-4" />
@@ -319,10 +332,10 @@ export function PackagesContent({ initialPackages = [] }: { initialPackages?: Pa
           {/* Sidebar Filter — desktop */}
           <aside className="hidden lg:block w-full lg:w-1/4 flex-shrink-0">
             <div className="bg-white rounded-xl shadow-sm border border-border/40 p-6 sticky top-28">
-              <h3 className="text-xl font-bold text-safari-ink mb-6 flex items-center gap-2">
+              <h2 className="text-xl font-bold text-safari-ink mb-6 flex items-center gap-2">
                 <span className="w-1 h-5 bg-safari-green rounded-full"></span>
                 Search By Filter
-              </h3>
+              </h2>
               {filterPanel}
             </div>
           </aside>
@@ -348,13 +361,14 @@ export function PackagesContent({ initialPackages = [] }: { initialPackages?: Pa
               <div className="absolute right-0 top-0 bottom-0 w-full max-w-sm bg-white shadow-2xl overflow-y-auto animate-in slide-in-from-right duration-300">
                 <div className="p-6">
                   <div className="flex items-center justify-between mb-6">
-                    <h3 className="text-xl font-bold text-safari-ink flex items-center gap-2">
+                    <h2 className="text-xl font-bold text-safari-ink flex items-center gap-2">
                       <span className="w-1 h-5 bg-safari-green rounded-full"></span>
                       Search By Filter
-                    </h3>
+                    </h2>
                     <button
                       onClick={() => setShowMobileFilter(false)}
                       className="p-2 rounded-lg hover:bg-muted transition-colors"
+                      aria-label="Close filters"
                     >
                       <X className="h-5 w-5" />
                     </button>
@@ -373,7 +387,7 @@ export function PackagesContent({ initialPackages = [] }: { initialPackages?: Pa
 
           {/* Main Content */}
           <div className="w-full lg:w-3/4 flex flex-col">
-            
+            <h2 className="sr-only">Available Safari Packages</h2>
             {/* Top Bar */}
             <div className="bg-white rounded-xl shadow-sm border border-border/40 p-4 mb-6 flex flex-col sm:flex-row justify-between items-center gap-4">
               <p className="text-safari-ink font-semibold text-sm">
@@ -381,12 +395,15 @@ export function PackagesContent({ initialPackages = [] }: { initialPackages?: Pa
                   <span>No results found</span>
                 ) : (
                   <>
-                    Showing <span className="text-safari-gold">{showingFrom} - {showingTo}</span> of {filteredPackages.length} Result{filteredPackages.length !== 1 ? 's' : ''}
+                    Showing <span className="text-safari-gold font-bold">{showingFrom} - {showingTo}</span> of {filteredPackages.length} Result{filteredPackages.length !== 1 ? 's' : ''}
                   </>
                 )}
               </p>
               <div className="flex items-center gap-2">
+                <label htmlFor="packages-sort" className="sr-only">Sort packages</label>
                 <select
+                  id="packages-sort"
+                  aria-label="Sort packages"
                   value={sortBy}
                   onChange={e => { setSortBy(e.target.value); setCurrentPage(1) }}
                   className="bg-transparent text-safari-ink font-semibold text-sm focus:outline-none cursor-pointer pr-6 appearance-none"
@@ -430,7 +447,7 @@ export function PackagesContent({ initialPackages = [] }: { initialPackages?: Pa
                           <ImageCarousel images={[pkg.imageUrl, ...(pkg.galleryUrls || [])]} altText={pkg.name} />
                         </div>
                         {pkg.status === 'on-offer' && (
-                          <div className="absolute top-4 left-4 bg-[#D4AF37] text-white px-3 py-1 text-xs font-bold rounded-sm shadow-md z-10">
+                          <div className="absolute top-4 left-4 bg-safari-green text-white px-3 py-1 text-xs font-bold rounded-sm shadow-md z-10">
                             On offer
                           </div>
                         )}
@@ -476,11 +493,12 @@ export function PackagesContent({ initialPackages = [] }: { initialPackages?: Pa
 
                 {/* Pagination */}
                 {totalPages > 1 && (
-                  <div className="flex justify-center items-center gap-2 mt-auto">
+                  <nav aria-label="Pagination" className="flex justify-center items-center gap-2 mt-auto">
                     {/* Prev */}
                     <button
                       onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
                       disabled={currentPage === 1}
+                      aria-label="Previous page"
                       className="w-10 h-10 rounded-full bg-white text-safari-ink hover:bg-safari-cream flex items-center justify-center shadow-sm border border-border/40 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
                     >
                       <ChevronLeft className="h-5 w-5" />
@@ -491,6 +509,8 @@ export function PackagesContent({ initialPackages = [] }: { initialPackages?: Pa
                       <button
                         key={page}
                         onClick={() => setCurrentPage(page)}
+                        aria-label={`Page ${page}`}
+                        aria-current={currentPage === page ? 'page' : undefined}
                         className={`w-10 h-10 rounded-full flex items-center justify-center font-bold transition-colors ${
                           currentPage === page
                             ? 'bg-safari-green text-white shadow-md'
@@ -505,11 +525,12 @@ export function PackagesContent({ initialPackages = [] }: { initialPackages?: Pa
                     <button
                       onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
                       disabled={currentPage === totalPages}
+                      aria-label="Next page"
                       className="w-10 h-10 rounded-full bg-white text-safari-ink hover:bg-safari-cream flex items-center justify-center shadow-sm border border-border/40 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
                     >
                       <ChevronsRight className="h-5 w-5" />
                     </button>
-                  </div>
+                  </nav>
                 )}
               </>
             )}

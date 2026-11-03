@@ -45,7 +45,10 @@ export function FaqHero({ onSearch, onTopicFilter }: { onSearch?: (query: string
         {/* Search Bar */}
         <div className="relative mx-auto max-w-2xl">
           <div className="flex items-center rounded-full bg-white shadow-lg ring-1 ring-border overflow-hidden">
+            <label htmlFor="faq-search" className="sr-only">Search For Safari Information</label>
             <input
+              id="faq-search"
+              aria-label="Search For Safari Information"
               type="text"
               value={query}
               onChange={(e) => setQuery(e.target.value)}

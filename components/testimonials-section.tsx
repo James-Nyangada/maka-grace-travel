@@ -76,7 +76,7 @@ export function TestimonialsSection() {
             <h2 className="text-2xl font-bold text-safari-ink md:text-[26px]">
               {activeTestimonial.rating === 5 ? 'Amazing, I Recommend A Million Times!!' : 'Great Experience!'}
             </h2>
-            <div className="mt-3 flex gap-1" aria-label={`${activeTestimonial.rating} out of 5 stars`}>
+            <div className="mt-3 flex gap-1" role="img" aria-label={`${activeTestimonial.rating} out of 5 stars`}>
               {Array.from({ length: 5 }).map((_, i) => (
                 <Star key={i} className={`h-4 w-4 ${i < activeTestimonial.rating ? 'fill-safari-gold text-safari-gold' : 'text-gray-300'}`} />
               ))}
@@ -97,7 +97,7 @@ export function TestimonialsSection() {
             <div className="mt-8 flex items-center gap-4">
               <button 
                 onClick={() => setCurrentIndex((prev) => (prev === 0 ? Math.max(testimonials.length - 1, 0) : prev - 1))}
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 text-gray-500 hover:bg-gray-50 hover:text-safari-green transition-colors"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 text-gray-700 hover:bg-gray-50 hover:text-safari-green transition-colors"
                 aria-label="Previous testimonial"
               >
                 <ChevronLeft className="h-5 w-5" />
@@ -118,7 +118,7 @@ export function TestimonialsSection() {
 
               <button 
                 onClick={() => setCurrentIndex((prev) => (testimonials.length > 0 ? (prev + 1) % testimonials.length : 0))}
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 text-gray-500 hover:bg-gray-50 hover:text-safari-green transition-colors"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 text-gray-700 hover:bg-gray-50 hover:text-safari-green transition-colors"
                 aria-label="Next testimonial"
               >
                 <ChevronRight className="h-5 w-5" />

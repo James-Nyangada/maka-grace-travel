@@ -31,7 +31,12 @@ export function BookingModal({ isOpen, onClose, packageData }: BookingModalProps
   if (!isOpen || !packageData) return null
 
   return createPortal(
-    <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 sm:p-6 md:p-8">
+    <div
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="booking-modal-title"
+      className="fixed inset-0 z-[9999] flex items-center justify-center p-4 sm:p-6 md:p-8"
+    >
       {/* Backdrop */}
       <div 
         className="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity"
@@ -43,7 +48,7 @@ export function BookingModal({ isOpen, onClose, packageData }: BookingModalProps
         
         {/* Sticky Header with Close Button */}
         <div className="sticky top-0 right-0 z-20 flex justify-between items-center bg-white/80 backdrop-blur-md border-b border-border p-4 md:p-6">
-          <h2 className="text-xl md:text-2xl font-bold text-safari-ink">
+          <h2 id="booking-modal-title" className="text-xl md:text-2xl font-bold text-safari-ink">
             Request Quotation: {packageData.name}
           </h2>
           <button

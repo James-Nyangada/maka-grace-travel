@@ -32,25 +32,37 @@ export function PackageFaq() {
   return (
     <section className="py-20 bg-safari-cream">
       <div className="container mx-auto px-4 max-w-4xl">
+        <h2 className="sr-only">Frequently Asked Questions</h2>
         <div className="space-y-4">
           {faqs.map((faq, index) => (
             <div key={index} className="bg-white rounded-md shadow-sm overflow-hidden border border-border/40 relative group">
-              <button 
-                className="w-full flex items-center justify-between p-6 text-left focus:outline-none"
-                onClick={() => setOpenIndex(openIndex === index ? -1 : index)}
-              >
-                <h3 className="font-bold text-safari-gold text-lg md:text-xl">{faq.question}</h3>
-                {openIndex === index ? (
-                  <ChevronUp className="w-5 h-5 text-safari-green shrink-0" />
-                ) : (
-                  <ChevronDown className="w-5 h-5 text-safari-ink shrink-0" />
-                )}
-              </button>
+              <h3>
+                <button 
+                  type="button"
+                  id={`pkg-faq-header-${index}`}
+                  aria-expanded={openIndex === index}
+                  aria-controls={`pkg-faq-content-${index}`}
+                  className="w-full flex items-center justify-between p-6 text-left focus:outline-none"
+                  onClick={() => setOpenIndex(openIndex === index ? -1 : index)}
+                >
+                  <span className="font-bold text-safari-gold text-lg md:text-xl">{faq.question}</span>
+                  {openIndex === index ? (
+                    <ChevronUp className="w-5 h-5 text-safari-green shrink-0" aria-hidden="true" />
+                  ) : (
+                    <ChevronDown className="w-5 h-5 text-safari-ink shrink-0" aria-hidden="true" />
+                  )}
+                </button>
+              </h3>
               {openIndex === index && (
-                <div className="px-6 pb-6 pt-2 text-muted-foreground text-sm leading-relaxed relative">
+                <div 
+                  id={`pkg-faq-content-${index}`}
+                  role="region"
+                  aria-labelledby={`pkg-faq-header-${index}`}
+                  className="px-6 pb-6 pt-2 text-muted-foreground text-sm leading-relaxed relative"
+                >
                    <div className="whitespace-pre-line text-safari-ink/80">{faq.answer}</div>
                    {/* Green triangle at bottom right */}
-                   <div className="absolute bottom-0 right-0 w-0 h-0 border-l-[32px] border-l-transparent border-b-[32px] border-b-safari-green"></div>
+                   <div className="absolute bottom-0 right-0 w-0 h-0 border-l-[32px] border-l-transparent border-b-[32px] border-b-safari-green" aria-hidden="true"></div>
                 </div>
               )}
             </div>

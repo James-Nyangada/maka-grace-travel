@@ -73,7 +73,12 @@ export function GalleryContent() {
 
         {/* Lightbox */}
         {lightboxImage && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 px-4 backdrop-blur-sm animate-in fade-in duration-300">
+          <div
+            role="dialog"
+            aria-modal="true"
+            aria-label="Gallery Image Lightbox"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 px-4 backdrop-blur-sm animate-in fade-in duration-300"
+          >
             <button 
               onClick={() => setLightboxImage(null)}
               className="absolute top-6 right-6 text-white hover:text-safari-gold transition-colors z-50 p-2"

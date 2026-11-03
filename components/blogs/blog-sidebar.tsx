@@ -30,7 +30,7 @@ export function BlogSidebar({ showRelated = false }: { showRelated?: boolean }) 
       <div className="bg-[#f9f9f9] p-6 rounded-lg">
         <div className="flex items-center gap-3 mb-6">
           <div className="w-1 h-6 bg-safari-green"></div>
-          <h3 className="text-xl font-sans font-bold text-safari-ink">Popular Blogs</h3>
+          <h2 className="text-xl font-sans font-bold text-safari-ink">Popular Blogs</h2>
         </div>
         <div className="space-y-6">
           {popularBlogs.map((blog, idx) => (
@@ -43,7 +43,7 @@ export function BlogSidebar({ showRelated = false }: { showRelated?: boolean }) 
                   <Calendar className="w-3 h-3" />
                   {blog.date}
                 </div>
-                <h4 className="text-[13px] font-sans font-bold text-safari-ink leading-snug group-hover:text-safari-green transition-colors">{blog.title}</h4>
+                <h3 className="text-[13px] font-sans font-bold text-safari-ink leading-snug group-hover:text-safari-green transition-colors">{blog.title}</h3>
               </div>
             </Link>
           ))}
@@ -55,7 +55,7 @@ export function BlogSidebar({ showRelated = false }: { showRelated?: boolean }) 
         <div className="bg-[#f9f9f9] p-6 rounded-lg">
           <div className="flex items-center gap-3 mb-6">
             <div className="w-1 h-6 bg-safari-green"></div>
-            <h3 className="text-xl font-sans font-bold text-safari-ink">Related Blogs</h3>
+            <h2 className="text-xl font-sans font-bold text-safari-ink">Related Blogs</h2>
           </div>
           <div className="space-y-6">
             {popularBlogs.slice(1, 3).map((blog, idx) => (
@@ -68,7 +68,7 @@ export function BlogSidebar({ showRelated = false }: { showRelated?: boolean }) 
                     <Calendar className="w-3 h-3" />
                     {blog.date}
                   </div>
-                  <h4 className="text-[13px] font-sans font-bold text-safari-ink leading-snug group-hover:text-safari-green transition-colors">{blog.title}</h4>
+                  <h3 className="text-[13px] font-sans font-bold text-safari-ink leading-snug group-hover:text-safari-green transition-colors">{blog.title}</h3>
                 </div>
               </Link>
             ))}

@@ -86,7 +86,7 @@ export async function SiteFooter() {
             <Image src="/logo-maka-icon.png" alt="Maka Grace Tours & Travel logo" width={56} height={56} className="h-14 w-14 object-contain" />
             <span className="flex flex-col leading-tight">
               <span className="text-base font-bold tracking-widest">MAKA GRACE</span>
-              <span className="text-[8px] font-semibold tracking-[0.2em] text-safari-gold">TOURS &amp; TRAVEL</span>
+              <span className="text-[8px] font-semibold tracking-[0.2em] text-safari-gold-light">TOURS &amp; TRAVEL</span>
             </span>
           </div>
           <p className="mt-5 text-sm leading-relaxed text-white/85">
@@ -128,11 +128,11 @@ export async function SiteFooter() {
 
         {/* Company */}
         <nav aria-label="Company links">
-          <h3 className="text-lg font-bold">Company</h3>
+          <h2 className="text-lg font-bold">Company</h2>
           <ul className="mt-5 flex flex-col gap-3">
             {companyLinks.map((link) => (
               <li key={link.label}>
-                <a href={link.href} className="text-sm text-white/85 transition-colors hover:text-safari-gold">
+                <a href={link.href} className="text-sm text-white/85 transition-colors hover:text-safari-gold-light">
                   {link.label}
                 </a>
               </li>
@@ -142,11 +142,11 @@ export async function SiteFooter() {
 
         {/* Explore */}
         <nav aria-label="Explore links">
-          <h3 className="text-lg font-bold">Explore</h3>
+          <h2 className="text-lg font-bold">Explore</h2>
           <ul className="mt-5 flex flex-col gap-3">
             {exploreLinks.map((link) => (
               <li key={link.label}>
-                <a href={link.href} className="text-sm text-white/85 transition-colors hover:text-safari-gold">
+                <a href={link.href} className="text-sm text-white/85 transition-colors hover:text-safari-gold-light">
                   {link.label}
                 </a>
               </li>
@@ -156,28 +156,28 @@ export async function SiteFooter() {
 
         {/* Contact */}
         <div>
-          <h3 className="text-lg font-bold">Contact Us</h3>
+          <h2 className="text-lg font-bold">Contact Us</h2>
           <ul className="mt-5 flex flex-col gap-5">
             <li className="flex items-start gap-3">
-              <Phone className="mt-1 h-4 w-4 shrink-0 text-safari-gold" />
+              <Phone className="mt-1 h-4 w-4 shrink-0 text-safari-gold-light" />
               <span>
                 <span className="block text-xs text-white/70">Call Us ({contactPerson})</span>
-                <a href={`tel:${phoneNumber.replace(/\s+/g, '')}`} className="text-sm font-bold hover:text-safari-gold">
+                <a href={`tel:${phoneNumber.replace(/\s+/g, '')}`} className="text-sm font-bold hover:text-safari-gold-light">
                   {phoneNumber}
                 </a>
               </span>
             </li>
             <li className="flex items-start gap-3">
-              <Mail className="mt-1 h-4 w-4 shrink-0 text-safari-gold" />
+              <Mail className="mt-1 h-4 w-4 shrink-0 text-safari-gold-light" />
               <span>
                 <span className="block text-xs text-white/70">Email Address</span>
-                <a href={`mailto:${emailAddress}`} className="text-sm font-bold hover:text-safari-gold">
+                <a href={`mailto:${emailAddress}`} className="text-sm font-bold hover:text-safari-gold-light">
                   {emailAddress}
                 </a>
               </span>
             </li>
             <li className="flex items-start gap-3">
-              <MapPin className="mt-1 h-4 w-4 shrink-0 text-safari-gold" />
+              <MapPin className="mt-1 h-4 w-4 shrink-0 text-safari-gold-light" />
               <span>
                 <span className="block text-xs text-white/70">Visit Office</span>
                 <span className="text-sm font-bold">{shortOfficeLocation}</span>
@@ -190,19 +190,23 @@ export async function SiteFooter() {
       <div className="border-t border-white/10">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-4 py-5 text-xs text-white/80 md:flex-row lg:px-8">
           <p>
-            <a href="/terms" className="hover:text-safari-gold">
+            <a href="/terms" className="hover:text-safari-gold-light">
               Terms &amp; Conditions
             </a>{' '}
             |{' '}
-            <a href="#" className="hover:text-safari-gold">
+            <a href="/accessibility" className="hover:text-safari-gold-light">
+              Accessibility Statement
+            </a>{' '}
+            |{' '}
+            <a href="#" className="hover:text-safari-gold-light">
               Privacy Policy
             </a>
           </p>
           <p>
-            Copyright © 2026 <span className="text-safari-gold">Maka Grace Tours and Travel</span>. All Rights Reserved
+            Copyright © 2026 <span className="text-safari-gold-light">Maka Grace Tours and Travel</span>. All Rights Reserved
           </p>
           <p>
-            Designed by <span className="text-safari-gold">Afringe Limited</span>
+            Designed by <span className="text-safari-gold-light">Afringe Limited</span>
           </p>
         </div>
       </div>

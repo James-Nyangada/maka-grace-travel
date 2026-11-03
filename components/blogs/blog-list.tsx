@@ -20,7 +20,9 @@ export async function BlogList() {
   }
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div>
+      <h2 className="sr-only">Latest Blog Articles</h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
       {blogs.map((blog, idx) => {
         const dateStr = blog.publishedAt ? new Date(blog.publishedAt).toLocaleDateString('en-US', { day: '2-digit', month: 'short', year: 'numeric' }) : '';
         const imageSrc = blog.thumbnailUrl || "/images/safari_lions.png";
@@ -55,6 +57,7 @@ export async function BlogList() {
           </div>
         )
       })}
+      </div>
     </div>
   )
 }

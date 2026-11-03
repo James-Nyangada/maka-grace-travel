@@ -48,20 +48,29 @@ export function PackageDetailClient({ packageData }: { packageData: Package }) {
         {/* The Tabs */}
         <div className="bg-white border-b border-border shadow-sm sticky top-20 z-40">
             <div className="container mx-auto px-4 max-w-7xl">
-                <div className="flex overflow-x-auto hide-scrollbar">
-                    {TABS.map((tab) => (
-                        <button
-                            key={tab}
-                            onClick={() => setActiveTab(tab)}
-                            className={`whitespace-nowrap px-6 py-4 font-sans font-bold text-sm md:text-base uppercase tracking-wider border-b-2 transition-colors ${
-                                activeTab === tab 
-                                ? 'border-safari-green text-safari-green' 
-                                : 'border-transparent text-safari-ink hover:text-safari-green'
-                            }`}
-                        >
-                            {tab}
-                        </button>
-                    ))}
+                <div role="tablist" aria-label="Package information tabs" className="flex overflow-x-auto hide-scrollbar">
+                    {TABS.map((tab) => {
+                        const tabId = tab.toLowerCase().replace(/\s+/g, '-');
+                        const isSelected = activeTab === tab;
+                        return (
+                            <button
+                                key={tab}
+                                role="tab"
+                                id={`tab-${tabId}`}
+                                aria-selected={isSelected}
+                                aria-controls={`tabpanel-${tabId}`}
+                                tabIndex={isSelected ? 0 : -1}
+                                onClick={() => setActiveTab(tab)}
+                                className={`whitespace-nowrap px-6 py-4 font-sans font-bold text-sm md:text-base uppercase tracking-wider border-b-2 transition-colors ${
+                                    isSelected 
+                                    ? 'border-safari-green text-safari-green' 
+                                    : 'border-transparent text-safari-ink hover:text-safari-green'
+                                }`}
+                            >
+                                {tab}
+                            </button>
+                        );
+                    })}
                 </div>
             </div>
         </div>
@@ -69,7 +78,13 @@ export function PackageDetailClient({ packageData }: { packageData: Package }) {
 
       {/* Content Area */}
       <div className="py-16 bg-[#F9F9F9] min-h-[50vh]">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl bg-white p-8 lg:p-12 rounded-xl shadow-sm border border-border/40">
+        <div 
+          role="tabpanel"
+          id={`tabpanel-${activeTab.toLowerCase().replace(/\s+/g, '-')}`}
+          aria-labelledby={`tab-${activeTab.toLowerCase().replace(/\s+/g, '-')}`}
+          tabIndex={0}
+          className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl bg-white p-8 lg:p-12 rounded-xl shadow-sm border border-border/40"
+        >
            {activeTab === 'Overview' && <PackageOverviewTab packageData={packageData} />}
            {activeTab === 'Itinerary' && <PackageItineraryTab packageData={packageData} />}
            {activeTab === 'Gallery' && <PackageGalleryTab packageData={packageData} />}

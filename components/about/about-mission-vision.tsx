@@ -29,6 +29,7 @@ export function AboutMissionVision() {
   return (
     <section className="py-20 md:py-28 bg-white relative">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+        <h2 className="sr-only">Our Mission, Vision, and Values</h2>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start mb-20">
           
           <div className="bg-safari-cream/40 p-8 md:p-12 rounded-2xl border border-border/40">

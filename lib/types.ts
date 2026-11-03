@@ -26,6 +26,7 @@ export interface Package {
   priceFromKSH?: number;
   currency: string;
   badge: 'popular' | 'limited' | 'new' | 'null' | null | '';
+  status?: string;
   overview: string;
   packageType?: 'Public' | 'Private';
   highlights?: string[];

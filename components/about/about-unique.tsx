@@ -30,7 +30,7 @@ export function AboutUnique() {
     <section className="py-20 md:py-28 bg-safari-cream relative">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         <div className="mb-16 max-w-3xl">
-          <h3 className="font-script text-3xl md:text-4xl text-safari-gold mb-2">The Maka Grace Difference</h3>
+          <p className="font-script text-3xl md:text-4xl text-safari-gold mb-2">The Maka Grace Difference</p>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-safari-ink mb-6">
             What Makes Us Unique
           </h2>
@@ -58,7 +58,7 @@ export function AboutUnique() {
               <div className="mb-6 bg-safari-cream/50 group-hover:bg-transparent w-16 h-16 rounded-full flex items-center justify-center group-hover:scale-110 transition-all duration-300">
                 {feature.icon}
               </div>
-              <h4 className="text-xl font-bold text-safari-ink group-hover:text-white transition-colors duration-300 mb-3">{feature.title}</h4>
+              <h3 className="text-xl font-bold text-safari-ink group-hover:text-white transition-colors duration-300 mb-3">{feature.title}</h3>
               <p className="text-muted-foreground group-hover:text-white/90 transition-colors duration-300 leading-relaxed text-sm">
                 {feature.description}
               </p>

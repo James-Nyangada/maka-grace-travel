@@ -108,8 +108,10 @@ export function Hero() {
             <div className="flex items-center gap-3 w-full">
               <MapPin className="h-5 w-5 shrink-0 text-safari-green" />
               <div className="flex flex-col w-full relative pr-4">
-                <p className="text-base font-bold text-safari-ink">Destination</p>
+                <label htmlFor="hero-destination" className="text-base font-bold text-safari-ink">Destination</label>
                 <select 
+                  id="hero-destination"
+                  aria-label="Destination"
                   value={destination}
                   onChange={(e) => setDestination(e.target.value)}
                   className="w-full text-sm text-muted-foreground bg-transparent focus:outline-none appearance-none cursor-pointer outline-none"
@@ -131,8 +133,10 @@ export function Hero() {
                 <path d="M3 17h18M5 17V9a2 2 0 012-2h6a2 2 0 012 2v8M15 11h4a2 2 0 012 2v4M7 17v2M17 17v2" />
               </svg>
               <div className="flex flex-col w-full relative pr-4">
-                <p className="text-base font-bold text-safari-ink">Safari Comfort</p>
+                <label htmlFor="hero-comfort" className="text-base font-bold text-safari-ink">Safari Comfort</label>
                 <select
+                  id="hero-comfort"
+                  aria-label="Safari Comfort"
                   value={category}
                   onChange={(e) => setCategory(e.target.value)}
                   className="w-full text-sm text-muted-foreground bg-transparent focus:outline-none appearance-none cursor-pointer outline-none"
@@ -150,8 +154,10 @@ export function Hero() {
             <div className="flex items-center gap-3 w-full">
               <Clock3 className="h-5 w-5 shrink-0 text-safari-green" />
               <div className="flex flex-col w-full relative pr-4">
-                <p className="text-base font-bold text-safari-ink">Days</p>
+                <label htmlFor="hero-days" className="text-base font-bold text-safari-ink">Days</label>
                 <select
+                  id="hero-days"
+                  aria-label="Days"
                   value={days}
                   onChange={(e) => setDays(e.target.value)}
                   className="w-full text-sm text-muted-foreground bg-transparent focus:outline-none appearance-none cursor-pointer outline-none"
