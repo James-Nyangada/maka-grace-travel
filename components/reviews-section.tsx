@@ -85,9 +85,9 @@ export function ReviewsSection() {
                     <Star key={i} className="h-3.5 w-3.5 fill-safari-gold text-safari-gold" />
                   ))}
                 </span>
-                <a href="#" className="ml-auto flex items-center gap-1 text-sm font-semibold text-safari-gold hover:underline">
+                <a href="/review" className="ml-auto flex items-center gap-1 text-sm font-semibold text-safari-green hover:underline">
                   Read all reviews
-                  <ArrowRight className="h-3.5 w-3.5" />
+                  <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
                 </a>
               </div>
             </article>

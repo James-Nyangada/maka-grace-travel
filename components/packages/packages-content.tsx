@@ -310,12 +310,14 @@ export function PackagesContent({ initialPackages = [] }: { initialPackages?: Pa
         </button>
         {hasActiveFilters && (
           <button
+            type="button"
             onClick={resetFilters}
-            className="px-4 py-3 border border-border/60 rounded-md text-safari-ink hover:bg-red-50 hover:border-red-200 hover:text-red-600 transition-colors text-sm font-semibold"
+            className="px-4 py-3 border border-border/60 rounded-md text-safari-ink hover:bg-red-50 hover:border-red-200 hover:text-red-600 transition-colors text-sm font-semibold flex items-center justify-center gap-1"
             aria-label="Reset filters"
             title="Reset filters"
           >
-            <X className="h-4 w-4" />
+            <X className="h-4 w-4" aria-hidden="true" />
+            <span className="sr-only">Reset filters</span>
           </button>
         )}
       </div>
@@ -343,13 +345,15 @@ export function PackagesContent({ initialPackages = [] }: { initialPackages?: Pa
           {/* Mobile filter button */}
           <div className="lg:hidden">
             <button
+              type="button"
               onClick={() => setShowMobileFilter(true)}
+              aria-label="Search by filter"
               className="w-full flex items-center justify-center gap-2 bg-white rounded-xl shadow-sm border border-border/40 p-4 font-bold text-safari-ink hover:border-safari-green transition-colors"
             >
-              <SlidersHorizontal className="h-5 w-5 text-safari-green" />
-              Search By Filter
+              <SlidersHorizontal className="h-5 w-5 text-safari-green" aria-hidden="true" />
+              <span>Search By Filter</span>
               {hasActiveFilters && (
-                <span className="ml-1 w-2 h-2 rounded-full bg-safari-gold animate-pulse" />
+                <span className="ml-1 w-2 h-2 rounded-full bg-safari-gold animate-pulse" aria-hidden="true" />
               )}
             </button>
           </div>
@@ -357,20 +361,27 @@ export function PackagesContent({ initialPackages = [] }: { initialPackages?: Pa
           {/* Mobile filter overlay */}
           {showMobileFilter && (
             <div className="fixed inset-0 z-50 lg:hidden">
-              <div className="absolute inset-0 bg-black/40" onClick={() => setShowMobileFilter(false)} />
-              <div className="absolute right-0 top-0 bottom-0 w-full max-w-sm bg-white shadow-2xl overflow-y-auto animate-in slide-in-from-right duration-300">
+              <div className="absolute inset-0 bg-black/40" onClick={() => setShowMobileFilter(false)} aria-hidden="true" />
+              <div 
+                role="dialog"
+                aria-modal="true"
+                aria-label="Filter safari packages"
+                className="absolute right-0 top-0 bottom-0 w-full max-w-sm bg-white shadow-2xl overflow-y-auto animate-in slide-in-from-right duration-300"
+              >
                 <div className="p-6">
                   <div className="flex items-center justify-between mb-6">
                     <h2 className="text-xl font-bold text-safari-ink flex items-center gap-2">
-                      <span className="w-1 h-5 bg-safari-green rounded-full"></span>
+                      <span className="w-1 h-5 bg-safari-green rounded-full" aria-hidden="true"></span>
                       Search By Filter
                     </h2>
                     <button
+                      type="button"
                       onClick={() => setShowMobileFilter(false)}
                       className="p-2 rounded-lg hover:bg-muted transition-colors"
                       aria-label="Close filters"
                     >
-                      <X className="h-5 w-5" />
+                      <X className="h-5 w-5" aria-hidden="true" />
+                      <span className="sr-only">Close filters</span>
                     </button>
                   </div>
                   {filterPanel}
@@ -496,18 +507,21 @@ export function PackagesContent({ initialPackages = [] }: { initialPackages?: Pa
                   <nav aria-label="Pagination" className="flex justify-center items-center gap-2 mt-auto">
                     {/* Prev */}
                     <button
+                      type="button"
                       onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
                       disabled={currentPage === 1}
                       aria-label="Previous page"
                       className="w-10 h-10 rounded-full bg-white text-safari-ink hover:bg-safari-cream flex items-center justify-center shadow-sm border border-border/40 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
                     >
-                      <ChevronLeft className="h-5 w-5" />
+                      <ChevronLeft className="h-5 w-5" aria-hidden="true" />
+                      <span className="sr-only">Previous page</span>
                     </button>
 
                     {/* Page numbers */}
                     {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
                       <button
                         key={page}
+                        type="button"
                         onClick={() => setCurrentPage(page)}
                         aria-label={`Page ${page}`}
                         aria-current={currentPage === page ? 'page' : undefined}
@@ -523,12 +537,14 @@ export function PackagesContent({ initialPackages = [] }: { initialPackages?: Pa
 
                     {/* Next */}
                     <button
+                      type="button"
                       onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
                       disabled={currentPage === totalPages}
                       aria-label="Next page"
                       className="w-10 h-10 rounded-full bg-white text-safari-ink hover:bg-safari-cream flex items-center justify-center shadow-sm border border-border/40 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
                     >
-                      <ChevronsRight className="h-5 w-5" />
+                      <ChevronsRight className="h-5 w-5" aria-hidden="true" />
+                      <span className="sr-only">Next page</span>
                     </button>
                   </nav>
                 )}

@@ -80,11 +80,13 @@ export function GalleryContent() {
             className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 px-4 backdrop-blur-sm animate-in fade-in duration-300"
           >
             <button 
+              type="button"
               onClick={() => setLightboxImage(null)}
-              className="absolute top-6 right-6 text-white hover:text-safari-gold transition-colors z-50 p-2"
+              className="absolute top-6 right-6 text-white hover:text-safari-gold-light transition-colors z-50 p-2"
               aria-label="Close lightbox"
             >
-              <X className="h-8 w-8" />
+              <X className="h-8 w-8" aria-hidden="true" />
+              <span className="sr-only">Close lightbox</span>
             </button>
             <div className="relative h-[80vh] w-full max-w-5xl">
               <Image 

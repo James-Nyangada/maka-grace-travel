@@ -46,7 +46,7 @@ export function BlogHero({
           {breadcrumbs.map((bc, idx) => (
             <div key={idx} className="flex items-center gap-2">
               {bc.href ? (
-                <Link href={bc.href} className="text-safari-green hover:text-white transition-colors">
+                <Link href={bc.href} className="text-safari-gold-light hover:text-white transition-colors underline underline-offset-4 decoration-safari-gold-light/40">
                   {bc.label}
                 </Link>
               ) : (

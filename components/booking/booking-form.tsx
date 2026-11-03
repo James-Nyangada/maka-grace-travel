@@ -310,15 +310,18 @@ export function BookingForm({ prefilledPackageName, packageId, embedded }: Booki
                     type="button"
                     onClick={() => { if (isDone) { setDirection('backward'); setStep(s.id) } }}
                     disabled={!isDone}
+                    aria-label={`Step ${s.id}: ${s.label}`}
                     className={`flex h-12 w-12 items-center justify-center rounded-full border-2 transition-all duration-500
                       ${isDone ? 'border-safari-green bg-safari-green text-white cursor-pointer hover:scale-110' : ''}
                       ${isActive ? 'border-safari-gold bg-white text-safari-gold scale-110 shadow-lg shadow-safari-gold/20' : ''}
                       ${!isDone && !isActive ? 'border-border bg-white text-muted-foreground' : ''}
                     `}
                   >
-                    {isDone ? <Check className="h-5 w-5" strokeWidth={3} /> : <Icon className="h-5 w-5" />}
+                    {isDone ? <Check className="h-5 w-5" strokeWidth={3} aria-hidden="true" /> : <Icon className="h-5 w-5" aria-hidden="true" />}
+                    <span className="sr-only">{`Step ${s.id}: ${s.label}`}</span>
                   </button>
                   <span
+                    aria-hidden="true"
                     className={`text-xs font-bold transition-colors ${isActive ? 'text-safari-gold' : isDone ? 'text-safari-green' : 'text-muted-foreground'}`}
                   >
                     {s.label}

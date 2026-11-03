@@ -38,14 +38,16 @@ export async function PackagesSection() {
                 aria-label="Previous packages"
                 className="flex h-16 w-16 items-center justify-center rounded-full bg-black/5 text-muted-foreground transition-colors hover:bg-black/10"
               >
-                <ArrowLeft className="h-5 w-5" />
+                <ArrowLeft className="h-5 w-5" aria-hidden="true" />
+                <span className="sr-only">Previous packages</span>
               </button>
               <button
                 type="button"
                 aria-label="Next packages"
                 className="flex h-16 w-16 items-center justify-center rounded-full bg-safari-green text-white transition-colors hover:bg-safari-green-dark"
               >
-                <ArrowRight className="h-5 w-5" />
+                <ArrowRight className="h-5 w-5" aria-hidden="true" />
+                <span className="sr-only">Next packages</span>
               </button>
             </div>
           </div>

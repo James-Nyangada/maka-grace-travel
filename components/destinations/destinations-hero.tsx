@@ -30,7 +30,7 @@ export function DestinationsHero() {
       <div className="relative z-10 text-center text-white px-4 animate-in fade-in slide-in-from-bottom-8 duration-1000">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-sans">Our Destinations</h1>
         <div className="flex items-center justify-center gap-2 text-lg">
-          <Link href="/" className="text-safari-gold hover:text-white transition-colors">
+          <Link href="/" className="text-safari-gold-light hover:text-white transition-colors underline underline-offset-4 decoration-safari-gold-light/40">
             Home
           </Link>
           <ChevronRight size={16} />

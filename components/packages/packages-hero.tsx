@@ -28,7 +28,7 @@ export function PackagesHero() {
       <div className="relative z-10 text-center text-white px-4 animate-in fade-in slide-in-from-bottom-8 duration-1000">
         <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 font-sans">Safari Tours</h1>
         <div className="flex items-center justify-center gap-2 text-lg">
-          <Link href="/" className="text-safari-green hover:text-white transition-colors">
+          <Link href="/" className="text-safari-gold-light hover:text-white transition-colors underline underline-offset-4 decoration-safari-gold-light/40">
             Home
           </Link>
           <ChevronRight size={16} />

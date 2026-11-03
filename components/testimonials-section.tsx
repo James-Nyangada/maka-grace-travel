@@ -96,32 +96,39 @@ export function TestimonialsSection() {
 
             <div className="mt-8 flex items-center gap-4">
               <button 
+                type="button"
                 onClick={() => setCurrentIndex((prev) => (prev === 0 ? Math.max(testimonials.length - 1, 0) : prev - 1))}
                 className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 text-gray-700 hover:bg-gray-50 hover:text-safari-green transition-colors"
                 aria-label="Previous testimonial"
               >
-                <ChevronLeft className="h-5 w-5" />
+                <ChevronLeft className="h-5 w-5" aria-hidden="true" />
+                <span className="sr-only">Previous testimonial</span>
               </button>
               
               <div className="flex gap-1.5">
                 {testimonials.length > 0 ? testimonials.map((_, idx) => (
                   <button 
                     key={idx}
+                    type="button"
                     onClick={() => setCurrentIndex(idx)}
                     className={`h-2 rounded-full transition-all ${idx === currentIndex ? 'w-6 bg-safari-green' : 'w-2 bg-gray-200'}`}
                     aria-label={`Go to testimonial ${idx + 1}`}
-                  />
+                  >
+                    <span className="sr-only">{`Go to testimonial ${idx + 1}`}</span>
+                  </button>
                 )) : (
                   <div className="h-2 w-6 rounded-full bg-safari-green" />
                 )}
               </div>
 
               <button 
+                type="button"
                 onClick={() => setCurrentIndex((prev) => (testimonials.length > 0 ? (prev + 1) % testimonials.length : 0))}
                 className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 text-gray-700 hover:bg-gray-50 hover:text-safari-green transition-colors"
                 aria-label="Next testimonial"
               >
-                <ChevronRight className="h-5 w-5" />
+                <ChevronRight className="h-5 w-5" aria-hidden="true" />
+                <span className="sr-only">Next testimonial</span>
               </button>
             </div>
           </div>

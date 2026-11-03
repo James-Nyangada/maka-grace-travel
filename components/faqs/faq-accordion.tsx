@@ -23,6 +23,7 @@ function FaqCard({ item, isOpen, onToggle }: { item: FaqItem; isOpen: boolean; o
       >
         <span className="text-sm md:text-base font-bold text-safari-gold pr-8">{item.question}</span>
         <ChevronDown
+          aria-hidden="true"
           className={`h-5 w-5 shrink-0 text-safari-ink/50 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
         />
       </button>

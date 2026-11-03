@@ -52,11 +52,13 @@ export function BookingModal({ isOpen, onClose, packageData }: BookingModalProps
             Request Quotation: {packageData.name}
           </h2>
           <button
+            type="button"
             onClick={onClose}
             className="p-2 rounded-full bg-muted/50 hover:bg-muted text-safari-ink transition-colors"
             aria-label="Close booking modal"
           >
-            <X className="h-5 w-5" />
+            <X className="h-5 w-5" aria-hidden="true" />
+            <span className="sr-only">Close booking modal</span>
           </button>
         </div>
 

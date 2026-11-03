@@ -26,11 +26,13 @@ export function FloatingBookingWidget() {
               <p className="text-sm opacity-90">We typically reply in minutes</p>
             </div>
             <button
+              type="button"
               onClick={() => setIsOpen(false)}
               className="p-2 bg-white/10 hover:bg-white/20 rounded-full transition-colors"
               aria-label="Close booking widget"
             >
-              <X className="h-5 w-5" />
+              <X className="h-5 w-5" aria-hidden="true" />
+              <span className="sr-only">Close booking widget</span>
             </button>
           </div>
           <div className="flex-1 overflow-y-auto bg-safari-cream/30 p-2 sm:p-4">
@@ -50,11 +52,14 @@ export function FloatingBookingWidget() {
         aria-label={isOpen ? 'Close booking widget' : 'Request Booking'}
       >
         {isOpen ? (
-          <X className="h-6 w-6" />
+          <>
+            <X className="h-6 w-6" aria-hidden="true" />
+            <span className="sr-only">Close booking widget</span>
+          </>
         ) : (
           <>
-            <CalendarRange className="h-6 w-6" />
-            <span className="font-bold hidden sm:inline">Request Booking</span>
+            <CalendarRange className="h-6 w-6" aria-hidden="true" />
+            <span className="font-bold sr-only sm:not-sr-only">Request Booking</span>
           </>
         )}
       </button>
